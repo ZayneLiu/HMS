@@ -45,11 +45,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="choice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="choice.Designer.cs">
+      <DependentUpon>choice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="choiceYAO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="choiceYAO.Designer.cs">
+      <DependentUpon>choiceYAO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor.Designer.cs">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doctorLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doctorLogin.Designer.cs">
+      <DependentUpon>doctorLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KaiyaoRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KaiyaoRecord.Designer.cs">
+      <DependentUpon>KaiyaoRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="patient.Designer.cs">
+      <DependentUpon>patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patientLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="patientLogin.Designer.cs">
+      <DependentUpon>patientLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patientSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="patientSign.Designer.cs">
+      <DependentUpon>patientSign.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
