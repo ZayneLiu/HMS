@@ -10,6 +10,10 @@ namespace DAL
     {
         static void Main(string[] args)
         {
+            var a = Doctor.Get_All_Doctors();
+
+            Console.WriteLine("Hello World!");
+            Console.ReadKey();
         }
     }
 }
