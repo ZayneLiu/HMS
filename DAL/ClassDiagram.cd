@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="DAL.DB_OP" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgQgAAAAAAAAAAAAAEAAAAAAAAAAAAAI=</HashCode>
+      <FileName>DB_OP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Doctor">
+    <Position X="4.5" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAgAAQgECAAEAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Doctor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Examination">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Examination.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Medication">
+    <Position X="0.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAABAABQAgAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Medication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Patient">
+    <Position X="2.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAABAgACABEAAAAQAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Patient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Program">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -11,8 +11,17 @@ namespace DAL
     /// </summary>
     public class Examination
     {
+        /// <summary>
+        /// 检查编号
+        /// </summary>
         public int Id { get; set; }
+        /// <summary>
+        /// 检查名称
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 价格
+        /// </summary>
         public double Price { get; set; }
 
 
