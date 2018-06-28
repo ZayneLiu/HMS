@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    class Login
+    public static class Login
     {
-       public static bool  is_login_valid()
+       public static bool  is_login_valid(string username, string pwd)
         {
             return true;
         }
