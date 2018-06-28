@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
+    /// <summary>
+    /// 医生类
+    /// </summary>
     public class Doctor
     {
         /// <summary>
@@ -44,12 +47,11 @@ namespace DAL
         {
             return String.Format("Doctor: {0}\tTel: {1}\nTitle: {2}\tRegion: {3}", Name, Tel, Title, Region);
         }
-
         /// <summary>
         /// 获取所有医生对象 每个医生对象包含该医生所有信息
         /// </summary>
         /// <returns>Doctor对象的泛型集合</returns>
-        public static List<Doctor> GetAllDoctors()
+        public static List<Doctor> Get_All_Doctors()
         {
             var AllDoctors = new List<Doctor>();
             var result = DB_OP.Read_Table("Doctor");

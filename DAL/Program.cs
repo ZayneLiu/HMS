@@ -11,7 +11,7 @@ namespace DAL
         static void Main(string[] args)
         {
             //获取所有医生对象
-            List<Doctor> doctors = Doctor.GetAllDoctors();
+            List<Doctor> doctors = Doctor.Get_All_Doctors();
 
 
 

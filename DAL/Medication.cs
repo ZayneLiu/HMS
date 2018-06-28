@@ -11,7 +11,7 @@ namespace DAL
         /// <summary>
         /// 药品编号
         /// </summary>
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// 药品名称
         /// </summary>
@@ -36,5 +36,14 @@ namespace DAL
         /// 药品库存
         /// </summary>
         public int Stock { get; set; }
+
+        /// <summary>
+        /// 获取所有药品对象 每个药品对象包含该药品所有信息
+        /// </summary>
+        /// <returns></returns>
+        public static List<Medication> Get_All_Meds()
+        {
+            return new List<Medication>();
+        }
     }
 }
