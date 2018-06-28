@@ -16,5 +16,26 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void 医生登陆ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            doctorLogin frm = new doctorLogin();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void 患者登陆ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            patientLogin frm = new patientLogin();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void 患者注册ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            patientSign frm = new patientSign();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace UI
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
         static void Main()
