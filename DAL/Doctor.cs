@@ -46,10 +46,10 @@ namespace DAL
         }
 
         /// <summary>
-        /// 获取所有医生对象
+        /// 获取所有医生对象 每个医生对象包含该医生所有信息
         /// </summary>
         /// <returns>Doctor对象的泛型集合</returns>
-        public static List<Doctor> Get_All_Doctors()
+        public static List<Doctor> GetAllDoctors()
         {
             var AllDoctors = new List<Doctor>();
             var result = DB_OP.Read_Table("Doctor");
