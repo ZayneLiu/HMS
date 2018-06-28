@@ -17,13 +17,10 @@ namespace DAL
         public static Result Read_Table(string table) => Extraction(String.Format("select * from {0}", table));
 
 
-
-
-
-
-
-
-        //执行SQL(无返回数据) ExecuteNonQuery()实现
+        /// <summary>
+        /// 执行SQL(无返回数据) cmd.ExecuteNonQuery()实现
+        /// </summary>
+        /// <param name="command">有 SQL命令文本 和 <c>SqlConnection</c> 的 <c>SqlCommand</c> 对象</param>
         public static void Run(SqlCommand command)
         {
             sqlConnection.Open();

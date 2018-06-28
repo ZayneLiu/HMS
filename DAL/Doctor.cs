@@ -8,21 +8,47 @@ namespace DAL
 {
     public class Doctor
     {
-        //编号
-        public int id { get; set; }
-        public string name { get; set; }
-        public string gender { get; set; }
-        public int age { get; set; }
-        public string tel { get; set; }
-        //病区管理
-        public string region { get; set; }
-        public string title { get; set; }
-
+        /// <summary>
+        /// 医生编号
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// 医生姓名
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// 医生性别
+        /// </summary>
+        public string Gender { get; set; }
+        /// <summary>
+        /// 医生年龄
+        /// </summary>
+        public int Age { get; set; }
+        /// <summary>
+        /// 医生电话
+        /// </summary>
+        public string Tel { get; set; }
+        /// <summary>
+        /// 病区名称
+        /// </summary>
+        public string Region { get; set; }
+        /// <summary>
+        /// 医生职称
+        /// </summary>
+        public string Title { get; set; }
+        /// <summary>
+        /// 重载 ToString() 方法
+        /// </summary>
+        /// <returns>返回医生基本信息 Console.WriteLine(); 试下就知道了</returns>
         public override string ToString()
         {
-            return String.Format("Doctor: {0}\tTel: {1}\nTitle: {2}\tRegion: {3}", name, tel, title, region);
+            return String.Format("Doctor: {0}\tTel: {1}\nTitle: {2}\tRegion: {3}", Name, Tel, Title, Region);
         }
 
+        /// <summary>
+        /// 获取所有医生对象
+        /// </summary>
+        /// <returns>Doctor对象的泛型集合</returns>
         public static List<Doctor> Get_All_Doctors()
         {
             var AllDoctors = new List<Doctor>();
@@ -31,18 +57,17 @@ namespace DAL
             {
                 var a = new Doctor()
                 {
-                    id = (int)row["_id"].value,
-                    name = row["_name"].value.ToString(),
-                    age = (int)row["_age"].value,
-                    gender = row["_gender"].value.ToString(),
-                    region = row["_region"].value.ToString(),
-                    tel = row["_tel"].value.ToString(),
-                    title = row["_title"].value.ToString()
+                    Id = (int)row["_id"].value,
+                    Name = row["_name"].value.ToString(),
+                    Age = (int)row["_age"].value,
+                    Gender = row["_gender"].value.ToString(),
+                    Region = row["_region"].value.ToString(),
+                    Tel = row["_tel"].value.ToString(),
+                    Title = row["_title"].value.ToString()
                 };
                 AllDoctors.Add(a);
             }
             return AllDoctors;
         }
-
     }
 }

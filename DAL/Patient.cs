@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DAL
 {
     public class Patient : DB_OP.CRUD
     {
-        public Patient old { get; set; }
-        public int id { get; set; }
-        public string name { get; set; }
-        public string gender { get; set; }
-        public int age { get; set; }
-        public string tel { get; set; }
-        public Patient()
-        {
+        public Patient Old { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
+        public string Tel { get; set; }
 
-        }
         public void CREATE(object to_create)
         {
             throw new NotImplementedException();
@@ -33,11 +27,11 @@ namespace DAL
             var cmd = new SqlCommand("update Patient set _name=@name, _gender=@gender, _age=@age, _tel=@tel where _id=@old_id", DB_OP.sqlConnection);
             //添加参数
             cmd.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@name",updated.name),
-                new SqlParameter("@gender",updated.gender),
-                new SqlParameter("@age",updated.age),
-                new SqlParameter("@tel",updated.tel),
-                new SqlParameter("@old_id",old.id),
+                new SqlParameter("@name",updated.Name),
+                new SqlParameter("@gender",updated.Gender),
+                new SqlParameter("@age",updated.Age),
+                new SqlParameter("@tel",updated.Tel),
+                new SqlParameter("@old_id",Old.Id),
             });
             DB_OP.Run(cmd);
         }
