@@ -8,9 +8,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DAL.Doctor">
-    <Position X="4.5" Y="1.75" Width="2.5" />
+    <Position X="4.75" Y="1.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAQCAAAAgAAQgECAAEAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQCEAAAgAAAgECAAEAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Doctor.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -29,9 +29,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DAL.Patient">
-    <Position X="2.5" Y="1.75" Width="1.75" />
+    <Position X="2.75" Y="1" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAQCAAAAAABAgACABEAAAAQAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAQCAAAAAAAAgACABEAAAAQAAAAAAEAAAAAAAAQAIAA=</HashCode>
       <FileName>Patient.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -24,6 +24,5 @@ namespace DAL
         /// </summary>
         public double Price { get; set; }
 
-
     }
 }

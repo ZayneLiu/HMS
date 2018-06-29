@@ -81,7 +81,7 @@ namespace DAL
             public string field_name;
             //值
             public object value = new object();
-            public override string ToString() => value.ToString();
+            //public override string ToString() => value.ToString();
         }
         //行
         public class Row : IEnumerable
