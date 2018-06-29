@@ -11,7 +11,7 @@ namespace BLL
         static void Main(string[] args)
         {
             //登陆判断 登陆成功返回值为true
-            Login.is_login_valid("用户名","密码");
+            Public.Login.is_login_valid("用户名","密码");
         }
     }
 }
