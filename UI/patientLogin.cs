@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
 using BLL.Public;
 
 
@@ -23,8 +22,10 @@ namespace UI
         public Doctor myPartent;
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Login.is_login_valid(textBox1.Text, textBox2.Text))
+            if (Login.is_login_valid(textBox1.Text , textBox2.Text))
             {
+
+
                 patient frm = new patient();
                 frm.MdiParent = this.myPartent;
                 frm.Show();

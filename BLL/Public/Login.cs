@@ -9,9 +9,15 @@ namespace BLL.Public
 {
     public static class Login
     {
-        public static bool  is_login_valid(string username, string pwd)
+        partial
+        public static bool is_login_valid(string username, string pwd)
         {
+            
             return true;
+        }
+        public static bool Select(string sql)
+        {
+            return Patient.All_Patients( );
         }
 
       
