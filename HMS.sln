@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{8A66
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{A2610C58-5319-4AD1-899A-7C04BDF177F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Doctor", "UI_Doctor\UI_Doctor.csproj", "{0DC9001C-8E2B-4782-9126-2624AADC91F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Admin", "UI_Admin\UI_Admin.csproj", "{08C404A2-C1B1-4D56-8D01-343278C11F43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{A2610C58-5319-4AD1-899A-7C04BDF177F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2610C58-5319-4AD1-899A-7C04BDF177F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2610C58-5319-4AD1-899A-7C04BDF177F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DC9001C-8E2B-4782-9126-2624AADC91F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC9001C-8E2B-4782-9126-2624AADC91F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC9001C-8E2B-4782-9126-2624AADC91F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC9001C-8E2B-4782-9126-2624AADC91F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C404A2-C1B1-4D56-8D01-343278C11F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C404A2-C1B1-4D56-8D01-343278C11F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C404A2-C1B1-4D56-8D01-343278C11F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C404A2-C1B1-4D56-8D01-343278C11F43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
