@@ -10,6 +10,9 @@ namespace DAL
     {
         static void Main(string[] args)
         {
+
+
+            new Patient().Create();
             //获取所有医生对象
             List<Doctor> doctors = Doctor.All_Doctors;
 

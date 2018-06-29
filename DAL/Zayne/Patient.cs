@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 
 
-namespace DAL
+namespace DAL.Zayne
 {
     public class Patient
     {
+        /// <summary>
+        /// 无参构造函数 添加病人时使用
+        /// </summary>
+        public Patient()
+        {
+
+        }
+        /// <summary>
+        /// 有参构造函数 从数据库读取时使用
+        /// </summary>
+        /// <param name="id"></param>
         public Patient(int id)
         {
             Id = id;
         }
         /// <summary>
-        /// 病人编号
+        /// 病人编号 只有get访问器，保证只有一个途径可以给起赋值，判断病人是否为新加
         /// </summary>
         public int Id { get; }
         /// <summary>
@@ -39,6 +50,32 @@ namespace DAL
         /// 床号
         /// </summary>
         public int Bed_No { get; set; }
+
+        /// <summary>
+        /// 用无参构造函数声明病人对象并填充数据，然后调用该方法创建病人
+        /// </summary>
+        public void Create()
+        {
+            if (Id == 0)
+            {
+                string sql = @"insert into Patient(_name, _gender, _age, _tel, _room_no, _bed_no) values (@name,@gender,@age,@tel,@room_no,@bed_no)";
+                var cmd = new SqlCommand(sql, DB_OP.sqlConnection);
+                cmd.Parameters.AddRange(new SqlParameter[] {
+                new SqlParameter("@name",Name),
+                new SqlParameter("@gender",Name),
+                new SqlParameter("@tel",Name),
+                new SqlParameter("@age",Name),
+                new SqlParameter("@room_no",Name),
+                new SqlParameter("@bed_no",Name),
+                });
+                DB_OP.Run(cmd);
+
+            }
+            else
+            {
+                throw new Exception("该病人已存在");
+            }
+        }
 
         /// <summary>
         /// 更新病人信息
@@ -97,10 +134,6 @@ namespace DAL
         /// <summary>
         /// 创建病人
         /// </summary>
-        public static void Create()
-        {
-            //TBC
-        }
 
         #region 更新病人信息 (复用)
         //public void UPDATE(object _new)

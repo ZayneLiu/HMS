@@ -42,11 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB_OP.cs" />
-    <Compile Include="Doctor.cs" />
-    <Compile Include="Examination.cs" />
-    <Compile Include="Medication.cs" />
-    <Compile Include="Patient.cs" />
+    <Compile Include="Zayne\DB_OP.cs" />
+    <Compile Include="Zayne\Doctor.cs" />
+    <Compile Include="Zayne\Examination.cs" />
+    <Compile Include="Zayne\Medication.cs" />
+    <Compile Include="Zayne\Patient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

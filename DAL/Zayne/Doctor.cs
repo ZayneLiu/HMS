@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL.Zayne
 {
     /// <summary>
     /// 医生类
@@ -44,6 +44,9 @@ namespace DAL
         /// 医生职称
         /// </summary>
         public string Title { get; set; }
+
+
+
 
         /// <summary>
         /// 更新医生信息
