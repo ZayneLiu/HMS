@@ -9,7 +9,7 @@ namespace Server
 {
     public class DB
     {
-        public static string conString = @"Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;database=HMS";
+        public static string conString = @"Server=127.0.0.1;Integrated Security=True;database=HMS";
         public static SqlConnection connection = new SqlConnection(conString);
 
         public static bool Execute(SqlCommand command)
