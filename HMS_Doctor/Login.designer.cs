@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Tbx_Password = new System.Windows.Forms.TextBox();
+            this.Tbx_Username = new System.Windows.Forms.TextBox();
+            this.Btn_Login = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,9 +45,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.Tbx_Password);
+            this.panel1.Controls.Add(this.Tbx_Username);
+            this.panel1.Controls.Add(this.Btn_Login);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(13, 119);
@@ -65,28 +65,29 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // Tbx_Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(208, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(138, 21);
-            this.textBox2.TabIndex = 2;
+            this.Tbx_Password.Location = new System.Drawing.Point(208, 89);
+            this.Tbx_Password.Name = "Tbx_Password";
+            this.Tbx_Password.Size = new System.Drawing.Size(138, 21);
+            this.Tbx_Password.TabIndex = 2;
             // 
-            // textBox1
+            // Tbx_Username
             // 
-            this.textBox1.Location = new System.Drawing.Point(208, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 21);
-            this.textBox1.TabIndex = 2;
+            this.Tbx_Username.Location = new System.Drawing.Point(208, 41);
+            this.Tbx_Username.Name = "Tbx_Username";
+            this.Tbx_Username.Size = new System.Drawing.Size(138, 21);
+            this.Tbx_Username.TabIndex = 2;
             // 
-            // button1
+            // Btn_Login
             // 
-            this.button1.Location = new System.Drawing.Point(184, 132);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "登录";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_Login.Location = new System.Drawing.Point(184, 132);
+            this.Btn_Login.Name = "Btn_Login";
+            this.Btn_Login.Size = new System.Drawing.Size(57, 30);
+            this.Btn_Login.TabIndex = 1;
+            this.Btn_Login.Text = "登录";
+            this.Btn_Login.UseVisualStyleBackColor = true;
+            this.Btn_Login.Click += new System.EventHandler(this.Btn_Login_Click);
             // 
             // label2
             // 
@@ -138,9 +139,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Tbx_Password;
+        private System.Windows.Forms.TextBox Tbx_Username;
+        private System.Windows.Forms.Button Btn_Login;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
