@@ -13,11 +13,29 @@ namespace Server.Models
         /// 身份证号
         /// </summary>
         public string P_ID { get; set; }
+        /// <summary>
+        /// 病人密码
+        /// </summary>
         public string P_Pwd { get; set; }
+        /// <summary>
+        /// 病人姓名
+        /// </summary>
         public string P_Name { get; set; }
+        /// <summary>
+        /// 病人性别
+        /// </summary>
         public string P_Gender { get; set; }
+        /// <summary>
+        /// 病人年龄
+        /// </summary>
         public int P_Age { get; set; }
+        /// <summary>
+        /// 病人电话
+        /// </summary>
         public string P_Tel { get; set; }
+        /// <summary>
+        /// 病人病史
+        /// </summary>
         public string P_Med_History { get; set; }
 
         /// <summary>
@@ -134,7 +152,7 @@ namespace Server.Models
         /// <summary>
         /// 按性别查询
         /// </summary>
-        /// <param name="gender"></param>
+        /// <param name="gender">病人性别</param>
         /// <returns></returns>
         public static List<Patient> Get_Patients_By_Gender(string gender)
         {

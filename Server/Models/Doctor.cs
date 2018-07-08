@@ -13,13 +13,37 @@ namespace Server.Models
         /// 医生身份证号
         /// </summary>
         public string D_ID { get; set; }
+        /// <summary>
+        /// 医生密码
+        /// </summary>
         public string D_Pwd { get; set; }
+        /// <summary>
+        /// 医生姓名
+        /// </summary>
         public string D_Name { get; set; }
+        /// <summary>
+        /// 医生年龄
+        /// </summary>
         public int D_Age { get; set; }
+        /// <summary>
+        /// 医生性别
+        /// </summary>
         public string D_Gender { get; set; }
+        /// <summary>
+        /// 医生电话
+        /// </summary>
         public string D_Tel { get; set; }
+        /// <summary>
+        /// 医生职称
+        /// </summary>
         public string D_Title { get; set; }
+        /// <summary>
+        /// 医生专长病类
+        /// </summary>
         public string D_Specialty { get; set; }
+        /// <summary>
+        /// 医生所属科室
+        /// </summary>
         public string D_Department { get; set; }
 
 
