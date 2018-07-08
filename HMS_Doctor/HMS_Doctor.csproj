@@ -45,14 +45,95 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Doc_Inspect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Inspect.designer.cs">
+      <DependentUpon>Doc_Inspect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc_Inspect_Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Inspect_Record.designer.cs">
+      <DependentUpon>Doc_Inspect_Record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc_Management_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Management_Patient.designer.cs">
+      <DependentUpon>Doc_Management_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc_Personal_Center.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Personal_Center.designer.cs">
+      <DependentUpon>Doc_Personal_Center.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc_Personal_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Personal_Information.designer.cs">
+      <DependentUpon>Doc_Personal_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc_Prescribe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Prescribe.designer.cs">
+      <DependentUpon>Doc_Prescribe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc_Prescribe_Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Prescribe_Record.designer.cs">
+      <DependentUpon>Doc_Prescribe_Record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc__Modify_Personal_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc__Modify_Personal_Information.designer.cs">
+      <DependentUpon>Doc__Modify_Personal_Information.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Doc_Inspect.resx">
+      <DependentUpon>Doc_Inspect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Inspect_Record.resx">
+      <DependentUpon>Doc_Inspect_Record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Management_Patient.resx">
+      <DependentUpon>Doc_Management_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Personal_Center.resx">
+      <DependentUpon>Doc_Personal_Center.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Personal_Information.resx">
+      <DependentUpon>Doc_Personal_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Prescribe.resx">
+      <DependentUpon>Doc_Prescribe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Prescribe_Record.resx">
+      <DependentUpon>Doc_Prescribe_Record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc__Modify_Personal_Information.resx">
+      <DependentUpon>Doc__Modify_Personal_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
