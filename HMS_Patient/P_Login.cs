@@ -19,8 +19,12 @@ namespace HMS_Patient
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
-            //P_Center frm = new P_Center();
-            //frm.Show();
+            if (Server.Logics.Doctor_Logics.Is_Login_Info_Valid("用户名", "密码"))
+            {
+                //P_Center frm = new P_Center();
+                //frm.Show();
+            };
+            MessageBox.Show("用户名或密码错误");
         }
 
         private void Btn_Sign_Click(object sender, EventArgs e)
