@@ -12,6 +12,7 @@ namespace HMS_Patient
 {
     public partial class P_Login : Form
     {
+        public static string P_ID = "";
         public P_Login()
         {
             InitializeComponent();
@@ -19,10 +20,12 @@ namespace HMS_Patient
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
-            if (Server.Logics.Patient_Logics.Is_Login_Info_Valid("用户名", "密码"))
+            if (Server.Logics.Patient_Logics.Is_Login_Info_Valid(Tbx_Username.Text, Tbx_Password.Text))
             {
-                //P_Center frm = new P_Center();
-                //frm.Show();
+                P_ID = Tbx_Username.Text;
+                P_Center frm = new P_Center();
+
+                frm.Show();
             }
             else
             {

@@ -125,7 +125,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(137, 24);
+            this.label1.Location = new System.Drawing.Point(143, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 64);
             this.label1.TabIndex = 10;
@@ -149,6 +149,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "P_Login";
             this.Text = "登陆";
             this.panel1.ResumeLayout(false);
