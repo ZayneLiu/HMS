@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Server.Models
 {
+    /// <summary>
+    /// 医生类
+    /// </summary>
     public class Doctor
     {
         /// <summary>

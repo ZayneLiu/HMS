@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Server.Models
 {
+    /// <summary>
+    /// 药品类
+    /// </summary>
     public class Med
     {
         /// <summary>
