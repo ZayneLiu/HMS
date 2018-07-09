@@ -25,32 +25,57 @@ namespace Server
             catch (Exception e)
             {
                 Console.WriteLine(String.Format("DB.Execute() <- ERR: {0}", e.Message));
-                return false;
             }
+            finally
+            {
+                Close_DB_Connection();
+            }
+            return false;
         }
 
         public static List<Row> Read(SqlCommand command)
         {
-            command.Connection = connection;
-            connection.Open();
-            var reader = command.ExecuteReader();
-            var rows = new List<Row>(reader.FieldCount);
-            while (reader.Read())
+            try
             {
-                Row row = new Row(reader.FieldCount);
-                for (int i = 0; i < reader.FieldCount; i++)
+                command.Connection = connection;
+                connection.Open();
+                var reader = command.ExecuteReader();
+                var rows = new List<Row>(reader.FieldCount);
+                while (reader.Read())
                 {
-                    row.datas[i] = new Data(reader.GetName(i))
+                    Row row = new Row(reader.FieldCount);
+                    for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        Value = reader.GetValue(i),
-                        Value_Type = reader.GetDataTypeName(i),
-                    };
+                        row.datas[i] = new Data(reader.GetName(i))
+                        {
+                            Value = reader.GetValue(i),
+                            Value_Type = reader.GetDataTypeName(i),
+                        };
+                    }
+                    //每行的记录添加到 List<Row> 中
+                    rows.Add(row);
                 }
-                //每行的记录添加到 List<Row> 中
-                rows.Add(row);
+                connection.Close();
+                return rows;
+
             }
-            connection.Close();
-            return rows;
+            catch (Exception e)
+            {
+                Console.WriteLine(String.Format("DB.Read() <- ERR: {0}", e.Message));
+            }
+            finally
+            {
+                Close_DB_Connection();
+            }
+            return null;
+        }
+
+        public static void Close_DB_Connection()
+        {
+            if (connection.State != System.Data.ConnectionState.Closed)
+            {
+                connection.Close();
+            }
         }
 
         public class Data

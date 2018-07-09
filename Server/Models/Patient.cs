@@ -39,6 +39,18 @@ namespace Server.Models
         public string P_Med_History { get; set; }
 
         /// <summary>
+        /// 将对 patient 对象的更改更新至数据库
+        /// </summary>
+        public void SaveChanges()
+        {
+            var command = new SqlCommand("update Patient set P_Name=@P_Name, P_Gender=@P_Gender, P_Age=@P_Age, P_Tel=@P_Tel, P_Med_History=@P_Med_History where P_ID=@P_ID");
+            command.Parameters.AddRange(new SqlParameter[] {
+                new SqlParameter("@P_Name")
+
+            });
+        }
+
+        /// <summary>
         /// 注册病人用户
         /// </summary>
         /// <param name="patient">病人对象</param>
