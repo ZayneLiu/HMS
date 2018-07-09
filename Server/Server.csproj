@@ -47,6 +47,7 @@
     <Compile Include="Logics\Med_Logics.cs" />
     <Compile Include="Logics\Patient_Logics.cs" />
     <Compile Include="Logics\Treatment_Record_Logics.cs" />
+    <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Inspection.cs" />
     <Compile Include="Models\Inspection_Record.cs" />

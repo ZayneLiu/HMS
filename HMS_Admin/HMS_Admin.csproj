@@ -45,47 +45,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Meds_Management_Logic.cs" />
-    <Compile Include="BLL\Shared_Logics.cs" />
-    <Compile Include="DAL\DB.cs" />
-    <Compile Include="DAL\Models\Data_Mapping.cs" />
-    <Compile Include="DAL\Models\Med.cs" />
-    <Compile Include="UI\Admin_Landing_Page.cs">
+    <Compile Include="Admin_Landing_Page.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Admin_Landing_Page.Designer.cs">
+    <Compile Include="Admin_Landing_Page.Designer.cs">
       <DependentUpon>Admin_Landing_Page.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Admin_Login.cs">
+    <Compile Include="Admin_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Admin_Login.Designer.cs">
+    <Compile Include="Admin_Login.Designer.cs">
       <DependentUpon>Admin_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\Dialog_On_Exit.cs">
+    <Compile Include="Dialog_On_Exit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Dialog_On_Exit.Designer.cs">
+    <Compile Include="Dialog_On_Exit.Designer.cs">
       <DependentUpon>Dialog_On_Exit.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Med_Management\Meds_Management_Edit_Med_Page.cs">
+    <Compile Include="Med_Management\Meds_Management_Edit_Med_Page.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Med_Management\Meds_Management_Edit_Med_Page.Designer.cs">
+    <Compile Include="Med_Management\Meds_Management_Edit_Med_Page.Designer.cs">
       <DependentUpon>Meds_Management_Edit_Med_Page.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Med_Management\Meds_Management_Landing_Page.cs">
+    <Compile Include="Med_Management\Meds_Management_Landing_Page.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Med_Management\Meds_Management_Landing_Page.Designer.cs">
+    <Compile Include="Med_Management\Meds_Management_Landing_Page.Designer.cs">
       <DependentUpon>Meds_Management_Landing_Page.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\Admin_Landing_Page.resx">
+    <EmbeddedResource Include="Admin_Landing_Page.resx">
       <DependentUpon>Admin_Landing_Page.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Admin_Login.resx">
+    <EmbeddedResource Include="Admin_Login.resx">
       <DependentUpon>Admin_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,13 +93,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\Dialog_On_Exit.resx">
+    <EmbeddedResource Include="Dialog_On_Exit.resx">
       <DependentUpon>Dialog_On_Exit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Med_Management\Meds_Management_Edit_Med_Page.resx">
+    <EmbeddedResource Include="Med_Management\Meds_Management_Edit_Med_Page.resx">
       <DependentUpon>Meds_Management_Edit_Med_Page.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Med_Management\Meds_Management_Landing_Page.resx">
+    <EmbeddedResource Include="Med_Management\Meds_Management_Landing_Page.resx">
       <DependentUpon>Meds_Management_Landing_Page.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -162,6 +157,11 @@
   <ItemGroup>
     <None Include="Resources\submit.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Server\Server.csproj">
+      <Project>{7685effd-4101-42a8-a396-e201125a379d}</Project>
+      <Name>Server</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
