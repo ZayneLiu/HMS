@@ -10,23 +10,24 @@ using System.Windows.Forms;
 
 namespace HMS_Patient
 {
-    public partial class P_Register : Form
+    public partial class P_Sign : Form
     {
-        public P_Register()
+        public P_Sign()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            P_Center frm = new P_Center();
+            P_Login frm = new P_Login();
             frm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            P_Tip_2 frm = new P_Tip_2();
-            frm.Show();
+            //对病人表添加数据
+            //P_Tip_1 frm = new P_Tip_1();
+            //frm.Show();
         }
     }
 }

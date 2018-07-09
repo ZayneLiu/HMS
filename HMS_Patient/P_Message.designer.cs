@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_Message));
             this.label_Tell = new System.Windows.Forms.Label();
-            this.label_Sickness_History = new System.Windows.Forms.Label();
+            this.label_Med_History = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label_Age = new System.Windows.Forms.Label();
             this.label_Gender = new System.Windows.Forms.Label();
@@ -41,7 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label_Tell
@@ -54,15 +57,15 @@
             this.label_Tell.TabIndex = 25;
             this.label_Tell.Text = "无";
             // 
-            // label_Sickness_History
+            // label_Med_History
             // 
-            this.label_Sickness_History.AutoSize = true;
-            this.label_Sickness_History.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Sickness_History.Location = new System.Drawing.Point(239, 257);
-            this.label_Sickness_History.Name = "label_Sickness_History";
-            this.label_Sickness_History.Size = new System.Drawing.Size(26, 21);
-            this.label_Sickness_History.TabIndex = 24;
-            this.label_Sickness_History.Text = "无";
+            this.label_Med_History.AutoSize = true;
+            this.label_Med_History.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Med_History.Location = new System.Drawing.Point(239, 257);
+            this.label_Med_History.Name = "label_Med_History";
+            this.label_Med_History.Size = new System.Drawing.Size(26, 21);
+            this.label_Med_History.TabIndex = 24;
+            this.label_Med_History.Text = "无";
             // 
             // label11
             // 
@@ -171,26 +174,44 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 26;
-            this.label1.Text = "患者信息";
+            this.label1.Text = "个人中心";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 75;
+            this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(31, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 27;
+            this.button1.Size = new System.Drawing.Size(54, 28);
+            this.button1.TabIndex = 74;
             this.button1.Text = "返回";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // P_Message
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 371);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Tell);
-            this.Controls.Add(this.label_Sickness_History);
+            this.Controls.Add(this.label_Med_History);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label_Age);
             this.Controls.Add(this.label_Gender);
@@ -204,6 +225,7 @@
             this.Name = "P_Message";
             this.Text = "P_Message";
             this.Load += new System.EventHandler(this.P_Message_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,7 +234,7 @@
         #endregion
 
         private System.Windows.Forms.Label label_Tell;
-        private System.Windows.Forms.Label label_Sickness_History;
+        private System.Windows.Forms.Label label_Med_History;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label_Age;
         private System.Windows.Forms.Label label_Gender;
@@ -224,6 +246,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
     }
 }

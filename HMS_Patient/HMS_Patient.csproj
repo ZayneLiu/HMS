@@ -68,8 +68,20 @@
     <Compile Include="P_Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="P_Register.designer.cs">
+    <Compile Include="P_Register.Designer.cs">
       <DependentUpon>P_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Sign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Sign.designer.cs">
+      <DependentUpon>P_Sign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Tip_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Tip_2.Designer.cs">
+      <DependentUpon>P_Tip_2.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P_Register.resx">
       <DependentUpon>P_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Sign.resx">
+      <DependentUpon>P_Sign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Tip_2.resx">
+      <DependentUpon>P_Tip_2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

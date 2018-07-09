@@ -24,7 +24,6 @@ namespace HMS_Patient
             {
                 P_ID = Tbx_Username.Text;
                 P_Center frm = new P_Center();
-
                 frm.Show();
             }
             else
@@ -36,7 +35,7 @@ namespace HMS_Patient
 
         private void Btn_Sign_Click(object sender, EventArgs e)
         {
-            P_Register frm = new P_Register();
+            P_Sign frm = new P_Sign();
             frm.Show(); 
         }
     }

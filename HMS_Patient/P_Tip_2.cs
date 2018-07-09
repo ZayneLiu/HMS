@@ -10,23 +10,18 @@ using System.Windows.Forms;
 
 namespace HMS_Patient
 {
-    public partial class P_Register : Form
+    public partial class P_Tip_2 : Form
     {
-        public P_Register()
+        public P_Tip_2()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             P_Center frm = new P_Center();
             frm.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            P_Tip_2 frm = new P_Tip_2();
-            frm.Show();
+            this.Close();
         }
     }
 }
