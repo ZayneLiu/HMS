@@ -35,7 +35,7 @@ namespace HMS_Patient
 
         private void Btn_Sign_Click(object sender, EventArgs e)
         {
-            P_Register frm = new P_Register();
+            P_Sign frm = new P_Sign();
             frm.Show(); 
         }
     }

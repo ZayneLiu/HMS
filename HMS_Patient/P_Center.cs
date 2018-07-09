@@ -19,8 +19,8 @@ namespace HMS_Patient
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // P_Registered frm = new P_Registered();
-           // Show();
+            P_Register frm = new P_Register();
+            frm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
