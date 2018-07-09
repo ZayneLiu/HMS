@@ -95,7 +95,6 @@ namespace Server.Models
             var command = new SqlCommand("select * from Med where M_ID=@M_ID");
             command.Parameters.AddWithValue("@M_ID", M_ID);
             var row = DB.Read(command).First();
-            Console.WriteLine(String.Format("|| 本次查询到 => {0} 条记录", rows.Count));
             return new Med()
             {
                 M_Id = (int)row["M_Id"].Value,
@@ -107,7 +106,6 @@ namespace Server.Models
                 M_Effect = row["M_Effect"].Value.ToString(),
             };
         }
-
 
         //public void Delete()
         //{

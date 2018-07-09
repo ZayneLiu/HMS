@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Server.Models
 {
+    /// <summary>
+    /// 坐诊记录表
+    /// </summary>
     public class Treatment_Record
     {
         /// <summary>
@@ -34,6 +37,12 @@ namespace Server.Models
         /// </summary>
         public int MR_ID { get; set; }
 
+
+        public static void Method()
+        {
+            
+        }
+
         /// <summary>
         /// 创建就诊记录
         /// </summary>
@@ -41,11 +50,14 @@ namespace Server.Models
         /// <param name="P_ID">病人ID</param>
         public static void Create_Record(Treatment_Record record)
         {
-            var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID) values(@T_Time, @D_ID, @P_ID)");
+            var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID, IR_ID, MR_ID) " +
+                "values(@T_Time, @D_ID, @P_ID, @IR_ID, @MR_ID)");
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@T_Time", DateTime.Now),
                 new SqlParameter("@D_ID", record.D_ID),
-                new SqlParameter("@P_ID", record.P_ID)
+                new SqlParameter("@P_ID", record.P_ID),
+                new SqlParameter("@IR_ID", record.IR_ID),
+                new SqlParameter("@MR_ID", record.MR_ID)
             });
             DB.Execute(command);
         }
@@ -62,11 +74,12 @@ namespace Server.Models
             var row = DB.Read(command).First();
             return new Treatment_Record()
             {
-
                 T_ID = (int)row["T_ID"].Value,
                 T_Time = (DateTime)row["T_Time"].Value,
                 D_ID = row["D_ID"].Value.ToString(),
-                P_ID = row["P_ID"].Value.ToString()
+                P_ID = row["P_ID"].Value.ToString(),
+                IR_ID = (int)row["IR_ID"].Value,
+                MR_ID = (int)row["MR_ID"].Value,
             };
         }
     }

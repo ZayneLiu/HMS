@@ -45,9 +45,14 @@ namespace Server.Models
         {
             var command = new SqlCommand("update Patient set P_Name=@P_Name, P_Gender=@P_Gender, P_Age=@P_Age, P_Tel=@P_Tel, P_Med_History=@P_Med_History where P_ID=@P_ID");
             command.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@P_Name")
-
+                new SqlParameter("@P_Name", P_Name),
+                new SqlParameter("@P_Gender", P_Gender),
+                new SqlParameter("@P_Age", P_Age),
+                new SqlParameter("@P_Tel", P_Tel),
+                new SqlParameter("@P_Med_History", P_Med_History),
+                new SqlParameter("@P_ID", P_ID)
             });
+            DB.Execute(command);
         }
 
         /// <summary>
