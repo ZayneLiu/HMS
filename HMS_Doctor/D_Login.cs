@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Doctor
+namespace HMS_Doctor
 {
-    public partial class Login : Form
+    public partial class D_Login : Form
     {
-        public Login()
+        public D_Login()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace Doctor
         {
             if (Server.Logics.Doctor_Logics.Is_Login_Info_Valid(Tbx_Username.Text, Tbx_Password.Text))
             {
-                Doc_Personal_Center frm = new Doc_Personal_Center();
+                D_Personal_Center frm = new D_Personal_Center();
                 frm.Show();
             }
             else 

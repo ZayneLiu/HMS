@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Doctor
+namespace HMS_Doctor
 {
-    public partial class Doc_Management_Patient : Form
+    public partial class D_Personal_Center : Form
     {
-        public Doc_Management_Patient()
+        public D_Personal_Center()
         {
             InitializeComponent();
         }

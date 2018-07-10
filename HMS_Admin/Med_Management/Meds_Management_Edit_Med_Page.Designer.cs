@@ -1,4 +1,4 @@
-﻿namespace HMS_Partial.UI.Med_Management
+﻿namespace HMS_Partial.Med_Management
 {
     partial class Meds_Management_Edit_Med_Page
     {
@@ -77,7 +77,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::HMS_Partial.Properties.Resources.Back;
@@ -129,7 +129,7 @@
             // 
             // Label_Save
             // 
-            this.Label_Save.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Label_Save.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Label_Save.AutoSize = true;
             this.Label_Save.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -259,8 +259,8 @@
             // 
             // Panel_Input_Group
             // 
-            this.Panel_Input_Group.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.Panel_Input_Group.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel_Input_Group.Controls.Add(this.Tbx_Effect);
             this.Panel_Input_Group.Controls.Add(this.label10);

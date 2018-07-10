@@ -19,18 +19,18 @@ namespace HMS_Patient
             p_Center = Center;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-            P_Center frm = new P_Center();
-            frm.Show();
-            Close();
+            //P_Center frm = new P_Center();
+            //frm.Show();
+            //Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            P_Tip_2 frm = new P_Tip_2();
-            frm.Show();
-            Close();
+            //P_Tip_2 frm = new P_Tip_2();
+            //frm.Show();
+            //Close();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

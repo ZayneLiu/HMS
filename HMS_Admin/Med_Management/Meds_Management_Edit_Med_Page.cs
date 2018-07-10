@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HMS_Partial.UI.Med_Management
+namespace HMS_Partial.Med_Management
 {
     public partial class Meds_Management_Edit_Med_Page : Form
     {
@@ -22,7 +22,7 @@ namespace HMS_Partial.UI.Med_Management
             pictureBox1.Image = Properties.Resources.Add;
             Landing_Page = meds_Management_Landing_Page;
         }
-        public Meds_Management_Edit_Med_Page(Meds_Management_Landing_Page landing_Page, DAL.Models.Med med_edit)
+        public Meds_Management_Edit_Med_Page(Meds_Management_Landing_Page landing_Page, Server.Models.Med med_edit)
         {
             InitializeComponent();
             pictureBox1.Image = Properties.Resources.Edit;
@@ -50,22 +50,22 @@ namespace HMS_Partial.UI.Med_Management
                 {
                     //添加药品
                     //待添加药品信息 存入元组  可以考虑直接在此处实例化一个Med对象
-                    var Med_To_Add = Tuple.Create(Name, Catgory, Unit, Price, Stock, Effect);
+                    //var Med_To_Add = Tuple.Create();
                     //将数据传入逻辑层进行处理
-                    succeed = BLL.Meds_Management_Logic.Create_If_Med_Info_Valid(Med_To_Add);
+                    //succeed = Server.Logics.Med_Logics.Add_Med_If_Info_Valid(Name, Catgory, Unit, Price, Stock, Effect);
                 }
                 else
                 {
                     //修改药品
-                    succeed = BLL.Meds_Management_Logic.Update_If_Med_Info_Valid(new DAL.Models.Med(Med_Id: 123)
-                    {
-                        Med_Name = Name,
-                        Med_Catgory = Catgory,
-                        Med_Stock = Stock,
-                        Med_Price = Price,
-                        Med_Unit = Unit,
-                        Med_Effect = Effect
-                    });
+                    //succeed = Server.Logics.Med_Logics.Update_If_Med_Info_Valid(new DAL.Models.Med(Med_Id: 123)
+                    //{
+                    //    Med_Name = Name,
+                    //    Med_Catgory = Catgory,
+                    //    Med_Stock = Stock,
+                    //    Med_Price = Price,
+                    //    Med_Unit = Unit,
+                    //    Med_Effect = Effect
+                    //});
                 }
             }
             catch (Exception exc)

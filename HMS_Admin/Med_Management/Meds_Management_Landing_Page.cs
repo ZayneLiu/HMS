@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HMS_Partial.UI.Med_Management
+namespace HMS_Partial.Med_Management
 {
     public partial class Meds_Management_Landing_Page : Form
     {
@@ -29,7 +29,7 @@ namespace HMS_Partial.UI.Med_Management
 
         public void DGV_Refresh()
         {
-            dataGridView1.DataSource = DAL.DB.dataset.Tables["Med"];
+            //dataGridView1.DataSource = DAL.DB.dataset.Tables["Med"];
         }
 
         private void Med_Add_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace HMS_Partial.UI.Med_Management
                 //删除所有选中行
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    new DAL.Models.Med((int)dataGridView1.SelectedRows[i].Cells["Med_Id"].Value).Delete();
+                    //new DAL.Models.Med((int)dataGridView1.SelectedRows[i].Cells["Med_Id"].Value).Delete();
                 }
                 //更新
                 DGV_Refresh();
@@ -55,9 +55,9 @@ namespace HMS_Partial.UI.Med_Management
 
         private void Update_Click(object sender, EventArgs e)
         {
-            new Meds_Management_Edit_Med_Page(this, new DAL.Models.Med()
-            {
-            }).Show();
+            //new Meds_Management_Edit_Med_Page(this, new DAL.Models.Med()
+            //{
+            //}).Show();
             //======TBC======
 
         }

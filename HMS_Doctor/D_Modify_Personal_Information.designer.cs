@@ -1,6 +1,6 @@
-﻿namespace Doctor
+﻿namespace HMS_Doctor
 {
-    partial class Doc__Modify_Personal_Information
+    partial class D_Modify_Personal_Information
     {
         /// <summary>
         /// Required designer variable.

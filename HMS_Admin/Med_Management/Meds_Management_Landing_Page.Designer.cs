@@ -1,4 +1,4 @@
-﻿namespace HMS_Partial.UI.Med_Management
+﻿namespace HMS_Partial.Med_Management
 {
     partial class Meds_Management_Landing_Page
     {

@@ -19,7 +19,7 @@ namespace HMS_Partial
 
         private void Login_Click(object sender, EventArgs e)
         {
-            Server.Logics.();
+            //Server.Logics.();
             Hide();
             new Admin_Landing_Page().Show();
         }

@@ -16,7 +16,7 @@ namespace HMS_Partial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.Admin_Login());
+            Application.Run(new Admin_Login());
         }
     }
 }

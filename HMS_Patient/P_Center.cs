@@ -13,11 +13,11 @@ namespace HMS_Patient
 
     public partial class P_Center : Form
     {
-        public P_Login p_Login; 
-        public P_Center(P_Login login)
+        public Form parent; 
+        public P_Center(Form form)
         {
             InitializeComponent();
-            p_Login = login;
+            parent = form;
            
         }
 
@@ -58,7 +58,7 @@ namespace HMS_Patient
 
         private void button6_Click(object sender, EventArgs e)
         {
-            p_Login.Show();
+            parent.Show();
         }
     }
 }

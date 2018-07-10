@@ -1,6 +1,6 @@
-﻿namespace Doctor
+﻿namespace HMS_Doctor
 {
-    partial class Doc_Prescribe
+    partial class D_Prescribe
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doc_Prescribe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Prescribe));
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("药品名");
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("类别");
             System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("单位");

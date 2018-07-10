@@ -140,7 +140,7 @@
             this.button1.TabIndex = 67;
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Back_Click);
             // 
             // pictureBox1
             // 
@@ -152,7 +152,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.Back_Click);
             // 
             // button2
             // 

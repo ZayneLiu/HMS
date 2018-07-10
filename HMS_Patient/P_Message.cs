@@ -29,9 +29,9 @@ namespace HMS_Patient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            P_Center frm = new P_Center();
-            frm.Show();
-            Close();
+            //P_Center frm = new P_Center(this);
+            //frm.Show();
+            //Close();
         }
     }
 }

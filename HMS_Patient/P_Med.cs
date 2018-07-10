@@ -17,11 +17,9 @@ namespace HMS_Patient
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-            P_Center frm = new P_Center();
-            frm.Show();
-            Close();
+
         }
     }
 }

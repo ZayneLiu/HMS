@@ -18,13 +18,12 @@ namespace HMS_Patient
             p_Login.Hide();
             InitializeComponent();
             login = p_Login;
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-            P_Login frm = new P_Login();
-            frm.Show();
+            //P_Login frm = new P_Login();
+            //frm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
