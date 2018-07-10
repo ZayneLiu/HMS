@@ -31,6 +31,7 @@ namespace HMS_Patient
         {
             P_Center frm = new P_Center();
             frm.Show();
+            Close();
         }
     }
 }

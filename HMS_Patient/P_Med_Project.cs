@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HMS_Patient
 {
-    public partial class P_Med : Form
+    public partial class P_Med_Project : Form
     {
-        public P_Med()
+        public P_Med_Project()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace HMS_Patient
         private void button1_Click(object sender, EventArgs e)
         {
             P_Center frm = new P_Center();
-            frm.Show();
+            frm.Close();
             Close();
         }
     }
