@@ -14,7 +14,7 @@ namespace Server.Models
         /// <summary>
         /// 检查项目列表ID
         /// </summary>
-        public int IR_ID { get; set; }
+        public int T_ID { get; set; }
         /// <summary>
         /// 检查项目ID
         /// </summary>

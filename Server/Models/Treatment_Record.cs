@@ -29,15 +29,28 @@ namespace Server.Models
         /// </summary>
         public string P_ID { get; set; }
         /// <summary>
-        /// 检查项目列表ID
+        /// 检查项目列表
         /// </summary>
-        public int IR_ID { get; set; }
-        /// <summary>
-        /// 开药记录列表ID
-        /// </summary>
-        public int MR_ID { get; set; }
-
-
+        public Dictionary<Med, int> M_Record
+        {
+            get
+            {
+                return Med_Record.Get_Med_List_By_T_ID(T_ID);
+            }
+            set
+            {
+                foreach (var med_count_pair in value)
+                {
+                    var command = new SqlCommand("insert into Med_Record values (@T_ID, @M_ID, @Count)");
+                    command.Parameters.AddRange(new SqlParameter[] {
+                        new SqlParameter("@T_ID", T_ID),
+                        new SqlParameter("@M_ID", med_count_pair.Key),
+                        new SqlParameter("@Count", med_count_pair.Value)
+                    });
+                    DB.Execute(command);
+                }
+            }
+        }
         public static void Method()
         {
             
@@ -50,14 +63,12 @@ namespace Server.Models
         /// <param name="P_ID">病人ID</param>
         public static void Create_Record(Treatment_Record record)
         {
-            var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID, IR_ID, MR_ID) " +
-                "values(@T_Time, @D_ID, @P_ID, @IR_ID, @MR_ID)");
+            var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID) " +
+                "values(@T_Time, @D_ID, @P_ID");
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@T_Time", DateTime.Now),
                 new SqlParameter("@D_ID", record.D_ID),
-                new SqlParameter("@P_ID", record.P_ID),
-                new SqlParameter("@IR_ID", record.IR_ID),
-                new SqlParameter("@MR_ID", record.MR_ID)
+                new SqlParameter("@P_ID", record.P_ID)
             });
             DB.Execute(command);
         }
@@ -77,9 +88,7 @@ namespace Server.Models
                 T_ID = (int)row["T_ID"].Value,
                 T_Time = (DateTime)row["T_Time"].Value,
                 D_ID = row["D_ID"].Value.ToString(),
-                P_ID = row["P_ID"].Value.ToString(),
-                IR_ID = (int)row["IR_ID"].Value,
-                MR_ID = (int)row["MR_ID"].Value,
+                P_ID = row["P_ID"].Value.ToString()
             };
         }
     }

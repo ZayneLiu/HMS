@@ -36,7 +36,7 @@ namespace HMS_Patient
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if(Server.Logics.Patient_Logics.Register_Patient_If_Info_Valid(Tbx_Username.Text, Tbx_Password.Text, Tbx_Turename.Text, int.Parse(Tbx_Age.Text), Cbx_Gender.Text, Tbx_Tell.Text, Tbx_Sickness_History.Text))
+            if(Server.Logics.Patient_Logics.Register_If_Info_Valid(Tbx_Username.Text, Tbx_Password.Text, Tbx_Turename.Text, int.Parse(Tbx_Age.Text), Cbx_Gender.Text, Tbx_Tell.Text, Tbx_Sickness_History.Text))
             {
                 login.Show();
                 this.Close();

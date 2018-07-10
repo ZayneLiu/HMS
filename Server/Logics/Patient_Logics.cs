@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;x
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +8,12 @@ namespace Server.Logics
 {
     public static class Patient_Logics
     {
+        /// <summary>
+        /// 登陆判断
+        /// </summary>
+        /// <param name="P_ID">病人ID</param>
+        /// <param name="pwd">病人密码</param>
+        /// <returns>登陆成功 或 失败</returns>
         public static bool Is_Login_Info_Valid(string P_ID, string pwd)
         {
             if (Models.Patient.Get_Patient_By_ID(P_ID).P_Pwd == pwd)
@@ -29,19 +35,23 @@ namespace Server.Logics
         /// <param name="tel">电话</param>
         /// <param name="med_history">病史</param>
         /// <returns>true / false</returns>
-        public static bool Register_Patient_If_Info_Valid(string id, string pwd, string realname, int age, string gender, string tel, string med_history)
+        public static bool Register_If_Info_Valid(string id, string pwd, string realname, int age, string gender, string tel, string med_history)
         {
+            #region 数据有效性判定
+            // ID 为病人身份证号 故18位
             if (id.Length != 18)
             {
-                Console.WriteLine("P_ID 输入非法 <- ERR:");
+                Console.WriteLine("P_ID 输入非法 <- Input_ERR:");
                 return false;
             }
+            // Tel 为病人电话 故11位
             if (tel.Length != 11)
             {
-                Console.WriteLine("P_Tel 输入非法 <- ERR:");
+                Console.WriteLine("P_Tel 输入非法 <- Input_ERR:");
                 return false;
             }
-
+            // 
+            #endregion
 
             return Models.Patient.Register_Patient(new Models.Patient()
             {

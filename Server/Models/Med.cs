@@ -12,10 +12,18 @@ namespace Server.Models
     /// </summary>
     public class Med
     {
+        public Med()
+        {
+
+        }
+        public Med(int id)
+        {
+            M_ID = id;
+        }
         /// <summary>
         /// 药品编号 某个药品的唯一标识
         /// </summary>
-        public int M_Id { get; set; }
+        public int M_ID { get; }
         /// <summary>
         /// 药品名称
         /// </summary>
@@ -42,28 +50,6 @@ namespace Server.Models
         public string M_Effect { get; set; }
 
         /// <summary>
-        /// 创建药品
-        /// </summary>
-        /// <param name="med">Med 类对象</param>
-        public static void Create(Med med)
-        {
-            //初始化SQL命令
-            var cmd = new SqlCommand();
-            cmd.CommandText = @"insert into Med(Med_Name, Med_Catgory, Med_Unit, Med_Price, Med_Stock, Med_Effect)"
-                + "values(@Med_Name, @Med_Catgory, @Med_Unit, @Med_Price, @Med_Stock, @Med_Effect)";
-            cmd.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@Med_Name",med.M_Name),
-                new SqlParameter("@Med_Catgory",med.M_Category),
-                new SqlParameter("@Med_Unit",med.M_Unit),
-                new SqlParameter("@Med_Price",med.M_Price),
-                new SqlParameter("@Med_Stock",med.M_Stock),
-                new SqlParameter("@Med_Effect",med.M_Effect),
-            });
-            //调用执行指令
-            DB.Execute(cmd);
-        }
-
-        /// <summary>
         /// 将对 对象做出的更改 更新至数据库
         /// </summary>
         public void SaveChanges()
@@ -73,7 +59,7 @@ namespace Server.Models
             cmd.CommandText = @"update Med set Med_Name=@Med_Name, Med_Catgory=@Med_Catgory, Med_Unit=@Med_Unit, Med_Price=@Med_Price, Med_Stock=@Med_Stock, Med_Effect=@Med_Effect)"
                 + " where Med_Id = @Med_Id";
             cmd.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@Med_Id",M_Id),
+                new SqlParameter("@Med_Id",M_ID),
                 new SqlParameter("@Med_Name",M_Name),
                 new SqlParameter("@Med_Catgory",M_Category),
                 new SqlParameter("@Med_Unit",M_Unit),
@@ -86,6 +72,40 @@ namespace Server.Models
         }
 
         /// <summary>
+        /// 创建药品
+        /// </summary>
+        /// <param name="med">Med 类对象</param>
+        public static bool Add(Med med)
+        {
+            try
+            {
+                //初始化SQL命令
+                var cmd = new SqlCommand();
+                cmd.CommandText = @"insert into Med(Med_Name, Med_Catgory, Med_Unit, Med_Price, Med_Stock, Med_Effect)"
+                    + "values(@Med_Name, @Med_Catgory, @Med_Unit, @Med_Price, @Med_Stock, @Med_Effect)";
+                cmd.Parameters.AddRange(new SqlParameter[] {
+                new SqlParameter("@Med_Name",med.M_Name),
+                new SqlParameter("@Med_Catgory",med.M_Category),
+                new SqlParameter("@Med_Unit",med.M_Unit),
+                new SqlParameter("@Med_Price",med.M_Price),
+                new SqlParameter("@Med_Stock",med.M_Stock),
+                new SqlParameter("@Med_Effect",med.M_Effect),
+                });
+                //调用执行指令
+                return DB.Execute(cmd);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Med.Add() <- ERR: " + e.Message);
+                return false;
+            }
+            finally
+            {
+                DB.Close_DB_Connection();
+            }
+        }
+
+        /// <summary>
         /// 根据 ID 查询药品
         /// </summary>
         /// <param name="M_ID"></param>
@@ -95,9 +115,8 @@ namespace Server.Models
             var command = new SqlCommand("select * from Med where M_ID=@M_ID");
             command.Parameters.AddWithValue("@M_ID", M_ID);
             var row = DB.Read(command).First();
-            return new Med()
+            return new Med((int)row["M_Id"].Value)
             {
-                M_Id = (int)row["M_Id"].Value,
                 M_Name = row["M_Name"].Value.ToString(),
                 M_Category = row["M_Catgory"].Value.ToString(),
                 M_Unit = row["M_Unit"].Value.ToString(),

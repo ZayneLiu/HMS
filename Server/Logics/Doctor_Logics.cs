@@ -35,20 +35,24 @@ namespace Server.Logics
         /// <param name="specialty">医生擅长病类</param>
         /// <param name="department">医生负责科室</param>
         /// <returns>添加成功 true; 添加失败 false</returns>
-        public static bool Add_Doctor_If_Info_Valid(string id, string name, string gender, int age, string tel, string title, string specialty, string department)
+        public static bool Add_If_Info_Valid(string id, string name, string gender, int age, string tel, string title, string specialty, string department)
         {
+            #region 数据有效性判定
+            // 医生身份证号
             if (id.Length != 18)
             {
                 Console.WriteLine("D_ID 输入非法 <- ERR:");
                 return false;
             }
+            //医生电话
             if (tel.Length != 11)
             {
                 Console.WriteLine("D_Tel 输入非法 <- ERR:");
                 return false;
             }
+            #endregion
 
-            return Models.Doctor.Add_Doctor(new Models.Doctor()
+            return Models.Doctor.Add(new Models.Doctor()
             {
                 D_ID = id,
                 //初始密码为身份证后六位

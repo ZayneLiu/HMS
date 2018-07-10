@@ -23,7 +23,7 @@ namespace Server
             a.P_Gender = "adsf";
             a.SaveChanges();
 
-            Logics.Treatment_Record_Logics.Create_Record_If_Info_Valid("123", "34");
+            Logics.Treatment_Record_Logics.Create_If_Info_Valid("123", "34");
         }
     }
 }

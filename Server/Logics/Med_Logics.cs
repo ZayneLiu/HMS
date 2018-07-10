@@ -21,23 +21,50 @@ namespace Server.Logics
         /// <returns></returns>
         public static bool Add_Med_If_Info_Valid(string Name, string Category, string Unit, double Price, int Stock, string Effect )
         {
-            var command = new SqlCommand("Insert into Med (Med_Name, Med_Category, Med_Unit, Med_Price, Med_Stock, Med_Effect) values " +
-                "(@Med_Name, @Med_Category, @Med_Unit, @Med_Price, @Med_Stock, @Med_Effect)");
-            command.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@Med_Name", Name),
-                new SqlParameter("@Med_Category", Category),
-                new SqlParameter("@Med_Unit", Unit),
-                new SqlParameter("@Med_Price", Price),
-                new SqlParameter("@Med_Stock", Stock),
-                new SqlParameter("@Med_Effect", Effect)
-            });
-            DB.Execute(command);
-            return true;
+            #region 数据有效性判定
+
+            #endregion
+            return Models.Med.Add(new Models.Med()
+                {
+                    M_Name = Name,
+                    M_Category = Category,
+                    M_Unit = Unit,
+                    M_Price = Price,
+                    M_Effect = Effect,
+                    M_Stock = Stock
+                });
         }
 
-        public static void Method()
-        {
+        
 
-        }
+        //public static bool Create_If_Med_Info_Valid(string id, string name, string category, string unit, double price, int stock, string effect)
+        //{
+        //    try
+        //    {
+        //        var _New_Med = new Models.Med()
+        //        {
+        //            M_ID = int.Parse(id),
+        //            M_Name = name,
+        //            M_Category = category,
+        //            M_Unit = unit,
+        //            M_Price = price,
+        //            M_Stock = stock,
+        //            M_Effect = effect
+        //        };
+        //        //更新
+        //        Models.Med.Create(_New_Med);
+        //        return true;
+        //    }
+        //    catch (Exception exc)
+        //    {
+        //        Console.WriteLine("|| ERR From BLL.Medsmanagement.cs => " + exc.Message);
+        //        return false;
+        //    }
+        //    finally
+        //    {
+        //        DAL.DB.Close_Connection();
+        //    }
+        //}
+
     }
 }

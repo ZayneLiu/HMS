@@ -55,7 +55,7 @@ namespace Server.Models
         /// </summary>
         /// <param name="doctor">要添加的医生对象</param>
         /// <returns>成功 true; 失败 false</returns>
-        public static bool Add_Doctor(Doctor doctor)
+        public static bool Add(Doctor doctor)
         {
             var command = new SqlCommand("insert into Doctor values " +
                 "(@D_ID, @D_Pwd, @D_Name, @D_Age, @D_Gender, @D_Tel, @D_Title, @D_Specialty, @D_Section)");
