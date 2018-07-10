@@ -39,6 +39,29 @@ namespace Server.Models
         public string P_Med_History { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public List<Treatment_Record> Get_My_Treatment_Records()
+        {
+            var records = new List<Treatment_Record>();
+            var command = new SqlCommand("select * from Treatment_Record where P_ID=@P_ID");
+            command.Parameters.AddWithValue("@P_ID", P_ID);
+            var rows = DB.Read(command);
+            foreach (var row in rows)
+            {
+                records.Add(new Treatment_Record()
+                {
+                    T_ID = (int)row["T_ID"].Value,
+                    T_Time = (DateTime)row["T_Time"].Value,
+                    D_ID = row["D_ID"].Value.ToString(),
+                    P_ID = row["P_ID"].Value.ToString(),
+                    Detail = row["Detail"].Value.ToString()
+                });
+            }
+            return records;
+        }
+
+        /// <summary>
         /// 将对 patient 对象的更改更新至数据库
         /// </summary>
         public void SaveChanges()
