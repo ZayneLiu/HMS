@@ -23,7 +23,7 @@ namespace HMS_Patient
             if (Server.Logics.Patient_Logics.Is_Login_Info_Valid(Tbx_Username.Text, Tbx_Password.Text))
             {
                 P_ID = Tbx_Username.Text;
-                P_Center frm = new P_Center();
+                P_Center frm = new P_Center(this);
                 frm.Show();
             }
             else
@@ -35,8 +35,9 @@ namespace HMS_Patient
 
         private void Btn_Sign_Click(object sender, EventArgs e)
         {
-            P_Sign frm = new P_Sign();
-            frm.Show(); 
+            P_Sign frm = new P_Sign(this);
+            frm.Show();
+            Hide();
         }
     }
 }

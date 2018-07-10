@@ -59,11 +59,29 @@
     <Compile Include="P_Login.designer.cs">
       <DependentUpon>P_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Med.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Med.designer.cs">
+      <DependentUpon>P_Med.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Med_Project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Med_Project.Designer.cs">
+      <DependentUpon>P_Med_Project.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Message.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="P_Message.designer.cs">
       <DependentUpon>P_Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Pay_Leave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Pay_Leave.Designer.cs">
+      <DependentUpon>P_Pay_Leave.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Register.cs">
       <SubType>Form</SubType>
@@ -98,8 +116,17 @@
     <EmbeddedResource Include="P_Login.resx">
       <DependentUpon>P_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P_Med.resx">
+      <DependentUpon>P_Med.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Med_Project.resx">
+      <DependentUpon>P_Med_Project.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P_Message.resx">
       <DependentUpon>P_Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Pay_Leave.resx">
+      <DependentUpon>P_Pay_Leave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Register.resx">
       <DependentUpon>P_Register.cs</DependentUpon>

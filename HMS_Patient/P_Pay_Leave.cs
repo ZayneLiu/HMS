@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HMS_Patient
 {
-    public partial class P_Med : Form
+    public partial class P_Pay_Leave : Form
     {
-        public P_Med()
+        public P_Pay_Leave()
         {
             InitializeComponent();
+        }
+
+        private void P_Pay_Leave_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
