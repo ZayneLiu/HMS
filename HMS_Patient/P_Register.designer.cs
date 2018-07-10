@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("医生姓名");
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("性别");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("职称");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("所在科室");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("擅长病症");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_Register));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +41,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Detail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +60,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(280, 20);
             this.comboBox1.TabIndex = 57;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.Depart_Change);
             // 
             // label2
             // 
@@ -103,19 +106,19 @@
             // 
             // listView1
             // 
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12,
-            listViewItem13,
-            listViewItem14,
-            listViewItem15});
-            this.listView1.Location = new System.Drawing.Point(17, 224);
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listView1.Location = new System.Drawing.Point(12, 216);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(530, 328);
+            this.listView1.Size = new System.Drawing.Size(540, 328);
             this.listView1.TabIndex = 64;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.SmallIcon;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // label1
             // 
@@ -167,7 +170,7 @@
             this.button2.TabIndex = 69;
             this.button2.Text = "确定";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Confirm_Click);
             // 
             // pictureBox2
             // 
@@ -179,7 +182,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 70;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.Confirm_Click);
             // 
             // comboBox2
             // 
@@ -189,12 +192,52 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(280, 20);
             this.comboBox2.TabIndex = 66;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.Specialty_Change);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Tag = "";
+            this.columnHeader1.Text = "医生编号";
+            this.columnHeader1.Width = 76;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "医生姓名";
+            this.columnHeader2.Width = 98;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "性别";
+            this.columnHeader3.Width = 79;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "职称";
+            this.columnHeader4.Width = 83;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "所在科室";
+            this.columnHeader5.Width = 105;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "擅长病症";
+            this.columnHeader6.Width = 144;
+            // 
+            // Detail
+            // 
+            this.Detail.Location = new System.Drawing.Point(206, 69);
+            this.Detail.Name = "Detail";
+            this.Detail.Size = new System.Drawing.Size(245, 21);
+            this.Detail.TabIndex = 71;
             // 
             // P_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 556);
+            this.Controls.Add(this.Detail);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
@@ -211,6 +254,7 @@
             this.Name = "P_Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "P_Register";
+            this.Load += new System.EventHandler(this.P_Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -232,5 +276,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.TextBox Detail;
     }
 }

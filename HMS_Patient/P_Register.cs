@@ -12,30 +12,84 @@ namespace HMS_Patient
 {
     public partial class P_Register : Form
     {
-        public P_Center p_Center;
-        public P_Register(P_Center Center)
+        public Form parent;
+        public P_Register(Form form)
         {
             InitializeComponent();
-            p_Center = Center;
+            parent = form;
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-            //P_Center frm = new P_Center();
-            //frm.Show();
-            //Close();
+            this.Close();
+            parent.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Confirm_Click(object sender, EventArgs e)
         {
-            //P_Tip_2 frm = new P_Tip_2();
-            //frm.Show();
-            //Close();
+            if(Server.Logics.Treatment_Record_Logics.Create_If_Info_Valid(listView1.SelectedItems[0].Text, P_Login.P_ID,Detail.Text))
+            {
+                MessageBox.Show("挂号成功", "信息提示");
+            }
+            this.Close();
+            parent.Show();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void P_Register_Load(object sender, EventArgs e)
         {
+            foreach (string Department in Server.Models.Doctor.Get_All_Department())
+            {
+                comboBox1.Items.Add(Department);
+            }
+            
+            foreach (string Specialty in Server.Models.Doctor.Get_All_Specialty())
+            {
+                comboBox2.Items.Add(Specialty);
+            }
+        }
 
+        private void Depart_Change(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+
+            var a = Server.Models.Doctor.Get_Doctor_By_Department(comboBox1.SelectedItem.ToString());
+            foreach (var doc in a)
+            {
+                listView1.Items.Add(new ListViewItem(new string[] {
+                    doc.D_ID,
+                    doc.D_Name,
+                    doc.D_Gender,
+                    doc.D_Title,
+                    doc.D_Department,
+                    doc.D_Specialty
+                }));
+            }
+        }
+
+        private void Specialty_Change(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+
+            var a = Server.Models.Doctor.Get_Doctor_By_Department_And_Specialty(comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
+            if(a.Count!=0)
+            {
+                foreach (var doc in a)
+                {
+                    listView1.Items.Add(new ListViewItem(new string[] {
+                    doc.D_ID,
+                    doc.D_Name,
+                    doc.D_Gender,
+                    doc.D_Title,
+                    doc.D_Department,
+                    doc.D_Specialty
+                }));
+                }
+            }
+            else
+            {
+                MessageBox.Show("没有擅长"+comboBox2.SelectedItem.ToString()+"的医生", "信息提示");
+            }
+            
         }
     }
 }

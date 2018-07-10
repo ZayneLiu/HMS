@@ -75,7 +75,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "挂号";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.GH_Click);
             // 
             // label1
             // 
@@ -97,7 +97,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.GH_Click);
             // 
             // panel1
             // 
@@ -128,7 +128,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.Info_Click);
             // 
             // button2
             // 
@@ -143,6 +143,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "个人信息";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Info_Click);
             // 
             // panel3
             // 
@@ -163,7 +164,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.button3_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.Med_Click);
             // 
             // button3
             // 
@@ -178,7 +179,7 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "我的药品";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Med_Click);
             // 
             // panel4
             // 
@@ -199,7 +200,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.button4_Click);
+            this.pictureBox4.Click += new System.EventHandler(this.Inspection_Click);
             // 
             // button4
             // 
@@ -214,7 +215,7 @@
             this.button4.TabIndex = 0;
             this.button4.Text = "医疗项目";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Inspection_Click);
             // 
             // panel5
             // 
@@ -235,6 +236,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.Check_And_Exit_Click);
             // 
             // button5
             // 
@@ -249,7 +251,7 @@
             this.button5.TabIndex = 0;
             this.button5.Text = "缴费离开";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Check_And_Exit_Click);
             // 
             // panel6
             // 
@@ -270,6 +272,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 7;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.Back_Click);
             // 
             // button6
             // 
@@ -284,7 +287,7 @@
             this.button6.TabIndex = 0;
             this.button6.Text = "退出";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.Back_Click);
             // 
             // P_Center
             // 

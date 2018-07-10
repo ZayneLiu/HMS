@@ -25,6 +25,7 @@ namespace HMS_Patient
                 P_ID = Tbx_Username.Text;
                 P_Center frm = new P_Center(this);
                 frm.Show();
+                Hide();
             }
             else
             {
