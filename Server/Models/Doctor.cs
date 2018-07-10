@@ -173,9 +173,9 @@ namespace Server.Models
         /// <param name="D_ID">医生ID</param>
         /// <param name="D_Specialty">医生专长</param>
         /// <returns></returns>
-        public static List<Doctor> Get_Doctor_By_Department_And_Specialty(string D_ID, string D_Specialty)
+        public static List<Doctor> Get_Doctor_By_Department_And_Specialty(string D_Department, string D_Specialty)
         {
-            return Get_Doctor(new string[] { "D_ID", "D_Specialty" }, new string[] { D_ID, D_Specialty });
+            return Get_Doctor(new string[] { "D_Department", "D_Specialty" }, new string[] { D_Department, D_Specialty });
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Server.Models
                     D_Name = row["D_Name"].Value.ToString(),
                     D_Tel = row["D_Tel"].Value.ToString(),
                     D_Title = row["D_Title"].Value.ToString(),
-                    D_Specialty = row["D_Specialty"].ToString(),
+                    D_Specialty = row["D_Specialty"].Value.ToString(),
                     D_Department = row["D_Department"].Value.ToString()
                 };
                 doctors.Add(doctor);

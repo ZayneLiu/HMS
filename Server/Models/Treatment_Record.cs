@@ -28,6 +28,8 @@ namespace Server.Models
         /// 病人ID
         /// </summary>
         public string P_ID { get; set; }
+
+
         /// <summary>
         /// 检查项目列表
         /// </summary>
@@ -51,6 +53,10 @@ namespace Server.Models
                 }
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static void Method()
         {
             
