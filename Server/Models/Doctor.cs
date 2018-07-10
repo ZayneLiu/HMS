@@ -125,7 +125,7 @@ namespace Server.Models
                     D_Name = row["D_Name"].Value.ToString(),
                     D_Tel = row["D_Tel"].Value.ToString(),
                     D_Title = row["D_Title"].Value.ToString(),
-                    D_Specialty = row["D_Specialty"].ToString(),
+                    D_Specialty = row["D_Specialty"].Value.ToString(),
                     D_Department = row["D_Department"].Value.ToString()
                 };
                 doctors.Add(doctor);
@@ -161,7 +161,7 @@ namespace Server.Models
                     D_Name = result["D_Name"].Value.ToString(),
                     D_Tel = result["D_Tel"].Value.ToString(),
                     D_Title = result["D_Title"].Value.ToString(),
-                    D_Specialty = result["D_Specialty"].ToString(),
+                    D_Specialty = result["D_Specialty"].Value.ToString(),
                     D_Department = result["D_Department"].Value.ToString()
                 };
             }
@@ -232,7 +232,7 @@ namespace Server.Models
                     D_Name = row["D_Name"].Value.ToString(),
                     D_Tel = row["D_Tel"].Value.ToString(),
                     D_Title = row["D_Title"].Value.ToString(),
-                    D_Specialty = row["D_Specialty"].ToString(),
+                    D_Specialty = row["D_Specialty"].Value.ToString(),
                     D_Department = row["D_Department"].Value.ToString()
                 };
                 doctors.Add(doctor);
@@ -260,7 +260,7 @@ namespace Server.Models
                     D_Name = row["D_Name"].Value.ToString(),
                     D_Tel = row["D_Tel"].Value.ToString(),
                     D_Title = row["D_Title"].Value.ToString(),
-                    D_Specialty = row["D_Specialty"].ToString(),
+                    D_Specialty = row["D_Specialty"].Value.ToString(),
                     D_Department = row["D_Department"].Value.ToString()
                 };
                 doctors.Add(doctor);
