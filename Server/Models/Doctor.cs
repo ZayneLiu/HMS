@@ -79,12 +79,29 @@ namespace Server.Models
         /// <returns></returns>
         public static List<string> Get_All_Department()
         {
-            return new List<string>();
+            var departments = new List<string>();
+            var command = new SqlCommand("select distinct D_Department from Doctor");
+            var rows = DB.Read(command);
+            foreach (var row in rows)
+            {
+                departments.Add(row["D_Department"].Value.ToString());
+            }
+            return departments;
         }
 
-        public static void Method()
+        /// <summary>
+        /// 获取所有专长病类
+        /// </summary>
+        public static List<string> Get_All_Specialty()
         {
-
+            var specialties = new List<string>();
+            var command = new SqlCommand("select distinct D_Specialty from Doctor");
+            var rows = DB.Read(command);
+            foreach (var row in rows)
+            {
+                specialties.Add(row["D_Specialty"].Value.ToString());
+            }
+            return specialties;
         }
 
         /// <summary>
@@ -150,14 +167,30 @@ namespace Server.Models
             }
         }
 
+        /// <summary>
+        /// 联合查询
+        /// </summary>
+        /// <param name="D_ID">医生ID</param>
+        /// <param name="D_Specialty">医生专长</param>
+        /// <returns></returns>
+        public static List<Doctor> Get_Doctor_By_Department_And_Specialty(string D_ID, string D_Specialty)
+        {
+            return Get_Doctor(new string[] { "D_ID", "D_Specialty" }, new string[] { D_ID, D_Specialty });
+        }
+
+        /// <summary>
+        /// 根据科室获取所有医生
+        /// </summary>
+        /// <param name="department"></param>
+        /// <returns></returns>
         public static List<Doctor> Get_Doctor_By_Department(string department)
         {
             // 初始化返回参数
             var doctors = new List<Doctor>();
             var command = new SqlCommand("select * from Doctor where D_Department=@D_Department");
             command.Parameters.AddWithValue("@D_Department", department);
-            var result = DB.Read(command);
-            foreach (DB.Row row in result)
+            var rows = DB.Read(command);
+            foreach (DB.Row row in rows)
             {
                 var doctor = new Doctor()
                 {
@@ -189,6 +222,34 @@ namespace Server.Models
             command.Parameters.AddWithValue("@D_Specialty", specialty);
             var result = DB.Read(command);
             foreach (DB.Row row in result)
+            {
+                var doctor = new Doctor()
+                {
+                    D_ID = row["D_ID"].Value.ToString(),
+                    D_Pwd = row["D_Pwd"].Value.ToString(),
+                    D_Gender = row["D_Gender"].Value.ToString(),
+                    D_Age = (int)row["D_Age"].Value,
+                    D_Name = row["D_Name"].Value.ToString(),
+                    D_Tel = row["D_Tel"].Value.ToString(),
+                    D_Title = row["D_Title"].Value.ToString(),
+                    D_Specialty = row["D_Specialty"].ToString(),
+                    D_Department = row["D_Department"].Value.ToString()
+                };
+                doctors.Add(doctor);
+            }
+            return doctors;
+        }
+
+        static List<Doctor> Get_Doctor(string[] condition, object[] value)
+        {
+            var doctors = new List<Doctor>();
+            var command = new SqlCommand(String.Format("select * from Med where {0}=@{0} and {1}=@{1}", condition[0], condition[1]));
+            command.Parameters.AddRange(new SqlParameter[] {
+                new SqlParameter("@" + condition[0], value[0]),
+                new SqlParameter("@" + condition[1], value[1])
+            });
+            var rows = DB.Read(command);
+            foreach (DB.Row row in rows)
             {
                 var doctor = new Doctor()
                 {

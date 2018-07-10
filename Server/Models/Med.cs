@@ -146,9 +146,9 @@ namespace Server.Models
         //public static List<Med> Get_Meds_By_Effect(string Effect) => Get_Med("M_Effect", Effect);
 
         //static List<Med> Get_Med(string condition, object value)
-        //{            
-        //var cmd = new SqlCommand(String.Format("select * from Med where {0}=@{0}", condition));
-        //cmd.Parameters.AddWithValue("@" + condition, value);
+        //{
+        //    var cmd = new SqlCommand(String.Format("select * from Med where {0}=@{0}", condition));
+        //    cmd.Parameters.AddWithValue("@" + condition, value);
         //}
     }
 }
