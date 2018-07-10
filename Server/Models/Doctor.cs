@@ -74,6 +74,20 @@ namespace Server.Models
         }
 
         /// <summary>
+        /// 获取所有科室
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> Get_All_Department()
+        {
+            return new List<string>();
+        }
+
+        public static void Method()
+        {
+
+        }
+
+        /// <summary>
         /// 获取所有医生对象
         /// </summary>
         /// <returns>医生对象的集合</returns>

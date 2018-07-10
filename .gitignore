@@ -3,6 +3,9 @@
 /HMS_Patient/obj/Debug
 /HMS_Doctor/obj/Debug
 /HMS_Admin/obj/Debug
+/HMS_Patient/bin/Debug
+/HMS_Doctor/bin/Debug
+/HMS_Admin/bin/Debug
 /HMS_Admin
 /HMS_Doctor/obj/Release
 /HMS_Patient/obj/Release
