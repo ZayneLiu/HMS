@@ -28,6 +28,10 @@ namespace Server.Models
         /// 病人ID
         /// </summary>
         public string P_ID { get; set; }
+        /// <summary>
+        /// 坐诊详情
+        /// </summary>
+        public string Detail { get; set; }
 
 
         /// <summary>
@@ -69,12 +73,13 @@ namespace Server.Models
         /// <param name="P_ID">病人ID</param>
         public static void Create_Record(Treatment_Record record)
         {
-            var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID) " +
-                "values(@T_Time, @D_ID, @P_ID");
+            var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID, Detail) " +
+                "values(@T_Time, @D_ID, @P_ID, @Detail");
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@T_Time", DateTime.Now),
                 new SqlParameter("@D_ID", record.D_ID),
-                new SqlParameter("@P_ID", record.P_ID)
+                new SqlParameter("@P_ID", record.P_ID),
+                new SqlParameter("@Detail", record.Detail)
             });
             DB.Execute(command);
         }
@@ -94,7 +99,8 @@ namespace Server.Models
                 T_ID = (int)row["T_ID"].Value,
                 T_Time = (DateTime)row["T_Time"].Value,
                 D_ID = row["D_ID"].Value.ToString(),
-                P_ID = row["P_ID"].Value.ToString()
+                P_ID = row["P_ID"].Value.ToString(),
+                Detail = row["Detail"].Value.ToString()
             };
         }
     }
