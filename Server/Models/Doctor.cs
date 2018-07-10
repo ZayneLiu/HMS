@@ -220,8 +220,8 @@ namespace Server.Models
             var doctors = new List<Doctor>();
             var command = new SqlCommand("select * from Doctor where D_Specialty = @D_Specialty");
             command.Parameters.AddWithValue("@D_Specialty", specialty);
-            var result = DB.Read(command);
-            foreach (DB.Row row in result)
+            var rows = DB.Read(command);
+            foreach (DB.Row row in rows)
             {
                 var doctor = new Doctor()
                 {
@@ -243,7 +243,7 @@ namespace Server.Models
         static List<Doctor> Get_Doctor(string[] condition, object[] value)
         {
             var doctors = new List<Doctor>();
-            var command = new SqlCommand(String.Format("select * from Med where {0}=@{0} and {1}=@{1}", condition[0], condition[1]));
+            var command = new SqlCommand(String.Format("select * from Doctor where {0}=@{0} and {1}=@{1}", condition[0], condition[1]));
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@" + condition[0], value[0]),
                 new SqlParameter("@" + condition[1], value[1])
