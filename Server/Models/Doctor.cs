@@ -133,8 +133,33 @@ namespace Server.Models
                     D_Specialty = result["D_Specialty"].ToString(),
                     D_Department = result["D_Department"].Value.ToString()
                 };
-
             }
+        }
+
+        public static List<Doctor> Get_Doctor_By_Department(string department)
+        {
+            // 初始化返回参数
+            var doctors = new List<Doctor>();
+            var command = new SqlCommand("select * from Doctor where D_Department=@D_Department");
+            command.Parameters.AddWithValue("@D_Department", department);
+            var result = DB.Read(command);
+            foreach (DB.Row row in result)
+            {
+                var doctor = new Doctor()
+                {
+                    D_ID = row["D_ID"].Value.ToString(),
+                    D_Pwd = row["D_Pwd"].Value.ToString(),
+                    D_Gender = row["D_Gender"].Value.ToString(),
+                    D_Age = (int)row["D_Age"].Value,
+                    D_Name = row["D_Name"].Value.ToString(),
+                    D_Tel = row["D_Tel"].Value.ToString(),
+                    D_Title = row["D_Title"].Value.ToString(),
+                    D_Specialty = row["D_Specialty"].ToString(),
+                    D_Department = row["D_Department"].Value.ToString()
+                };
+                doctors.Add(doctor);
+            }
+            return doctors;
         }
 
         /// <summary>
