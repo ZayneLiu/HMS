@@ -18,14 +18,13 @@ namespace Server.Logics
         {
             if (Doctor.Get_Doctor_By_ID(D_ID) != null && Patient.Get_Patient_By_ID(P_ID) != null)
             {
-                Treatment_Record.Create_Record(new Treatment_Record()
+                return Treatment_Record.Create_Record(new Treatment_Record()
                 {
                     D_ID = D_ID,
                     P_ID = P_ID,
                     T_Time = DateTime.Now,
                     Detail = Detail
                 });
-                return true;
             }
             return false;
         }

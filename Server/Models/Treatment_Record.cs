@@ -71,7 +71,7 @@ namespace Server.Models
         /// </summary>
         /// <param name="D_ID">医生ID</param>
         /// <param name="P_ID">病人ID</param>
-        public static void Create_Record(Treatment_Record record)
+        public static bool Create_Record(Treatment_Record record)
         {
             var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID, Detail) " +
                 "values(@T_Time, @D_ID, @P_ID, @Detail");
@@ -81,7 +81,7 @@ namespace Server.Models
                 new SqlParameter("@P_ID", record.P_ID),
                 new SqlParameter("@Detail", record.Detail)
             });
-            DB.Execute(command);
+            return DB.Execute(command);
         }
 
         /// <summary>
