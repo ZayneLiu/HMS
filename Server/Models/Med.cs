@@ -72,6 +72,29 @@ namespace Server.Models
         }
 
         /// <summary>
+        /// Gets all meds.
+        /// </summary>
+        /// <returns>All meds.</returns>
+        public static List<Med> Get_All_Meds(){
+            var meds = new List<Med>();
+            var command = new SqlCommand("select * from Med ");
+            var rows = DB.Read(command);
+            foreach (var row in rows)
+            {
+                meds.Add(new Med((int)row["M_Id"].Value)
+                {
+                    M_Name = row["M_Name"].Value.ToString(),
+                    M_Category = row["M_Catgory"].Value.ToString(),
+                    M_Unit = row["M_Unit"].Value.ToString(),
+                    M_Price = (double)row["M_Price"].Value,
+                    M_Stock = (int)row["M_Stock"].Value,
+                    M_Effect = row["M_Effect"].Value.ToString(),
+                });
+            }
+            return meds;
+        }
+
+        /// <summary>
         /// 创建药品
         /// </summary>
         /// <param name="med">Med 类对象</param>

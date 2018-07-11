@@ -170,7 +170,7 @@ namespace Server.Models
         /// <summary>
         /// 联合查询
         /// </summary>
-        /// <param name="D_ID">医生ID</param>
+        /// <param name="D_Department">医生所在科室</param>
         /// <param name="D_Specialty">医生专长</param>
         /// <returns></returns>
         public static List<Doctor> Get_Doctor_By_Department_And_Specialty(string D_Department, string D_Specialty)
