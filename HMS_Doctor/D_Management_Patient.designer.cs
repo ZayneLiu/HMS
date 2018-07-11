@@ -108,6 +108,7 @@
             this.listView1.Size = new System.Drawing.Size(732, 346);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.SmallIcon;
             // 
             // panel2
             // 
@@ -185,7 +186,7 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "搜索全部";
             // 
-            // Doc_Management_Patient
+            // D_Management_Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,7 +199,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Doc_Management_Patient";
+            this.Name = "D_Management_Patient";
             this.Text = "Doc_Management_Patient";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
