@@ -55,9 +55,8 @@ namespace Server.Models
         public void SaveChanges()
         {
             //初始化SQL命令
-            var cmd = new SqlCommand();
-            cmd.CommandText = @"update Med set Med_Name=@Med_Name, Med_Catgory=@Med_Catgory, Med_Unit=@Med_Unit, Med_Price=@Med_Price, Med_Stock=@Med_Stock, Med_Effect=@Med_Effect)"
-                + " where Med_Id = @Med_Id";
+            var cmd = new SqlCommand(@"update Med set Med_Name=@Med_Name, Med_Catgory=@Med_Catgory, Med_Unit=@Med_Unit, Med_Price=@Med_Price, Med_Stock=@Med_Stock, Med_Effect=@Med_Effect)" 
+                                     + " where Med_Id = @Med_Id");
             cmd.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@Med_Id",M_ID),
                 new SqlParameter("@Med_Name",M_Name),
@@ -103,9 +102,8 @@ namespace Server.Models
             try
             {
                 //初始化SQL命令
-                var cmd = new SqlCommand();
-                cmd.CommandText = @"insert into Med(Med_Name, Med_Catgory, Med_Unit, Med_Price, Med_Stock, Med_Effect)"
-                    + "values(@Med_Name, @Med_Catgory, @Med_Unit, @Med_Price, @Med_Stock, @Med_Effect)";
+                var cmd = new SqlCommand(@"insert into Med(Med_Name, Med_Catgory, Med_Unit, Med_Price, Med_Stock, Med_Effect)"
+                    + "values(@Med_Name, @Med_Catgory, @Med_Unit, @Med_Price, @Med_Stock, @Med_Effect)");
                 cmd.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@Med_Name",med.M_Name),
                 new SqlParameter("@Med_Catgory",med.M_Category),
