@@ -16,5 +16,29 @@ namespace HMS_Doctor
         {
             InitializeComponent();
         }
+
+        private void D_Inspect_Load(object sender, EventArgs e)
+        {
+            listView1.Clear();
+            var Inspect = Server.Models.Inspection.Get_All_Inspections ();
+            foreach (var Inspeccts in Inspect)
+            {
+                listView1.Items.Add(new ListViewItem(new string[]
+                    {
+                        Inspeccts.I_Name ,
+                        Inspeccts .I_Price .ToString ()
+                    }));
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            //if (Server .Models .Inspection.)
+            D_Treatment frm = new D_Treatment();
+            frm.Show();
+            Hide();
+        }
+
+ 
     }
 }

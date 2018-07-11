@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace HMS_Doctor
 {
-    public partial class D_Inspect_Record : Form
+    public partial class D_Treatment : Form
     {
-        public D_Inspect_Record()
+        public D_Treatment()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
         }
     }
 }

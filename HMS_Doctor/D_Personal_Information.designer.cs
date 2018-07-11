@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Personal_Information));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,17 +38,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.D_ID = new System.Windows.Forms.Label();
+            this.D_Pwd = new System.Windows.Forms.Label();
+            this.D_Name = new System.Windows.Forms.Label();
+            this.D_Gender = new System.Windows.Forms.Label();
+            this.D_Age = new System.Windows.Forms.Label();
+            this.D_Department = new System.Windows.Forms.Label();
+            this.D_Title = new System.Windows.Forms.Label();
+            this.D_Tel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.D_Specialty = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -143,93 +149,93 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "电话：";
             // 
-            // label10
+            // D_ID
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(242, 113);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 22);
-            this.label10.TabIndex = 1;
-            this.label10.Tag = "";
-            this.label10.Text = "label";
+            this.D_ID.AutoSize = true;
+            this.D_ID.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_ID.Location = new System.Drawing.Point(242, 113);
+            this.D_ID.Name = "D_ID";
+            this.D_ID.Size = new System.Drawing.Size(49, 22);
+            this.D_ID.TabIndex = 1;
+            this.D_ID.Tag = "";
+            this.D_ID.Text = "label";
             // 
-            // label11
+            // D_Pwd
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(242, 150);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 22);
-            this.label11.TabIndex = 1;
-            this.label11.Tag = "";
-            this.label11.Text = "label";
+            this.D_Pwd.AutoSize = true;
+            this.D_Pwd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Pwd.Location = new System.Drawing.Point(242, 150);
+            this.D_Pwd.Name = "D_Pwd";
+            this.D_Pwd.Size = new System.Drawing.Size(49, 22);
+            this.D_Pwd.TabIndex = 1;
+            this.D_Pwd.Tag = "";
+            this.D_Pwd.Text = "label";
             // 
-            // label12
+            // D_Name
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(242, 183);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 22);
-            this.label12.TabIndex = 1;
-            this.label12.Tag = "";
-            this.label12.Text = "label";
+            this.D_Name.AutoSize = true;
+            this.D_Name.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Name.Location = new System.Drawing.Point(242, 183);
+            this.D_Name.Name = "D_Name";
+            this.D_Name.Size = new System.Drawing.Size(49, 22);
+            this.D_Name.TabIndex = 1;
+            this.D_Name.Tag = "";
+            this.D_Name.Text = "label";
             // 
-            // label13
+            // D_Gender
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(242, 219);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 22);
-            this.label13.TabIndex = 1;
-            this.label13.Tag = "";
-            this.label13.Text = "label";
+            this.D_Gender.AutoSize = true;
+            this.D_Gender.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Gender.Location = new System.Drawing.Point(242, 219);
+            this.D_Gender.Name = "D_Gender";
+            this.D_Gender.Size = new System.Drawing.Size(49, 22);
+            this.D_Gender.TabIndex = 1;
+            this.D_Gender.Tag = "";
+            this.D_Gender.Text = "label";
             // 
-            // label14
+            // D_Age
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(242, 254);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 22);
-            this.label14.TabIndex = 1;
-            this.label14.Tag = "";
-            this.label14.Text = "label";
+            this.D_Age.AutoSize = true;
+            this.D_Age.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Age.Location = new System.Drawing.Point(242, 254);
+            this.D_Age.Name = "D_Age";
+            this.D_Age.Size = new System.Drawing.Size(49, 22);
+            this.D_Age.TabIndex = 1;
+            this.D_Age.Tag = "";
+            this.D_Age.Text = "label";
             // 
-            // label15
+            // D_Department
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(242, 292);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 22);
-            this.label15.TabIndex = 1;
-            this.label15.Tag = "";
-            this.label15.Text = "label";
+            this.D_Department.AutoSize = true;
+            this.D_Department.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Department.Location = new System.Drawing.Point(242, 292);
+            this.D_Department.Name = "D_Department";
+            this.D_Department.Size = new System.Drawing.Size(49, 22);
+            this.D_Department.TabIndex = 1;
+            this.D_Department.Tag = "";
+            this.D_Department.Text = "label";
             // 
-            // label16
+            // D_Title
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(242, 334);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 22);
-            this.label16.TabIndex = 1;
-            this.label16.Tag = "";
-            this.label16.Text = "label";
+            this.D_Title.AutoSize = true;
+            this.D_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Title.Location = new System.Drawing.Point(242, 334);
+            this.D_Title.Name = "D_Title";
+            this.D_Title.Size = new System.Drawing.Size(49, 22);
+            this.D_Title.TabIndex = 1;
+            this.D_Title.Tag = "";
+            this.D_Title.Text = "label";
             // 
-            // label17
+            // D_Tel
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(242, 376);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 22);
-            this.label17.TabIndex = 1;
-            this.label17.Tag = "";
-            this.label17.Text = "label";
+            this.D_Tel.AutoSize = true;
+            this.D_Tel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Tel.Location = new System.Drawing.Point(242, 376);
+            this.D_Tel.Name = "D_Tel";
+            this.D_Tel.Size = new System.Drawing.Size(49, 22);
+            this.D_Tel.TabIndex = 1;
+            this.D_Tel.Tag = "";
+            this.D_Tel.Text = "label";
             // 
             // label18
             // 
@@ -241,6 +247,7 @@
             this.label18.TabIndex = 1;
             this.label18.Tag = "";
             this.label18.Text = "修改信息";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label19
             // 
@@ -252,24 +259,57 @@
             this.label19.TabIndex = 2;
             this.label19.Text = "擅长病类：";
             // 
-            // label20
+            // D_Specialty
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(242, 420);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 22);
-            this.label20.TabIndex = 3;
-            this.label20.Tag = "";
-            this.label20.Text = "label";
+            this.D_Specialty.AutoSize = true;
+            this.D_Specialty.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Specialty.Location = new System.Drawing.Point(242, 420);
+            this.D_Specialty.Name = "D_Specialty";
+            this.D_Specialty.Size = new System.Drawing.Size(49, 22);
+            this.D_Specialty.TabIndex = 3;
+            this.D_Specialty.Tag = "";
+            this.D_Specialty.Text = "label";
             // 
-            // Doc_Personal_Information
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(120, 46);
+            this.panel1.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(60, 10);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 28);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "返回";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // D_Personal_Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 555);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.D_Specialty);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -278,19 +318,23 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.D_Tel);
+            this.Controls.Add(this.D_Title);
+            this.Controls.Add(this.D_Department);
+            this.Controls.Add(this.D_Age);
+            this.Controls.Add(this.D_Gender);
+            this.Controls.Add(this.D_Name);
+            this.Controls.Add(this.D_Pwd);
+            this.Controls.Add(this.D_ID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Doc_Personal_Information";
+            this.Name = "D_Personal_Information";
             this.Text = "Doc_Personal_Information";
+            this.Load += new System.EventHandler(this.D_Personal_Information_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,16 +351,19 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label D_ID;
+        private System.Windows.Forms.Label D_Pwd;
+        private System.Windows.Forms.Label D_Name;
+        private System.Windows.Forms.Label D_Gender;
+        private System.Windows.Forms.Label D_Age;
+        private System.Windows.Forms.Label D_Department;
+        private System.Windows.Forms.Label D_Title;
+        private System.Windows.Forms.Label D_Tel;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label D_Specialty;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

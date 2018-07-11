@@ -12,9 +12,45 @@ namespace HMS_Doctor
 {
     public partial class D_Prescribe : Form
     {
-        public D_Prescribe()
+        public Form parent;
+        public D_Prescribe(Form form)
         {
             InitializeComponent();
+            parent = form;
+
+        }
+
+        private void label_Add_Med_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void D_Prescribe_Load(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            var Med = Server.Models.Med.Get_All_Meds ();
+            foreach (var Meds in Med)
+            {
+                listView1.Items.Add(new ListViewItem(new string[]
+                    {
+                        Meds.M_Name ,
+                        Meds .M_Category,
+                        Meds.M_Unit,
+                        Meds.M_Price.ToString(),
+                        Meds .M_Effect,
+                        Meds.M_Stock .ToString ()
+                    }));
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            D_Treatment frm  = new D_Treatment();
+            frm.Show();
+            Hide();
+            
+
         }
     }
 }

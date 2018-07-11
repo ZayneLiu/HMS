@@ -16,13 +16,15 @@ namespace HMS_Doctor
         {
             InitializeComponent();
         }
-
+        public static string D_ID;
         private void Btn_Login_Click(object sender, EventArgs e)
         {
             if (Server.Logics.Doctor_Logics.Is_Login_Info_Valid(Tbx_Username.Text, Tbx_Password.Text))
             {
+                D_ID = Tbx_Username.Text;
                 D_Personal_Center frm = new D_Personal_Center();
                 frm.Show();
+                Hide();
             }
             else 
             {

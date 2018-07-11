@@ -28,22 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Modify_Personal_Information));
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.D_Modify = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.textBox_Pwd = new System.Windows.Forms.TextBox();
+            this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.textBox_Age = new System.Windows.Forms.TextBox();
+            this.textBox_Tel = new System.Windows.Forms.TextBox();
+            this.textBox_Specialty = new System.Windows.Forms.TextBox();
+            this.comboBox_Department = new System.Windows.Forms.ComboBox();
+            this.comboBox_Title = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -106,82 +112,17 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "密码：";
             // 
-            // label18
+            // D_Modify
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(348, 378);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(54, 28);
-            this.label18.TabIndex = 11;
-            this.label18.Tag = "";
-            this.label18.Text = "修改";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(251, 295);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 22);
-            this.label17.TabIndex = 10;
-            this.label17.Tag = "";
-            this.label17.Text = "label";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(251, 253);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 22);
-            this.label16.TabIndex = 9;
-            this.label16.Tag = "";
-            this.label16.Text = "label";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(251, 211);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 22);
-            this.label15.TabIndex = 8;
-            this.label15.Tag = "";
-            this.label15.Text = "label";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(251, 173);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 22);
-            this.label14.TabIndex = 7;
-            this.label14.Tag = "";
-            this.label14.Text = "label";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(251, 135);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 22);
-            this.label12.TabIndex = 5;
-            this.label12.Tag = "";
-            this.label12.Text = "label";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(251, 102);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 22);
-            this.label11.TabIndex = 4;
-            this.label11.Tag = "";
-            this.label11.Text = "label";
+            this.D_Modify.AutoSize = true;
+            this.D_Modify.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.D_Modify.Location = new System.Drawing.Point(348, 378);
+            this.D_Modify.Name = "D_Modify";
+            this.D_Modify.Size = new System.Drawing.Size(54, 28);
+            this.D_Modify.TabIndex = 11;
+            this.D_Modify.Tag = "";
+            this.D_Modify.Text = "修改";
+            this.D_Modify.Click += new System.EventHandler(this.D_Modify_Click);
             // 
             // label1
             // 
@@ -204,41 +145,118 @@
             this.label19.TabIndex = 20;
             this.label19.Text = "擅长病类：";
             // 
-            // label20
+            // textBox_Pwd
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(252, 332);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 22);
-            this.label20.TabIndex = 21;
-            this.label20.Tag = "";
-            this.label20.Text = "label";
+            this.textBox_Pwd.Location = new System.Drawing.Point(220, 102);
+            this.textBox_Pwd.Name = "textBox_Pwd";
+            this.textBox_Pwd.Size = new System.Drawing.Size(124, 21);
+            this.textBox_Pwd.TabIndex = 21;
             // 
-            // Doc__Modify_Personal_Information
+            // textBox_Name
+            // 
+            this.textBox_Name.Location = new System.Drawing.Point(220, 136);
+            this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.Size = new System.Drawing.Size(124, 21);
+            this.textBox_Name.TabIndex = 21;
+            // 
+            // textBox_Age
+            // 
+            this.textBox_Age.Location = new System.Drawing.Point(220, 174);
+            this.textBox_Age.Name = "textBox_Age";
+            this.textBox_Age.Size = new System.Drawing.Size(124, 21);
+            this.textBox_Age.TabIndex = 21;
+            // 
+            // textBox_Tel
+            // 
+            this.textBox_Tel.Location = new System.Drawing.Point(220, 299);
+            this.textBox_Tel.Name = "textBox_Tel";
+            this.textBox_Tel.Size = new System.Drawing.Size(124, 21);
+            this.textBox_Tel.TabIndex = 21;
+            // 
+            // textBox_Specialty
+            // 
+            this.textBox_Specialty.Location = new System.Drawing.Point(220, 336);
+            this.textBox_Specialty.Name = "textBox_Specialty";
+            this.textBox_Specialty.Size = new System.Drawing.Size(124, 21);
+            this.textBox_Specialty.TabIndex = 21;
+            // 
+            // comboBox_Department
+            // 
+            this.comboBox_Department.FormattingEnabled = true;
+            this.comboBox_Department.Location = new System.Drawing.Point(220, 211);
+            this.comboBox_Department.Name = "comboBox_Department";
+            this.comboBox_Department.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_Department.TabIndex = 22;
+            // 
+            // comboBox_Title
+            // 
+            this.comboBox_Title.FormattingEnabled = true;
+            this.comboBox_Title.Location = new System.Drawing.Point(220, 255);
+            this.comboBox_Title.Name = "comboBox_Title";
+            this.comboBox_Title.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_Title.TabIndex = 22;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(97, 47);
+            this.panel1.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(46, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 28);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "返回";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // D_Modify_Personal_Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 425);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.comboBox_Title);
+            this.Controls.Add(this.comboBox_Department);
+            this.Controls.Add(this.textBox_Specialty);
+            this.Controls.Add(this.textBox_Tel);
+            this.Controls.Add(this.textBox_Age);
+            this.Controls.Add(this.textBox_Name);
+            this.Controls.Add(this.textBox_Pwd);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.D_Modify);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Doc__Modify_Personal_Information";
+            this.Name = "D_Modify_Personal_Information";
             this.Text = "Doc__Modify_Personal_Information";
+            this.Load += new System.EventHandler(this.D_Modify_Personal_Information_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,15 +270,18 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label D_Modify;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBox_Pwd;
+        private System.Windows.Forms.TextBox textBox_Name;
+        private System.Windows.Forms.TextBox textBox_Age;
+        private System.Windows.Forms.TextBox textBox_Tel;
+        private System.Windows.Forms.TextBox textBox_Specialty;
+        private System.Windows.Forms.ComboBox comboBox_Department;
+        private System.Windows.Forms.ComboBox comboBox_Title;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -64,7 +64,7 @@
             // 
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 26);
+            this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(119, 48);
             this.panel1.TabIndex = 3;
@@ -151,7 +151,7 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "查询全部";
             // 
-            // Doc_Prescribe_Record
+            // D_Prescribe_Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,7 +163,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Doc_Prescribe_Record";
+            this.Name = "D_Prescribe_Record";
             this.Text = "Doc_Prescribe_Record";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -35,18 +35,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.Detail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -119,6 +119,37 @@
             this.listView1.TabIndex = 64;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Tag = "";
+            this.columnHeader1.Text = "医生编号";
+            this.columnHeader1.Width = 76;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "医生姓名";
+            this.columnHeader2.Width = 98;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "性别";
+            this.columnHeader3.Width = 79;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "职称";
+            this.columnHeader4.Width = 83;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "所在科室";
+            this.columnHeader5.Width = 105;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "擅长病症";
+            this.columnHeader6.Width = 144;
             // 
             // label1
             // 
@@ -193,37 +224,6 @@
             this.comboBox2.Size = new System.Drawing.Size(280, 20);
             this.comboBox2.TabIndex = 66;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.Specialty_Change);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Tag = "";
-            this.columnHeader1.Text = "医生编号";
-            this.columnHeader1.Width = 76;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "医生姓名";
-            this.columnHeader2.Width = 98;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "性别";
-            this.columnHeader3.Width = 79;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "职称";
-            this.columnHeader4.Width = 83;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "所在科室";
-            this.columnHeader5.Width = 105;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "擅长病症";
-            this.columnHeader6.Width = 144;
             // 
             // Detail
             // 
