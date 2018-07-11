@@ -12,6 +12,11 @@ namespace Server
         public static string conString = @"Server=127.0.0.1;Integrated Security=True;database=HMS";
         public static SqlConnection connection = new SqlConnection(conString);
 
+        /// <summary>
+        /// 执行对应SqlCommand
+        /// </summary>
+        /// <returns>是否执行成功</returns>
+        /// <param name="command">带有参数的 SqlCommand 对象，无需加入SqlConnection</param>
         public static bool Execute(SqlCommand command)
         {
             try
@@ -33,6 +38,11 @@ namespace Server
             return false;
         }
 
+        /// <summary>
+        /// 执行对应 sql命令
+        /// </summary>
+        /// <returns>SqlDataReader </returns>
+        /// <param name="command">带有参数的SqlCommand 对象</param>
         public static List<Row> Read(SqlCommand command)
         {
             try
