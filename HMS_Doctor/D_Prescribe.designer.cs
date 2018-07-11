@@ -100,6 +100,7 @@
             this.listView1.Size = new System.Drawing.Size(627, 416);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.SmallIcon;
             // 
             // panel2
             // 
@@ -130,17 +131,17 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // Doc_Prescribe
+            // D_Prescribe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 538);
+            this.ClientSize = new System.Drawing.Size(639, 538);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Doc_Prescribe";
+            this.Name = "D_Prescribe";
             this.Text = "Doc_Prescribe";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

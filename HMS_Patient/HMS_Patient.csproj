@@ -77,6 +77,12 @@
     <Compile Include="P_Message.designer.cs">
       <DependentUpon>P_Message.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_My_Treatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_My_Treatment.Designer.cs">
+      <DependentUpon>P_My_Treatment.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Pay_Leave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="P_Sign.designer.cs">
       <DependentUpon>P_Sign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Treatment_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Treatment_Detail.Designer.cs">
+      <DependentUpon>P_Treatment_Detail.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +131,9 @@
     <EmbeddedResource Include="P_Message.resx">
       <DependentUpon>P_Message.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P_My_Treatment.resx">
+      <DependentUpon>P_My_Treatment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P_Pay_Leave.resx">
       <DependentUpon>P_Pay_Leave.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P_Sign.resx">
       <DependentUpon>P_Sign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Treatment_Detail.resx">
+      <DependentUpon>P_Treatment_Detail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
