@@ -22,6 +22,7 @@ namespace HMS_Patient
         private void button1_Click(object sender, EventArgs e)
         {
             P_Treatment_Detail frm = new P_Treatment_Detail(this);
+            frm.T_ID = listView1.SelectedItems[0].SubItems[0].Text.ToString();
             frm.Show();
             Hide();
         }
@@ -38,9 +39,10 @@ namespace HMS_Patient
             var b= patient.Get_My_Treatment_Records();
             foreach (var a in b)
             {
+                var doctor = Server.Models.Doctor.Get_Doctor_By_ID(a.D_ID);
                 listView1.Items.Add(new ListViewItem(new string[]{
                       a.T_ID.ToString(),
-                      a.D_ID.ToString(),
+                      doctor.D_Name.ToString(),
                       a.T_Time.ToString(),
                       a.Detail
                   }));

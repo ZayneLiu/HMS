@@ -32,11 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -81,19 +79,10 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "坐诊医生：";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(225, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "被诊病人：";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(225, 147);
+            this.label5.Location = new System.Drawing.Point(236, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 1;
@@ -117,19 +106,10 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "label2";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(361, 109);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "label2";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(361, 147);
+            this.label10.Location = new System.Drawing.Point(307, 109);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 12);
             this.label10.TabIndex = 1;
@@ -244,15 +224,15 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "P_Treatment_Detail";
             this.Text = "P_Treatment_Detail";
+            this.Load += new System.EventHandler(this.P_Treatment_Detail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -264,11 +244,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;

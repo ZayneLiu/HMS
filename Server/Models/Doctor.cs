@@ -82,7 +82,7 @@ namespace Server.Models
             var departments = new List<string>();
             var command = new SqlCommand("select distinct D_Department from Doctor");
             var rows = DB.Read(command);
-            if (rows != null)
+            if (rows == null)
             {
                 return null;
             }
