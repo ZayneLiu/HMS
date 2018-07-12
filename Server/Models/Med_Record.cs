@@ -25,7 +25,13 @@ namespace Server.Models
         /// </summary>
         public int Count { get; set; }
 
-        public static void Give_Meds()
+        /// <summary>
+        /// Prescribe the specified D_ID, P_ID and M_ID.
+        /// </summary>
+        /// <param name="D_ID">医生ID</param>
+        /// <param name="P_ID">病人ID</param>
+        /// <param name="M_ID">药品ID</param>
+        public static void Prescribe(string D_ID, string P_ID, int M_ID)
         {
             
         }

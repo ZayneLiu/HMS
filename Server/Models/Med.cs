@@ -78,6 +78,10 @@ namespace Server.Models
             var meds = new List<Med>();
             var command = new SqlCommand("select * from Med ");
             var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
             foreach (var row in rows)
             {
                 meds.Add(new Med((int)row["M_Id"].Value)
@@ -135,7 +139,12 @@ namespace Server.Models
         {
             var command = new SqlCommand("select * from Med where M_ID=@M_ID");
             command.Parameters.AddWithValue("@M_ID", M_ID);
-            var row = DB.Read(command).First();
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            var row = rows.First();
             return new Med((int)row["M_Id"].Value)
             {
                 M_Name = row["M_Name"].Value.ToString(),

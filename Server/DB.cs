@@ -50,7 +50,7 @@ namespace Server
                 command.Connection = connection;
                 connection.Open();
                 var reader = command.ExecuteReader();
-                var rows = new List<Row>(reader.FieldCount);
+                var rows = new List<Row>();
                 while (reader.Read())
                 {
                     Row row = new Row(reader.FieldCount);
@@ -64,6 +64,10 @@ namespace Server
                     }
                     //每行的记录添加到 List<Row> 中
                     rows.Add(row);
+                }
+                if (rows.Count == 0)
+                {
+                    return null;
                 }
                 connection.Close();
                 return rows;
