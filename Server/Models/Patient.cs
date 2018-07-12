@@ -83,6 +83,15 @@ namespace Server.Models
         }
 
         /// <summary>
+        /// 获取对应病人ID的坐诊记录
+        /// </summary>
+        /// <returns>The treatment records by p identifier.</returns>
+        /// <param name="P_ID">病人ID</param>
+        public static List<Treatment_Record> Get_Treatment_Records_By_P_ID(string P_ID){
+            return Get_Patient_By_ID(P_ID).Get_My_Treatment_Records();
+        }
+
+        /// <summary>
         /// 注册病人用户
         /// </summary>
         /// <param name="patient">病人对象</param>
