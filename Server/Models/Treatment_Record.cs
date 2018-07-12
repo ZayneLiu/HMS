@@ -33,38 +33,73 @@ namespace Server.Models
         /// </summary>
         public string Detail { get; set; }
 
-
         /// <summary>
-        /// 检查项目列表
+        /// 坐诊记录药品列表
         /// </summary>
-        public Dictionary<Med, int> M_Record
+        public Dictionary<Med, int> Meds
         {
             get
             {
-                return Med_Record.Get_Med_List_By_T_ID(T_ID);
-            }
-            set
-            {
-                foreach (var med_count_pair in value)
+                var meds = new Dictionary<Med, int>();
+                var command = new SqlCommand("select M_ID, COUNT(M_ID) as Count from Med_Record where T_ID=@T_ID group by M_ID");
+                command.Parameters.AddWithValue("@T_ID", T_ID);
+                var rows = DB.Read(command);
+                foreach (DB.Row row in rows)
                 {
-                    var command = new SqlCommand("insert into Med_Record values (@T_ID, @M_ID, @Count)");
-                    command.Parameters.AddRange(new SqlParameter[] {
-                        new SqlParameter("@T_ID", T_ID),
-                        new SqlParameter("@M_ID", med_count_pair.Key),
-                        new SqlParameter("@Count", med_count_pair.Value)
-                    });
-                    DB.Execute(command);
+                    var M_ID = (int)row["M_ID"].Value;
+                    meds.Add(Med.Get_Med_By_Id(M_ID), (int)row["Count"].Value);
                 }
+                return meds;
+            }
+        }
+
+
+        /// <summary>
+        /// 获取所有我的检查项目
+        /// </summary>
+        /// <value>The inspections.</value>
+        public List<Inspection> Inspections{
+            get{
+                var inspections = new List<Inspection>();
+                var command = new SqlCommand("select I_ID, COUNT(I_ID) as Count from Inspection_Record where T_ID=@T_ID group by I_ID");
+                command.Parameters.AddWithValue("@T_ID", T_ID);
+                var rows = DB.Read(command);
+                foreach (var row in rows){
+                    var I_ID = row["I_ID"].Value.ToString();
+                    inspections.Add(Inspection.Get_Inspection_By_ID(I_ID));
+                }
+                return inspections;
             }
         }
 
         /// <summary>
-        /// 
+        /// 获取对应坐诊记录的基本信息
         /// </summary>
-        public static void Method()
-        {
-            
+        /// <returns>The basic info.</returns>
+        public Dictionary<string, string> Get_Basic_Info(){
+            // 初始化返回参数
+            var key_value_pair = new Dictionary<string, string>();
+
+            var command = new SqlCommand("select * from Treatment_Record TR join Patient P on TR.P_ID=P.P_ID join Doctor D on TR.D_ID=D.D_ID where T_ID = @T_ID");
+            command.Parameters.AddWithValue("@T_ID", T_ID);
+            var row = DB.Read(command).First();
+            string my_treatment_ID = row["T_ID"].Value.ToString();
+            string my_treatment_doctor = row["D_Name"].Value.ToString();
+            string my_treatment_patient = row["P_Name"].Value.ToString();
+            // 可能出错
+            string my_treatment_time = ((DateTime)row["T_Time"].Value).ToString();
+            // ======
+
+            // 获取所有就诊记录的基本信息 医生病人姓名，时间等
+            return new Dictionary<string, string>
+            {
+                {"ID", my_treatment_ID},
+                {"Doctor", my_treatment_doctor},
+                {"Patient", my_treatment_patient},
+                {"Time", my_treatment_time}
+            };
         }
+
 
         /// <summary>
         /// 创建就诊记录
@@ -103,5 +138,6 @@ namespace Server.Models
                 Detail = row["Detail"].Value.ToString()
             };
         }
+
     }
 }

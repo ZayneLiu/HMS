@@ -18,8 +18,33 @@ namespace Server.Models
         /// 检查项目ID
         /// </summary>
         public int I_ID { get; set; }
+        /// <summary>
+        /// 检查项目名称
+        /// </summary>
+        /// <value>Name of the Inspection.</value>
         public string I_Name { get; set; }
+        /// <summary>
+        /// 检查项目费用
+        /// </summary>
+        /// <value>The price of Inspection.</value>
         public double I_Price { get; set; }
+
+        /// <summary>
+        /// 获取对应ID的检查项目
+        /// </summary>
+        /// <returns>The inspection by identifier.</returns>
+        /// <param name="I_ID">检查ID</param>
+        public static Inspection Get_Inspection_By_ID(string I_ID){
+            var command = new SqlCommand("select * from Inspection where I_ID=@I_ID");
+            command.Parameters.AddWithValue("@I_ID", I_ID);
+            var row = DB.Read(command).First();
+            return new Inspection()
+            {
+                I_ID = (int)row["I_ID"].Value,
+                I_Name = row["I_Name"].Value.ToString(),
+                I_Price = (double)row["I_Price"].Value
+            };
+        }
 
         /// <summary>
         /// 获取所有检查项目

@@ -38,9 +38,13 @@ namespace Server.Models
         /// </summary>
         public string P_Med_History { get; set; }
 
+
+
+
         /// <summary>
-        /// 
+        /// 获取所有我的就诊记录
         /// </summary>
+        /// <returns>The my treatment records.</returns>
         public List<Treatment_Record> Get_My_Treatment_Records()
         {
             var records = new List<Treatment_Record>();
@@ -141,16 +145,16 @@ namespace Server.Models
         {
             var command = new SqlCommand("select * from Patient where P_ID = @P_ID");
             command.Parameters.AddWithValue("@P_ID", ID);
-            var result = DB.Read(command).First();
+            var row = DB.Read(command).First();
             return new Patient()
             {
-                P_ID = result["P_ID"].Value.ToString(),
-                P_Age = (int)result["P_Age"].Value,
-                P_Gender = result["P_Gender"].Value.ToString(),
-                P_Name = result["P_Name"].Value.ToString(),
-                P_Tel = result["P_Tel"].Value.ToString(),
-                P_Pwd = result["P_Pwd"].Value.ToString(),
-                P_Med_History = result["P_Med_History"].Value.ToString()
+                P_ID = row["P_ID"].Value.ToString(),
+                P_Age = (int)row["P_Age"].Value,
+                P_Gender = row["P_Gender"].Value.ToString(),
+                P_Name = row["P_Name"].Value.ToString(),
+                P_Tel = row["P_Tel"].Value.ToString(),
+                P_Pwd = row["P_Pwd"].Value.ToString(),
+                P_Med_History = row["P_Med_History"].Value.ToString()
             };
         }
 
