@@ -9,6 +9,7 @@ namespace Server.Models
 {
     public class Patient
     {
+        #region 字段
         /// <summary>
         /// 身份证号
         /// </summary>
@@ -37,6 +38,7 @@ namespace Server.Models
         /// 病人病史
         /// </summary>
         public string P_Med_History { get; set; }
+        #endregion
 
 
 
@@ -51,6 +53,10 @@ namespace Server.Models
             var command = new SqlCommand("select * from Treatment_Record where P_ID=@P_ID");
             command.Parameters.AddWithValue("@P_ID", P_ID);
             var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
             foreach (var row in rows)
             {
                 records.Add(new Treatment_Record()
@@ -68,20 +74,29 @@ namespace Server.Models
         /// <summary>
         /// 将对 patient 对象的更改更新至数据库
         /// </summary>
-        public void SaveChanges()
+        public bool SaveChanges()
         {
-            var command = new SqlCommand("update Patient set P_Name=@P_Name, P_Gender=@P_Gender, P_Age=@P_Age, P_Tel=@P_Tel, P_Med_History=@P_Med_History where P_ID=@P_ID");
-            command.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@P_Name", P_Name),
-                new SqlParameter("@P_Gender", P_Gender),
-                new SqlParameter("@P_Age", P_Age),
-                new SqlParameter("@P_Tel", P_Tel),
-                new SqlParameter("@P_Med_History", P_Med_History),
-                new SqlParameter("@P_ID", P_ID)
-            });
-            DB.Execute(command);
+            try
+            {
+                var command = new SqlCommand("update Patient set P_Name=@P_Name, P_Gender=@P_Gender, P_Age=@P_Age, P_Tel=@P_Tel, P_Med_History=@P_Med_History where P_ID=@P_ID");
+                command.Parameters.AddRange(new SqlParameter[] {
+                    new SqlParameter("@P_Name", P_Name),
+                    new SqlParameter("@P_Gender", P_Gender),
+                    new SqlParameter("@P_Age", P_Age),
+                    new SqlParameter("@P_Tel", P_Tel),
+                    new SqlParameter("@P_Med_History", P_Med_History),
+                    new SqlParameter("@P_ID", P_ID)
+                });
+                DB.Execute(command);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SaveChanges() <- ERR: "+ex.Message);
+                DB.Close_DB_Connection();
+                return false;
+            }
         }
-
         /// <summary>
         /// 获取对应病人ID的坐诊记录
         /// </summary>
@@ -122,7 +137,7 @@ namespace Server.Models
             var patients = new List<Patient>();
             SqlCommand command = new SqlCommand("select * from Patient");
             var rows = DB.Read(command);
-            if (rows.Count == 0)
+            if (rows == null)
             {
                 return null;
             }
@@ -154,7 +169,12 @@ namespace Server.Models
         {
             var command = new SqlCommand("select * from Patient where P_ID = @P_ID");
             command.Parameters.AddWithValue("@P_ID", ID);
-            var row = DB.Read(command).First();
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            var row = rows.First();
             return new Patient()
             {
                 P_ID = row["P_ID"].Value.ToString(),
@@ -179,7 +199,7 @@ namespace Server.Models
             var command = new SqlCommand("select * from Patient where P_ID = @P_Name");
             command.Parameters.AddWithValue("@P_Name", name);
             var rows = DB.Read(command);
-            if (rows.Count == 0)
+            if (rows == null)
             {
                 return null;
             }
@@ -214,7 +234,7 @@ namespace Server.Models
             var command = new SqlCommand("select * from Patient where P_Gender = @P_Gender");
             command.Parameters.AddWithValue("@P_Gender", gender);
             var rows = DB.Read(command);
-            if (rows.Count == 0)
+            if (rows == null)
             {
                 return null;
             }
@@ -253,27 +273,27 @@ namespace Server.Models
                 new SqlParameter("@P_Name", name)
             });
             var rows = DB.Read(command);
-            if (rows.Count == 0)
+            if (rows == null)
             {
                 return null;
             }
-            else
+            foreach (DB.Row row in rows)
             {
-                foreach (DB.Row row in rows)
+                patients.Add(new Patient()
                 {
-                    patients.Add(new Patient()
-                    {
-                        P_ID = row["P_ID"].Value.ToString(),
-                        P_Name = row["P_Name"].Value.ToString(),
-                        P_Age = (int)row["P_Age"].Value,
-                        P_Gender = row["P_Gender"].Value.ToString(),
-                        P_Pwd = row["P_Pwd"].Value.ToString(),
-                        P_Tel = row["P_Tel"].Value.ToString(),
-                        P_Med_History = row["P_Med_History"].Value.ToString(),
-                    });
-                }
-                return patients;
+                    P_ID = row["P_ID"].Value.ToString(),
+                    P_Name = row["P_Name"].Value.ToString(),
+                    P_Age = (int)row["P_Age"].Value,
+                    P_Gender = row["P_Gender"].Value.ToString(),
+                    P_Pwd = row["P_Pwd"].Value.ToString(),
+                    P_Tel = row["P_Tel"].Value.ToString(),
+                    P_Med_History = row["P_Med_History"].Value.ToString(),
+                });
             }
+            return patients;
         }
+
+
+        //public List
     }
 }

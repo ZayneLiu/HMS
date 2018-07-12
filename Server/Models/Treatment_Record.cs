@@ -34,8 +34,9 @@ namespace Server.Models
         public string Detail { get; set; }
 
         /// <summary>
-        /// 坐诊记录药品列表
+        /// 坐诊记录药品列表 属性-只读
         /// </summary>
+        /// <value>The meds.</value>
         public Dictionary<Med, int> Meds
         {
             get
@@ -44,6 +45,10 @@ namespace Server.Models
                 var command = new SqlCommand("select M_ID, COUNT(M_ID) as Count from Med_Record where T_ID=@T_ID group by M_ID");
                 command.Parameters.AddWithValue("@T_ID", T_ID);
                 var rows = DB.Read(command);
+                if (rows == null)
+                {
+                    return null;
+                }
                 foreach (DB.Row row in rows)
                 {
                     var M_ID = (int)row["M_ID"].Value;
@@ -53,9 +58,8 @@ namespace Server.Models
             }
         }
 
-
         /// <summary>
-        /// 获取所有我的检查项目
+        /// 获取所有我的检查项目 属性-只读
         /// </summary>
         /// <value>The inspections.</value>
         public List<Inspection> Inspections{
@@ -64,6 +68,10 @@ namespace Server.Models
                 var command = new SqlCommand("select I_ID, COUNT(I_ID) as Count from Inspection_Record where T_ID=@T_ID group by I_ID");
                 command.Parameters.AddWithValue("@T_ID", T_ID);
                 var rows = DB.Read(command);
+                if (rows == null)
+                {
+                    return null;
+                }
                 foreach (var row in rows){
                     var I_ID = row["I_ID"].Value.ToString();
                     inspections.Add(Inspection.Get_Inspection_By_ID(I_ID));
@@ -73,7 +81,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// 获取对应坐诊记录的基本信息
+        /// 获取对应坐诊记录的基本信息 动态成员方法
         /// </summary>
         /// <returns>The basic info.</returns>
         public Dictionary<string, string> Get_Basic_Info(){
@@ -82,14 +90,18 @@ namespace Server.Models
 
             var command = new SqlCommand("select * from Treatment_Record TR join Patient P on TR.P_ID=P.P_ID join Doctor D on TR.D_ID=D.D_ID where T_ID = @T_ID");
             command.Parameters.AddWithValue("@T_ID", T_ID);
-            var row = DB.Read(command).First();
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            var row = rows.First();
             string my_treatment_ID = row["T_ID"].Value.ToString();
             string my_treatment_doctor = row["D_Name"].Value.ToString();
             string my_treatment_patient = row["P_Name"].Value.ToString();
             // 可能出错
             string my_treatment_time = ((DateTime)row["T_Time"].Value).ToString();
             // ======
-
             // 获取所有就诊记录的基本信息 医生病人姓名，时间等
             return new Dictionary<string, string>
             {
@@ -100,16 +112,15 @@ namespace Server.Models
             };
         }
 
-
         /// <summary>
-        /// 创建就诊记录
+        /// 创建就诊记录 静态成员方法
         /// </summary>
         /// <returns><c>true</c>, if record was created, <c>false</c> otherwise.</returns>
         /// <param name="record">Record.</param>
         public static bool Create_Record(Treatment_Record record)
         {
             var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID, Detail) " +
-                "values(@T_Time, @D_ID, @P_ID, @Detail");
+                                         "values(@T_Time, @D_ID, @P_ID, @Detai)");
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@T_Time", DateTime.Now),
                 new SqlParameter("@D_ID", record.D_ID),
@@ -128,7 +139,12 @@ namespace Server.Models
         {
             var command = new SqlCommand("select * from Treatment_Record where T_ID = @T_ID");
             command.Parameters.AddWithValue("@T_ID", T_ID);
-            var row = DB.Read(command).First();
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            var row = rows.First();
             return new Treatment_Record()
             {
                 T_ID = (int)row["T_ID"].Value,
