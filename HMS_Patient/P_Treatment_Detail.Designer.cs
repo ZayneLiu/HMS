@@ -39,15 +39,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,6 +149,24 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "药品名称";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.DisplayIndex = 2;
+            this.columnHeader3.Text = "单价";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.DisplayIndex = 1;
+            this.columnHeader2.Text = "数量";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "药品功效";
+            // 
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -160,6 +178,14 @@
             this.listView2.TabIndex = 3;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "检查名称";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "费用";
             // 
             // label6
             // 
@@ -178,32 +204,6 @@
             this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 5;
             this.label11.Text = "金额";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "药品名称";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.DisplayIndex = 1;
-            this.columnHeader2.Text = "数量";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.DisplayIndex = 2;
-            this.columnHeader3.Text = "单价";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "药品功效";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "检查名称";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "费用";
             // 
             // pictureBox1
             // 

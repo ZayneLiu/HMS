@@ -27,7 +27,7 @@ namespace HMS_Patient
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            if(Server.Logics.Treatment_Record_Logics.Create_If_Info_Valid(listView1.SelectedItems[0].Text, P_Login.P_ID,Detail.Text))
+            if(Server.Logics.Treatment_Record_Logics.Start_Treatment(listView1.SelectedItems[0].Text, P_Login.P_ID,Detail.Text))
             {
                 MessageBox.Show("挂号成功", "信息提示");
             }

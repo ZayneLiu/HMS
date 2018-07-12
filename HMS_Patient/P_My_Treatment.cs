@@ -31,5 +31,21 @@ namespace HMS_Patient
             this.Close();
             parent.Show();
         }
+
+        private void P_My_Treatment_Load(object sender, EventArgs e)
+        {
+            var patient = Server.Models.Patient.Get_Patient_By_ID(P_Login.P_ID);
+            var b= patient.Get_My_Treatment_Records();
+            foreach (var a in b)
+            {
+                listView1.Items.Add(new ListViewItem(new string[]{
+                      a.T_ID.ToString(),
+                      a.D_ID.ToString(),
+                      a.T_Time.ToString(),
+                      a.Detail
+                  }));
+            }
+
+        }
     }
 }

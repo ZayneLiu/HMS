@@ -109,7 +109,7 @@ namespace Server.Models
         public static bool Create_Record(Treatment_Record record)
         {
             var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID, Detail) " +
-                "values(@T_Time, @D_ID, @P_ID, @Detail");
+                "values(@T_Time, @D_ID, @P_ID, @Detail)");
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@T_Time", DateTime.Now),
                 new SqlParameter("@D_ID", record.D_ID),
