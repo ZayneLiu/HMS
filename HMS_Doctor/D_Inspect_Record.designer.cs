@@ -67,6 +67,7 @@
             this.label2.Size = new System.Drawing.Size(54, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "返回";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 

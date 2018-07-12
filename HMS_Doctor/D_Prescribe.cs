@@ -12,11 +12,9 @@ namespace HMS_Doctor
 {
     public partial class D_Prescribe : Form
     {
-        public Form parent;
-        public D_Prescribe(Form form)
+        public D_Prescribe()
         {
             InitializeComponent();
-            parent = form;
 
         }
 
@@ -51,6 +49,13 @@ namespace HMS_Doctor
             Hide();
             
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            D_Management_Patient frm = new D_Management_Patient();
+            Hide();
+            frm.Show();
         }
     }
 }

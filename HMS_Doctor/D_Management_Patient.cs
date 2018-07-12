@@ -71,7 +71,9 @@ namespace HMS_Doctor
 
         private void label_Prescride_Click_1(object sender, EventArgs e)
         {
-
+            D_Treatment frm = new D_Treatment();
+            Hide();
+            frm.Show();
         }
     }
 }
