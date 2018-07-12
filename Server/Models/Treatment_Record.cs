@@ -69,8 +69,8 @@ namespace Server.Models
         /// <summary>
         /// 创建就诊记录
         /// </summary>
-        /// <param name="D_ID">医生ID</param>
-        /// <param name="P_ID">病人ID</param>
+        /// <returns><c>true</c>, if record was created, <c>false</c> otherwise.</returns>
+        /// <param name="record">Record.</param>
         public static bool Create_Record(Treatment_Record record)
         {
             var command = new SqlCommand("insert into Treatment_Record(T_Time, D_ID, P_ID, Detail) " +
@@ -87,12 +87,12 @@ namespace Server.Models
         /// <summary>
         /// 获取对应ID的坐诊记录
         /// </summary>
-        /// <param name="ID">坐诊记录ID</param>
-        /// <returns></returns>
-        public static Treatment_Record Get_Treatment_Record_By_ID(string ID)
+        /// <returns>对应ID的坐诊记录</returns>
+        /// <param name="T_ID">坐诊ID</param>
+        public static Treatment_Record Get_Treatment_Record_By_ID(string T_ID)
         {
             var command = new SqlCommand("select * from Treatment_Record where T_ID = @T_ID");
-            command.Parameters.AddWithValue("@T_ID", ID);
+            command.Parameters.AddWithValue("@T_ID", T_ID);
             var row = DB.Read(command).First();
             return new Treatment_Record()
             {

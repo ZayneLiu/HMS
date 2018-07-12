@@ -59,5 +59,12 @@ namespace HMS_Patient
         {
             Application.Exit();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            P_My_Treatment frm = new P_My_Treatment(this);
+            frm.Show();
+            Hide();
+        }
     }
 }

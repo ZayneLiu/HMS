@@ -10,11 +10,13 @@ namespace Server.Logics
     public static class Treatment_Record_Logics
     {
         /// <summary>
-        /// 创建坐诊记录
+        /// 开始坐诊
         /// </summary>
-        /// <param name="D_ID">坐诊医生ID</param>
-        /// <param name="P_ID">被诊病人ID</param>
-        public static bool Create_If_Info_Valid(string D_ID, string P_ID, string Detail)
+        /// <returns>成功或失败</returns>
+        /// <param name="D_ID">医生ID</param>
+        /// <param name="P_ID">病人ID</param>
+        /// <param name="Detail">坐诊内容</param>
+        public static bool Start_Treatment(string D_ID, string P_ID, string Detail)
         {
             if (Doctor.Get_Doctor_By_ID(D_ID) != null && Patient.Get_Patient_By_ID(P_ID) != null)
             {

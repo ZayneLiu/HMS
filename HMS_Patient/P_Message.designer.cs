@@ -49,7 +49,7 @@
             // 
             this.label_Tel.AutoSize = true;
             this.label_Tel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Tel.Location = new System.Drawing.Point(236, 253);
+            this.label_Tel.Location = new System.Drawing.Point(309, 253);
             this.label_Tel.Name = "label_Tel";
             this.label_Tel.Size = new System.Drawing.Size(26, 21);
             this.label_Tel.TabIndex = 25;
@@ -59,7 +59,7 @@
             // 
             this.label_Med_History.AutoSize = true;
             this.label_Med_History.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Med_History.Location = new System.Drawing.Point(236, 217);
+            this.label_Med_History.Location = new System.Drawing.Point(309, 218);
             this.label_Med_History.Name = "label_Med_History";
             this.label_Med_History.Size = new System.Drawing.Size(26, 21);
             this.label_Med_History.TabIndex = 24;
@@ -69,7 +69,7 @@
             // 
             this.label_Age.AutoSize = true;
             this.label_Age.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Age.Location = new System.Drawing.Point(236, 179);
+            this.label_Age.Location = new System.Drawing.Point(309, 183);
             this.label_Age.Name = "label_Age";
             this.label_Age.Size = new System.Drawing.Size(26, 21);
             this.label_Age.TabIndex = 22;
@@ -79,7 +79,7 @@
             // 
             this.label_Gender.AutoSize = true;
             this.label_Gender.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Gender.Location = new System.Drawing.Point(236, 144);
+            this.label_Gender.Location = new System.Drawing.Point(309, 148);
             this.label_Gender.Name = "label_Gender";
             this.label_Gender.Size = new System.Drawing.Size(26, 21);
             this.label_Gender.TabIndex = 21;
@@ -89,7 +89,7 @@
             // 
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_name.Location = new System.Drawing.Point(236, 110);
+            this.label_name.Location = new System.Drawing.Point(309, 113);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(26, 21);
             this.label_name.TabIndex = 20;
@@ -99,7 +99,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(95, 248);
+            this.label7.Location = new System.Drawing.Point(168, 249);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 27);
             this.label7.TabIndex = 19;
@@ -109,7 +109,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(135, 214);
+            this.label6.Location = new System.Drawing.Point(208, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 27);
             this.label6.TabIndex = 18;
@@ -119,7 +119,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(135, 173);
+            this.label4.Location = new System.Drawing.Point(208, 179);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 27);
             this.label4.TabIndex = 16;
@@ -129,7 +129,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(135, 141);
+            this.label3.Location = new System.Drawing.Point(208, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 27);
             this.label3.TabIndex = 15;
@@ -139,7 +139,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(135, 106);
+            this.label2.Location = new System.Drawing.Point(208, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 27);
             this.label2.TabIndex = 14;
@@ -148,9 +148,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(157, 23);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(116, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(146, 42);
             this.label1.TabIndex = 26;
             this.label1.Text = "个人中心";
             // 

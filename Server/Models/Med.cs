@@ -71,7 +71,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Gets all meds.
+        /// 获取所有药品
         /// </summary>
         /// <returns>All meds.</returns>
         public static List<Med> Get_All_Meds(){
