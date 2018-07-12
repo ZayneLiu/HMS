@@ -82,6 +82,10 @@ namespace Server.Models
             var departments = new List<string>();
             var command = new SqlCommand("select distinct D_Department from Doctor");
             var rows = DB.Read(command);
+            if (rows != null)
+            {
+                return null;
+            }
             foreach (var row in rows)
             {
                 departments.Add(row["D_Department"].Value.ToString());
@@ -97,6 +101,10 @@ namespace Server.Models
             var specialties = new List<string>();
             var command = new SqlCommand("select distinct D_Specialty from Doctor");
             var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
             foreach (var row in rows)
             {
                 specialties.Add(row["D_Specialty"].Value.ToString());
@@ -113,8 +121,12 @@ namespace Server.Models
             // 初始化返回参数
             var doctors = new List<Doctor>();
             var command = new SqlCommand("select * from Doctor");
-            var result = DB.Read(command);
-            foreach (DB.Row row in result)
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            foreach (DB.Row row in rows)
             {
                 var doctor = new Doctor()
                 {
@@ -144,27 +156,25 @@ namespace Server.Models
             command.Parameters.AddWithValue("@D_ID", D_ID);
             // 获取查询到的医生
             var rows = DB.Read(command);
-            if (rows.Count == 0)
+            if (rows == null)
             {
                 return null;
             }
-            else
+            var row = rows.First();
+            // 根据获取到的数据实例化一个 Doctor 对象
+            return new Doctor()
             {
-                var result = DB.Read(command).First();
-                // 根据获取到的数据实例化一个 Doctor 对象
-                return new Doctor()
-                {
-                    D_ID = result["D_ID"].Value.ToString(),
-                    D_Pwd = result["D_Pwd"].Value.ToString(),
-                    D_Gender = result["D_Gender"].Value.ToString(),
-                    D_Age = (int)result["D_Age"].Value,
-                    D_Name = result["D_Name"].Value.ToString(),
-                    D_Tel = result["D_Tel"].Value.ToString(),
-                    D_Title = result["D_Title"].Value.ToString(),
-                    D_Specialty = result["D_Specialty"].Value.ToString(),
-                    D_Department = result["D_Department"].Value.ToString()
-                };
-            }
+                D_ID = row["D_ID"].Value.ToString(),
+                D_Pwd = row["D_Pwd"].Value.ToString(),
+                D_Gender = row["D_Gender"].Value.ToString(),
+                D_Age = (int)row["D_Age"].Value,
+                D_Name = row["D_Name"].Value.ToString(),
+                D_Tel = row["D_Tel"].Value.ToString(),
+                D_Title = row["D_Title"].Value.ToString(),
+                D_Specialty = row["D_Specialty"].Value.ToString(),
+                D_Department = row["D_Department"].Value.ToString()
+            };
+
         }
 
         /// <summary>
@@ -190,6 +200,10 @@ namespace Server.Models
             var command = new SqlCommand("select * from Doctor where D_Department=@D_Department");
             command.Parameters.AddWithValue("@D_Department", department);
             var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
             foreach (DB.Row row in rows)
             {
                 var doctor = new Doctor()
@@ -221,6 +235,10 @@ namespace Server.Models
             var command = new SqlCommand("select * from Doctor where D_Specialty = @D_Specialty");
             command.Parameters.AddWithValue("@D_Specialty", specialty);
             var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
             foreach (DB.Row row in rows)
             {
                 var doctor = new Doctor()
@@ -249,6 +267,10 @@ namespace Server.Models
                 new SqlParameter("@" + condition[1], value[1])
             });
             var rows = DB.Read(command);
+            if (rows ==null)
+            {
+                return null;
+            }
             foreach (DB.Row row in rows)
             {
                 var doctor = new Doctor()

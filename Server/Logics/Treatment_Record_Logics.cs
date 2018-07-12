@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Server.Models;
-using System.Net.Http.Headers;
 using System.Data.SqlClient;
 
 namespace Server.Logics
@@ -44,7 +43,12 @@ namespace Server.Logics
             var key_value_pair = new Dictionary<string, string>();
             var command = new SqlCommand("select * from Treatment_Record TR join Patient P on TR.P_ID=P.P_ID join Doctor D on TR.D_ID=D.D_ID where T_ID = @T_ID");
             command.Parameters.AddWithValue("@T_ID", treatment_ID);
-            var row = DB.Read(command).First();
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            var row = rows.First();
             string my_treatment_ID = row["T_ID"].Value.ToString();
             string my_treatment_doctor = row["D_Name"].Value.ToString();
             string my_treatment_patient = row["P_Name"].Value.ToString();
@@ -62,6 +66,10 @@ namespace Server.Logics
             };
 
             return basic_info;
+        }
+
+        public static bool Prescribe(string D_ID){
+            return true;
         }
     }
 }

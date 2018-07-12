@@ -33,7 +33,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,7 +47,6 @@
             this.columnHeader1,
             this.columnHeader4,
             this.columnHeader2,
-            this.columnHeader3,
             this.columnHeader5});
             this.listView1.Location = new System.Drawing.Point(12, 107);
             this.listView1.Name = "listView1";
@@ -72,12 +70,6 @@
             this.columnHeader2.DisplayIndex = 1;
             this.columnHeader2.Text = "医生姓名";
             this.columnHeader2.Width = 90;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.DisplayIndex = 2;
-            this.columnHeader3.Text = "病人姓名";
-            this.columnHeader3.Width = 97;
             // 
             // columnHeader5
             // 
@@ -144,6 +136,7 @@
             this.Name = "P_My_Treatment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "P_My_Treatment";
+            this.Load += new System.EventHandler(this.P_My_Treatment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,7 +150,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;

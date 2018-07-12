@@ -22,6 +22,8 @@ namespace Server.Models
         public int I_ID { get; set; }
 
 
+
+
         /// <summary>
         /// 获取所有坐诊记录
         /// </summary>
@@ -30,6 +32,10 @@ namespace Server.Models
             var inspection_records = new List<Inspection_Record>();
             var command = new SqlCommand("select * from Inspection_Record");
             var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
             foreach (var row in rows)
             {
                 inspection_records.Add(new Inspection_Record()

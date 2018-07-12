@@ -37,7 +37,12 @@ namespace Server.Models
         public static Inspection Get_Inspection_By_ID(string I_ID){
             var command = new SqlCommand("select * from Inspection where I_ID=@I_ID");
             command.Parameters.AddWithValue("@I_ID", I_ID);
-            var row = DB.Read(command).First();
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            var row = rows.First();
             return new Inspection()
             {
                 I_ID = (int)row["I_ID"].Value,
@@ -54,6 +59,10 @@ namespace Server.Models
             var inspections = new List<Inspection>();
             var command = new SqlCommand("select * from Inspection");
             var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
             foreach (var row in rows)
             {
                 inspections.Add(new Inspection()
