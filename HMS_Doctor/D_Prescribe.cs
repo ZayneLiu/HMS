@@ -20,18 +20,28 @@ namespace HMS_Doctor
 
         private void label_Add_Med_Click(object sender, EventArgs e)
         {
-            
+            var Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse (listView1.SelectedItems[0].SubItems[0].Text) );
+            listView2.Items.Add(new ListViewItem(new string[]
+                {
+                    Med_Add.M_ID .ToString (),
+                    Med_Add .M_Name ,
+                    Med_Add.M_Category ,
+                    Med_Add .M_Unit ,
+                    Med_Add .M_Price.ToString (),
+                    Med_Add .M_Effect 
+                }));
         }
 
         private void D_Prescribe_Load(object sender, EventArgs e)
         {
             listView1.Clear();
-
+            listView2.Clear();
             var Med = Server.Models.Med.Get_All_Meds ();
             foreach (var Meds in Med)
             {
                 listView1.Items.Add(new ListViewItem(new string[]
                     {
+                        Meds.M_ID .ToString (),
                         Meds.M_Name ,
                         Meds .M_Category,
                         Meds.M_Unit,
@@ -44,6 +54,7 @@ namespace HMS_Doctor
 
         private void label3_Click(object sender, EventArgs e)
         {
+
             D_Treatment frm  = new D_Treatment();
             frm.Show();
             Hide();

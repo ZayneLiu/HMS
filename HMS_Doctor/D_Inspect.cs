@@ -25,6 +25,7 @@ namespace HMS_Doctor
             {
                 listView1.Items.Add(new ListViewItem(new string[]
                     {
+                        Inspeccts .I_ID .ToString (),
                         Inspeccts.I_Name ,
                         Inspeccts .I_Price .ToString ()
                     }));
@@ -39,6 +40,19 @@ namespace HMS_Doctor
             Hide();
         }
 
- 
+        private void labelD_Inspect_Click(object sender, EventArgs e)
+        {
+            var Med_Add = Server.Models.Inspection .Get_Inspection_By_ID(listView1.SelectedItems[0].SubItems[0].Text);
+            listView2.Items.Add(new ListViewItem(new string[]
+                {
+                    Med_Add .I_Name ,
+                    Med_Add .I_Price .ToString ()
+                }));
+        }
+
+        private void D_Inspect_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

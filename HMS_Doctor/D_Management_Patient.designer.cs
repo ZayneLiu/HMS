@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("病人ID");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "病人姓名"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))));
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("病人性别");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("病人年龄");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("电话");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("病史");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("病人性别");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("病人年龄");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("电话");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("病史");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Management_Patient));
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -74,7 +75,8 @@
             listViewItem2,
             listViewItem3,
             listViewItem4,
-            listViewItem5});
+            listViewItem5,
+            listViewItem6});
             this.listView1.Location = new System.Drawing.Point(22, 137);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(715, 346);
@@ -88,14 +90,14 @@
             this.label_Name_Search.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Name_Search.Location = new System.Drawing.Point(51, 12);
             this.label_Name_Search.Name = "label_Name_Search";
-            this.label_Name_Search.Size = new System.Drawing.Size(138, 28);
+            this.label_Name_Search.Size = new System.Drawing.Size(201, 28);
             this.label_Name_Search.TabIndex = 2;
-            this.label_Name_Search.Text = "按姓名查找：";
+            this.label_Name_Search.Text = "按姓名和性别查找：";
             this.label_Name_Search.Click += new System.EventHandler(this.label_Name_Search_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(356, 87);
+            this.textBox1.Location = new System.Drawing.Point(478, 78);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(153, 19);
@@ -105,9 +107,9 @@
             // 
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label_Name_Search);
-            this.panel3.Location = new System.Drawing.Point(177, 83);
+            this.panel3.Location = new System.Drawing.Point(234, 74);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(173, 48);
+            this.panel3.Size = new System.Drawing.Size(238, 48);
             this.panel3.TabIndex = 5;
             this.panel3.Click += new System.EventHandler(this.label_Name_Search_Click);
             // 
@@ -126,7 +128,7 @@
             // 
             this.label_All_Search.AutoSize = true;
             this.label_All_Search.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_All_Search.Location = new System.Drawing.Point(560, 94);
+            this.label_All_Search.Location = new System.Drawing.Point(641, 86);
             this.label_All_Search.Name = "label_All_Search";
             this.label_All_Search.Size = new System.Drawing.Size(96, 28);
             this.label_All_Search.TabIndex = 6;
@@ -139,7 +141,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "男",
             "女"});
-            this.comboBox1.Location = new System.Drawing.Point(356, 112);
+            this.comboBox1.Location = new System.Drawing.Point(478, 103);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 20);
             this.comboBox1.TabIndex = 7;
@@ -148,7 +150,7 @@
             // 
             this.panel1.Controls.Add(this.label_Prescride);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(21, 83);
+            this.panel1.Location = new System.Drawing.Point(22, 72);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(119, 48);
             this.panel1.TabIndex = 8;
@@ -178,7 +180,7 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(22, 7);
+            this.panel2.Location = new System.Drawing.Point(11, 7);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(119, 48);

@@ -12,23 +12,12 @@ namespace HMS_Doctor
 {
     public partial class D_Management_Patient : Form
     {
+       
      
         public D_Management_Patient()
         {
             InitializeComponent();
 
-            listView1.Clear();
-            var Patients = Server.Models.Patient.Get_All_Patient();
-            foreach (var Patient in Patients)
-            {
-                listView1.Items.Add(new ListViewItem(new string[] {
-                Patient.P_Name ,
-                Patient.P_Gender ,
-                Patient.P_Age.ToString (),
-                Patient.P_Tel ,
-                Patient.P_Med_History
-                }));
-            }
         }
 
         private void label_Name_Search_Click(object sender, EventArgs e)
@@ -63,7 +52,7 @@ namespace HMS_Doctor
             }
         }
 
-        public static string  P_ID;
+
         private void label_Prescride_Click(object sender, EventArgs e)
         {
             
@@ -75,5 +64,26 @@ namespace HMS_Doctor
             Hide();
             frm.Show();
         }
+
+        public static int P_ID;
+        private void D_Management_Patient_Load(object sender, EventArgs e)
+        {
+            P_ID = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            listView1.Clear();
+            var Patients = Server.Models.Patient.Get_All_Patient();
+            foreach (var Patient in Patients)
+            {
+                listView1.Items.Add(new ListViewItem(new string[] {
+                Patient .P_ID ,
+                Patient.P_Name ,
+                Patient.P_Gender ,
+                Patient.P_Age.ToString (),
+                Patient.P_Tel ,
+                Patient.P_Med_History
+                }));
+            }
+        }
+
+
     }
 }
