@@ -34,25 +34,12 @@ namespace HMS_Patient
             Hide();
         }
 
-        private void Med_Click(object sender, EventArgs e)
-        {
-            P_Med frm = new P_Med(this);
-            frm.Show();
-            Hide();
-        }
-
-        private void Inspection_Click(object sender, EventArgs e)
-        {
-            P_Med_Project frm = new P_Med_Project();
-            frm.Show();
-            Hide();
-        }
 
         private void Check_And_Exit_Click(object sender, EventArgs e)
         {
             P_Pay_Leave frm = new P_Pay_Leave();
             frm.Show();
-            Close();
+            Hide();
         }
 
         private void Back_Click(object sender, EventArgs e)

@@ -10,22 +10,23 @@ using System.Windows.Forms;
 
 namespace HMS_Patient
 {
-    public partial class P_Med : Form
+    
+    public partial class P_Message_Edit : Form
     {
         public Form parent;
-        public P_Med(Form form)
+        public P_Message_Edit(Form form)
         {
             InitializeComponent();
             parent = form;
         }
 
-        private void Back_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
             parent.Show();
         }
 
-        private void P_Med_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
