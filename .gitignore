@@ -10,3 +10,6 @@
 /HMS_Doctor/obj/Release
 /HMS_Patient/obj/Release
 /Server/obj/Release
+Server/bin/Debug/Server.exe
+Server/bin/Debug/Server.exe.config
+Server/bin/Debug/Server.pdb
