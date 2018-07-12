@@ -34,5 +34,12 @@ namespace HMS_Patient
             this.Close();
             parent.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            P_Message_Edit frm = new P_Message_Edit(this);
+            frm.Show();
+            Hide();
+        }
     }
 }
