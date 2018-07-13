@@ -9,7 +9,7 @@ namespace Server
 {
     public class DB
     {
-        public static string conString = @"Server=127.0.0.1;Integrated Security=True;database=HMS";
+        public static string conString = @"server = 127.0.0.1;integrated security = true;database=HMS";
         public static SqlConnection connection = new SqlConnection(conString);
 
         /// <summary>
