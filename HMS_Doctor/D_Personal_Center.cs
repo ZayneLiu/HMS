@@ -49,5 +49,7 @@ namespace HMS_Doctor
             Hide();
             frm.Show();
         }
+
+ 
     }
 }

@@ -199,6 +199,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "D_Treatment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "D_Treatment";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -205,6 +205,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(97, 47);
             this.panel1.TabIndex = 23;
+            this.panel1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -216,6 +217,7 @@
             this.label2.Size = new System.Drawing.Size(54, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "返回";
+            this.label2.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox1
             // 
@@ -227,6 +229,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // D_Modify_Personal_Information
             // 
@@ -252,6 +255,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "D_Modify_Personal_Information";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doc__Modify_Personal_Information";
             this.Load += new System.EventHandler(this.D_Modify_Personal_Information_Load);
             this.panel1.ResumeLayout(false);

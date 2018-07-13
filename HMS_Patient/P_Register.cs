@@ -27,9 +27,17 @@ namespace HMS_Patient
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            if(Server.Logics.Treatment_Record_Logics.Start_Treatment(listView1.SelectedItems[0].Text, P_Login.P_ID,Detail.Text))
+            if (listView1.SelectedItems.Count != 0)
             {
-                MessageBox.Show("挂号成功", "信息提示");
+                if (Server.Logics.Treatment_Record_Logics.Start_Treatment(listView1.SelectedItems[0].Text, P_Login.P_ID, Detail.Text))
+                {
+                    MessageBox.Show("挂号成功", "信息提示");
+                }
+            }
+            else
+            {
+                MessageBox.Show("尚未选择医生");
+                return;
             }
             this.Close();
             parent.Show();
@@ -71,7 +79,8 @@ namespace HMS_Patient
             listView1.Items.Clear();
 
             var a = Server.Models.Doctor.Get_Doctor_By_Department_And_Specialty(comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
-            if(a.Count!=0)
+
+            if (a!= null)
             {
                 foreach (var doc in a)
                 {

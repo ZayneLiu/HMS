@@ -51,5 +51,12 @@ namespace HMS_Doctor
             textBox_Tel .Text = D.D_Tel.ToString();
             comboBox_Title.Text = D.D_Title;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            D_Personal_Information frm = new D_Personal_Information();
+            Hide();
+            frm.Show();
+        }
     }
 }

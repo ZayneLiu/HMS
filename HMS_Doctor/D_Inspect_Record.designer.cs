@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Inspect_Record));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("患者姓名");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("项目名");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("时间");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("价格");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("患者姓名");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("项目名");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("时间");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("价格");
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,6 +57,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(119, 48);
             this.panel1.TabIndex = 9;
+            this.panel1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -67,7 +68,7 @@
             this.label2.Size = new System.Drawing.Size(54, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "返回";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox1
             // 
@@ -78,6 +79,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -97,6 +99,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(221, 48);
             this.panel2.TabIndex = 10;
+            this.panel2.Click += new System.EventHandler(this.label3_Click);
             // 
             // label3
             // 
@@ -118,6 +121,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -132,10 +136,10 @@
             // listView1
             // 
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12});
             this.listView1.Location = new System.Drawing.Point(4, 149);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(481, 267);
@@ -164,6 +168,7 @@
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "D_Inspect_Record";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doc_Inspect_Record";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

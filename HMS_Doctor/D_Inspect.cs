@@ -54,5 +54,12 @@ namespace HMS_Doctor
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            D_Personal_Center frm = new D_Personal_Center();
+            Hide();
+            frm.Show();
+        }
     }
 }

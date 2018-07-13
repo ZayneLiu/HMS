@@ -33,20 +33,45 @@ namespace HMS_Patient
             label7.Text = p.T_ID.ToString();
             label10.Text = p.T_Time.ToString();
             label8.Text = doctor.D_Name;
+            label4.Text = p.Detail;
 
 
             var Treatment = Server.Models.Treatment_Record.Get_Treatment_Record_By_ID(T_ID);
+            // 总价
+            double total = 0;
             var meds = Treatment.Meds;
-            foreach (var item in meds)
+            if (meds != null)
             {
-                //item.Key.M_Name;
-                //item.Key.M_Price;
-                //item.Value
+                foreach (var med in meds)
+                {
+                    total += med.Key.M_Price * med.Value;
+                    listView1.Items.Add(new ListViewItem(new string[] {
+                    //name
+                    med.Key.M_Name,
+                    //count
+                    med.Value.ToString(),
+                    //price
+                    med.Key.M_Price.ToString(),
+                    //effect
+                    med.Key.M_Effect
+                }));
+                }
+
             }
-
             var inspections = Treatment.Inspections;
+            if (inspections != null)
+            {
+                foreach (var inspection in inspections)
+                {
+                    total += inspection.I_Price;
+                    listView2.Items.Add(new ListViewItem(new string[] {
+                    inspection.I_Name,
+                    inspection.I_Price.ToString()
+                }));
+                }
 
+            }
+            label11.Text = total.ToString();
         }
-
     }
 }

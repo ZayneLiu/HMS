@@ -21,6 +21,11 @@ namespace HMS_Patient
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("请选中一行记录");
+                return;
+            }
             P_Treatment_Detail frm = new P_Treatment_Detail(this);
             frm.T_ID = listView1.SelectedItems[0].SubItems[0].Text.ToString();
             frm.Show();
@@ -43,6 +48,7 @@ namespace HMS_Patient
                 listView1.Items.Add(new ListViewItem(new string[]{
                       a.T_ID.ToString(),
                       doctor.D_Name.ToString(),
+                      doctor.D_Department.ToString(),
                       a.T_Time.ToString(),
                       a.Detail
                   }));

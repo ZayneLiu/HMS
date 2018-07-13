@@ -38,7 +38,7 @@ namespace HMS_Doctor
 
         private void label_All_Search_Click(object sender, EventArgs e)
         {
-            listView1.Clear();
+            listView1.Items.Clear();
             var Patients  = Server.Models.Patient .Get_All_Patient ();
             foreach (var  Patient in Patients )
             {
@@ -84,6 +84,11 @@ namespace HMS_Doctor
             }
         }
 
-
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            D_Personal_Center frm = new D_Personal_Center();
+            Hide();
+            frm.Show();
+        }
     }
 }
