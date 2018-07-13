@@ -49,5 +49,10 @@ namespace HMS_Doctor
             Hide();
             frm.Show();
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

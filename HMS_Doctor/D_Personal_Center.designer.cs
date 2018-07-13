@@ -265,6 +265,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(86, 106);
             this.panel8.TabIndex = 2;
+            this.panel8.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // label7
             // 
@@ -276,6 +277,7 @@
             this.label7.Size = new System.Drawing.Size(74, 21);
             this.label7.TabIndex = 3;
             this.label7.Text = "退出登录";
+            this.label7.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox6
             // 
@@ -287,6 +289,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // panel9
             // 
@@ -302,7 +305,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(50, 6);
+            this.label5.Location = new System.Drawing.Point(50, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 28);
             this.label5.TabIndex = 1;
@@ -311,7 +314,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 6);
+            this.pictureBox5.Location = new System.Drawing.Point(3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(51, 33);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
