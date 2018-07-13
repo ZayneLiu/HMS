@@ -23,13 +23,13 @@ namespace HMS_Partial.Med_Management
         {
             //默认选中一个RadioBtn
             RadioBtn_Search_By_Name.Checked = true;
-            DGV_Refresh();
-            
+            RefreshData();
         }
 
-        public void DGV_Refresh()
+        public void RefreshData()
         {
-            //dataGridView1.DataSource = DAL.DB.dataset.Tables["Med"];
+            Server.DB.GetAdapter("select * from Med").Fill(Server.DB.dataSet, "Med");
+            dataGridView1.DataSource = Server.DB.dataSet.Tables["Med"];
         }
 
         private void Med_Add_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace HMS_Partial.Med_Management
                     //new DAL.Models.Med((int)dataGridView1.SelectedRows[i].Cells["Med_Id"].Value).Delete();
                 }
                 //更新
-                DGV_Refresh();
+                RefreshData();
                 //DAL.Models.Med.adapter.Update(DAL.DB.dataset.Tables["Med"]);
             };
         }

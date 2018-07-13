@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Server
 {
@@ -91,6 +92,14 @@ namespace Server
                 connection.Close();
             }
         }
+
+        public static DataSet dataSet = new DataSet();
+
+        public static SqlDataAdapter GetAdapter(string sql)
+        {
+            return new SqlDataAdapter(sql, connection);
+        }
+
 
         public class Data
         {
