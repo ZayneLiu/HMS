@@ -16,7 +16,13 @@ namespace Server.Logics
         /// <returns>添加成功 true; 添加失败 false</returns>
         public static bool Is_Login_Info_Valid(string Doctor_ID, string pwd)
         {
-            if (Models.Doctor.Get_Doctor_By_ID(Doctor_ID).D_Pwd == pwd)
+            var doc = Models.Doctor.Get_Doctor_By_ID(Doctor_ID);
+            
+            if (doc == null)
+            {
+                return false;
+            }
+            if ( doc.D_Pwd == pwd)
             {
                 return true;
             } 
