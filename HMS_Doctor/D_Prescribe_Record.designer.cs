@@ -164,6 +164,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "D_Prescribe_Record";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doc_Prescribe_Record";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -20,7 +20,12 @@ namespace HMS_Doctor
 
         private void label_Add_Med_Click(object sender, EventArgs e)
         {
-            var Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse (listView1.SelectedItems[0].SubItems[0].Text) );
+            var Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse (listView1.SelectedItems[0].Text) );
+            if (Med_Add == null)
+            {
+                MessageBox.Show("请选中任意项");
+                return;
+            }
             listView2.Items.Add(new ListViewItem(new string[]
                 {
                     Med_Add.M_ID .ToString (),
@@ -28,7 +33,7 @@ namespace HMS_Doctor
                     Med_Add.M_Category ,
                     Med_Add .M_Unit ,
                     Med_Add .M_Price.ToString (),
-                    Med_Add .M_Effect 
+                    Med_Add .M_Effect
                 }));
         }
 
@@ -36,7 +41,11 @@ namespace HMS_Doctor
         {
             listView1.Clear();
             listView2.Clear();
-            var Med = Server.Models.Med.Get_All_Meds ();
+            var Med = Server.Models.Med.Get_All_Meds();
+            if (Med == null)
+            {
+                return;
+            }
             foreach (var Meds in Med)
             {
                 listView1.Items.Add(new ListViewItem(new string[]
@@ -67,6 +76,11 @@ namespace HMS_Doctor
             D_Management_Patient frm = new D_Management_Patient();
             Hide();
             frm.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

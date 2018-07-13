@@ -12,11 +12,9 @@ namespace HMS_Doctor
 {
     public partial class D_Personal_Information : Form
     {
-        public Form parent;
-        public D_Personal_Information( Form form )
+        public D_Personal_Information( )
         {
             InitializeComponent();
-            parent = form;
         }
 
         private void D_Personal_Information_Load(object sender, EventArgs e)

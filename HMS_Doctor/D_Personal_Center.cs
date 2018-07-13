@@ -21,5 +21,33 @@ namespace HMS_Doctor
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            D_Management_Patient frm = new D_Management_Patient();
+            Hide();
+            frm.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            D_Inspect_Record frm = new D_Inspect_Record();
+            Hide();
+            frm.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            D_Prescribe_Record frm = new D_Prescribe_Record();
+            Hide();
+            frm.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            D_Personal_Information frm = new D_Personal_Information();
+            Hide();
+            frm.Show();
+        }
     }
 }

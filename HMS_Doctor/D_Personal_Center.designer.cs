@@ -103,6 +103,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(86, 106);
             this.panel1.TabIndex = 2;
+            this.panel1.Click += new System.EventHandler(this.label2_Click);
             // 
             // label2
             // 
@@ -114,6 +115,7 @@
             this.label2.Size = new System.Drawing.Size(74, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "我的病人";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -125,6 +127,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel4
             // 
@@ -135,6 +138,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(86, 106);
             this.panel4.TabIndex = 4;
+            this.panel4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label4
             // 
@@ -146,6 +150,7 @@
             this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "检查记录";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox4
             // 
@@ -157,6 +162,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel2
             // 
@@ -167,6 +173,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(86, 106);
             this.panel2.TabIndex = 4;
+            this.panel2.Click += new System.EventHandler(this.label6_Click);
             // 
             // label6
             // 
@@ -178,6 +185,7 @@
             this.label6.Size = new System.Drawing.Size(74, 21);
             this.label6.TabIndex = 3;
             this.label6.Text = "开药记录";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox2
             // 
@@ -189,6 +197,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel6
             // 
@@ -206,6 +215,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(86, 106);
             this.panel3.TabIndex = 4;
+            this.panel3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label3
             // 
@@ -217,6 +227,7 @@
             this.label3.Size = new System.Drawing.Size(74, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "个人信息";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
             // 
@@ -228,6 +239,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel5
             // 
