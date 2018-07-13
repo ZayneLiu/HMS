@@ -21,6 +21,11 @@ namespace HMS_Patient
 
         private void P_Message_Load(object sender, EventArgs e)
         {
+            Refresh_Info();
+        }
+
+        public void Refresh_Info()
+        {
             var p = Server.Models.Patient.Get_Patient_By_ID(P_Login.P_ID);
             label_name.Text = p.P_Name;
             label_Age.Text = p.P_Age.ToString();

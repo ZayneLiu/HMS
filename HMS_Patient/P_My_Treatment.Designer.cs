@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_My_Treatment));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,9 +45,10 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader4,
             this.columnHeader2,
+            this.columnHeader4,
             this.columnHeader5});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(12, 107);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(705, 419);
@@ -59,17 +60,15 @@
             // 
             this.columnHeader1.Text = "坐诊ID";
             // 
-            // columnHeader4
-            // 
-            this.columnHeader4.DisplayIndex = 3;
-            this.columnHeader4.Text = "坐诊时间";
-            this.columnHeader4.Width = 123;
-            // 
             // columnHeader2
             // 
-            this.columnHeader2.DisplayIndex = 1;
             this.columnHeader2.Text = "医生姓名";
             this.columnHeader2.Width = 90;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "坐诊时间";
+            this.columnHeader4.Width = 123;
             // 
             // columnHeader5
             // 
