@@ -41,7 +41,21 @@ namespace HMS_Partial
 
         private void Patient_Click(object sender, EventArgs e)
         {
-            Admin_Pat_Management frm =new Admin_Pat_Management(this);
+            Admin_Patient_Management frm =new Admin_Patient_Management(this);
+            frm.Show();
+            Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Admin_Inspection frm = new Admin_Inspection(this);
+            frm.Show();
+            Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Admin_Ptient_Record frm = new Admin_Ptient_Record(this);
             frm.Show();
             Hide();
         }

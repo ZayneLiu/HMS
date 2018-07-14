@@ -57,6 +57,18 @@
     <Compile Include="Admin_Doc_Management.Designer.cs">
       <DependentUpon>Admin_Doc_Management.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Inspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Inspection.Designer.cs">
+      <DependentUpon>Admin_Inspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ins_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Ins_Add.Designer.cs">
+      <DependentUpon>Admin_Ins_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Landing_Page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,11 +81,23 @@
     <Compile Include="Admin_Login.Designer.cs">
       <DependentUpon>Admin_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Pat_Management.cs">
+    <Compile Include="Admin_Patient_Management.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Pat_Management.Designer.cs">
-      <DependentUpon>Admin_Pat_Management.cs</DependentUpon>
+    <Compile Include="Admin_Patient_Management.Designer.cs">
+      <DependentUpon>Admin_Patient_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Pat_Treatment_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Pat_Treatment_Detail.Designer.cs">
+      <DependentUpon>Admin_Pat_Treatment_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ptient_Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Ptient_Record.Designer.cs">
+      <DependentUpon>Admin_Ptient_Record.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,14 +131,26 @@
     <EmbeddedResource Include="Admin_Doc_Management.resx">
       <DependentUpon>Admin_Doc_Management.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Inspection.resx">
+      <DependentUpon>Admin_Inspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Ins_Add.resx">
+      <DependentUpon>Admin_Ins_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Landing_Page.resx">
       <DependentUpon>Admin_Landing_Page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_Login.resx">
       <DependentUpon>Admin_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Pat_Management.resx">
-      <DependentUpon>Admin_Pat_Management.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_Patient_Management.resx">
+      <DependentUpon>Admin_Patient_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Pat_Treatment_Detail.resx">
+      <DependentUpon>Admin_Pat_Treatment_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Ptient_Record.resx">
+      <DependentUpon>Admin_Ptient_Record.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
