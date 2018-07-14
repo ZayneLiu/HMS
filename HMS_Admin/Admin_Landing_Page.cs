@@ -38,5 +38,12 @@ namespace HMS_Partial
             frm.Show();
             Hide();
         }
+
+        private void Patient_Click(object sender, EventArgs e)
+        {
+            Admin_Pat_Management frm =new Admin_Pat_Management(this);
+            frm.Show();
+            Hide();
+        }
     }
 }
