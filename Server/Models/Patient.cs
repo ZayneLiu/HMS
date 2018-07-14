@@ -40,9 +40,6 @@ namespace Server.Models
         public string P_Med_History { get; set; }
         #endregion
 
-
-
-
         /// <summary>
         /// 获取所有我的就诊记录
         /// </summary>
@@ -97,6 +94,7 @@ namespace Server.Models
                 return false;
             }
         }
+        
         /// <summary>
         /// 获取对应病人ID的坐诊记录
         /// </summary>
@@ -188,15 +186,15 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// 根据姓名查询
+        /// 根据姓名查询 模糊
         /// </summary>
         /// <param name="name">要查询的姓名</param>
-        /// <returns>对应的 patient对象</returns>
+        /// <returns>对应的 patient对象集合</returns>
         public static List<Patient> Get_Patient_By_Name(string name)
         {
             //初始化返回变量
             var patients = new List<Patient>();
-            var command = new SqlCommand("select * from Patient where P_ID = @P_Name");
+            var command = new SqlCommand("select * from Patient where P_ID like (%@P_Name%)");
             command.Parameters.AddWithValue("@P_Name", name);
             var rows = DB.Read(command);
             if (rows == null)
@@ -267,7 +265,7 @@ namespace Server.Models
         {
             // 初始化返回变量
             var patients = new List<Patient>();
-            var command = new SqlCommand("select * from Patient where P_Gender = @P_Gender and P_Name = @P_Name");
+            var command = new SqlCommand("select * from Patient where P_Gender = @P_Gender and P_Name like (%@P_Name%)");
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@P_Gender", gender),
                 new SqlParameter("@P_Name", name)
@@ -292,8 +290,5 @@ namespace Server.Models
             }
             return patients;
         }
-
-
-        //public List
     }
 }

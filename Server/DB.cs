@@ -10,8 +10,8 @@ namespace Server
 {
     public class DB
     {
-        public static string conString = @"server = 127.0.0.1;integrated security = true;database=HMS";
-        public static SqlConnection connection = new SqlConnection(conString);
+        private static string conString = @"server = 127.0.0.1;integrated security = true;database=HMS";
+        private static SqlConnection connection = new SqlConnection(conString);
 
         /// <summary>
         /// 执行对应SqlCommand
@@ -30,7 +30,7 @@ namespace Server
             }
             catch (Exception e)
             {
-                Console.WriteLine(String.Format("DB.Execute() <- ERR: {0}", e.Message));
+                Console.WriteLine("DB.Execute() <- ERR: {0}", e.Message);
             }
             finally
             {
@@ -60,7 +60,7 @@ namespace Server
                         row.datas[i] = new Data(reader.GetName(i))
                         {
                             Value = reader.GetValue(i),
-                            Value_Type = reader.GetDataTypeName(i),
+                            ValueType = reader.GetDataTypeName(i),
                         };
                     }
                     //每行的记录添加到 List<Row> 中
@@ -76,7 +76,7 @@ namespace Server
             }
             catch (Exception e)
             {
-                Console.WriteLine(String.Format("DB.Read() <- ERR: {0}", e.Message));
+                Console.WriteLine("DB.Read() <- ERR: {0}", e.Message);
             }
             finally
             {
@@ -101,25 +101,33 @@ namespace Server
         }
 
 
+        /// <summary>
+        /// 映射数据库中的数据
+        /// </summary>
         public class Data
         {
-            public Data(string Field_Name) => this.Field_Name = Field_Name;
-            public string Field_Name { get; }
+            public Data(string fieldName) => this.FieldName = fieldName;
+            public string FieldName { get; }
             public object Value { get; set; }
-            public string Value_Type { get; set; }
+            public string ValueType { get; set; }
         }
 
+
+        /// <summary>
+        /// 映射数据库中的行
+        /// </summary>
         public class Row
         {
             public Row(Data[] datas) => this.datas = datas;
-            public Row(int field_count) => datas = new Data[field_count];
+            public Row(int fieldCount) => datas = new Data[fieldCount];
             public Data[] datas;
-            public Data this[string field_name]
+            
+            public Data this[string fieldName]
             {
                 get
                 {
                     Predicate<Data> match = new Predicate<Data>(
-                        (data) => { return (data.Field_Name == field_name); });
+                        (data) => { return (data.FieldName == fieldName); });
                     return Array.Find(datas, match);
                 }
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Server.Models
     /// </summary>
     public class Doctor
     {
+        # region 字段
         /// <summary>
         /// 医生身份证号
         /// </summary>
@@ -48,8 +50,37 @@ namespace Server.Models
         /// 医生所属科室
         /// </summary>
         public string D_Department { get; set; }
+        #endregion
 
+        
+        public bool SaveChanges()
+        {
+            try
+            {
+                var command = new SqlCommand("update Doctor set D_Name=@D_Name, D_Gender=@D_Gender, D_Age=@D_Age, D_Tel=@D_Tel, D_Specialty=@D_Specialty, D_Department=@Department, D_Title=@D_Title, D_Pwd=@D_Pwd where D_ID=@D_ID");
+                command.Parameters.AddRange(new SqlParameter[] {
+                    new SqlParameter("@D_Name", D_Name),
+                    new SqlParameter("@D_Gender", D_Gender),
+                    new SqlParameter("@D_Age", D_Age),
+                    new SqlParameter("@D_Title", D_Title),
+                    new SqlParameter("@D_Pwd", D_Pwd),
+                    new SqlParameter("@D_Tel", D_Tel),
+                    new SqlParameter("@D_Specialty", D_Specialty),
+                    new SqlParameter("@D_Department", D_Department),
+                    new SqlParameter("@D_ID", D_ID)
+                });
+                DB.Execute(command);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Doctor.SaveChanges() <- ERR: "+ex.Message);
+                DB.Close_DB_Connection();
+                return false;
+            }
+        }
 
+        
         /// <summary>
         /// 添加医生
         /// </summary>
@@ -288,6 +319,41 @@ namespace Server.Models
                 doctors.Add(doctor);
             }
             return doctors;
+        }
+
+        /// <summary>
+        /// 获取该医生的坐诊记录
+        /// </summary>
+        /// <param name="D_ID">医生编号</param>
+        /// <returns></returns>
+        public static List<Treatment_Record> GeMyTreatmentRecords(string D_ID)
+        {
+            // 初始化返回参数
+            var records = new List<Treatment_Record>();
+            var command = new SqlCommand("select * from Treatment_Record where D_ID=@D_ID");
+            command.Parameters.AddWithValue("@D_ID", D_ID);
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            foreach (var row in rows)
+            {
+                records.Add(new Treatment_Record()
+                {
+                    T_ID = (int) row["T_ID"].Value,
+                    T_Time = (DateTime) row["T_Time"].Value,
+                    D_ID = row["D_ID"].Value.ToString(),
+                    P_ID = row["P_ID"].Value.ToString(),
+                    Detail = row["Detail"].Value.ToString()
+                });
+            }
+            return records;
+        }
+
+        public List<Treatment_Record> GeMyTreatmentRecords()
+        {
+            return GeMyTreatmentRecords(D_ID);
         }
     }
 }

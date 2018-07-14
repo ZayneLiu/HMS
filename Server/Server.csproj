@@ -42,11 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logics\Admin_Logics.cs" />
     <Compile Include="Logics\Doctor_Logics.cs" />
     <Compile Include="Logics\Patient_Logics.cs" />
     <Compile Include="Logics\Med_Logics.cs" />
     <Compile Include="Logics\Treatment_Record_Logics.cs" />
-    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Inspection.cs" />
     <Compile Include="Models\Inspection_Record.cs" />

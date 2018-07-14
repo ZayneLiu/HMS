@@ -133,12 +133,12 @@ namespace Server.Models
         /// <summary>
         /// 根据 ID 查询药品
         /// </summary>
-        /// <param name="M_ID"></param>
+        /// <param name="mId"></param>
         /// <returns></returns>
-        public static Med Get_Med_By_Id(int M_ID)
+        public static Med Get_Med_By_Id(int mId)
         {
             var command = new SqlCommand("select * from Med where M_ID=@M_ID");
-            command.Parameters.AddWithValue("@M_ID", M_ID);
+            command.Parameters.AddWithValue("@M_ID", mId);
             var rows = DB.Read(command);
             if (rows == null)
             {
