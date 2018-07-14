@@ -213,7 +213,7 @@ namespace Server.Models
         /// <param name="D_Department">医生所在科室</param>
         /// <param name="D_Specialty">医生专长</param>
         /// <returns></returns>
-        public static List<Doctor> Get_Doctor_By_Department_And_Specialty(string D_Department, string D_Specialty)
+        public static List<Doctor> Get_Doctors_By_Department_And_Specialty(string D_Department, string D_Specialty)
         {
             return Get_Doctor(new string[] { "D_Department", "D_Specialty" }, new string[] { D_Department, D_Specialty });
         }

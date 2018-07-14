@@ -66,17 +66,17 @@ namespace HMS_Doctor
 
         private void label_Prescride_Click_1(object sender, EventArgs e)
         {
-            P_ID = listView1.SelectedItems[0].SubItems[0].ToString();
-            if (P_ID == null)
+            if (listView1.SelectedItems.Count == 0)
             {
-                MessageBox.Show("请选择病人ID");
+                MessageBox.Show("请选择病人开始坐诊");
             }
+            T_ID = int.Parse(listView1.SelectedItems[0].Text);
             D_Treatment frm = new D_Treatment();
             Hide();
             frm.Show();
         }
 
-        public static string P_ID;
+        public static int T_ID;
          
         private void D_Management_Patient_Load(object sender, EventArgs e)
         {
@@ -95,12 +95,13 @@ namespace HMS_Doctor
                 var patient = Server.Models.Patient.Get_Patient_By_ID(record.P_ID);
                 listView1.Items.Add(new ListViewItem(new string[]
                     {
+                        record.T_ID.ToString(),
                         patient.P_ID,
                         patient.P_Name,
                         patient.P_Gender,
-                        patient.P_Gender,
+                        patient.P_Age.ToString(),
                         patient.P_Tel,
-                        patient.P_Med_History 
+                        patient.P_Med_History
                     }));
             }
 

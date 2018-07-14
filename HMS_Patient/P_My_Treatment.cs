@@ -27,7 +27,7 @@ namespace HMS_Patient
                 return;
             }
             P_Treatment_Detail frm = new P_Treatment_Detail(this);
-            frm.T_ID = listView1.SelectedItems[0].SubItems[0].Text.ToString();
+            frm.T_ID = int.Parse(listView1.SelectedItems[0].Text);
             frm.Show();
             Hide();
         }

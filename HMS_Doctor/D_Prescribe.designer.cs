@@ -40,17 +40,16 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.label_Add_Med = new System.Windows.Forms.Label();
+            this.listView_Prescribe_Meds = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label_Add_Med = new System.Windows.Forms.Label();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -111,8 +110,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader5});
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(6, 117);
             this.listView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -146,10 +144,6 @@
             // 
             this.columnHeader5.Text = "效果";
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "库存";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label3);
@@ -159,7 +153,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(119, 48);
             this.panel2.TabIndex = 2;
-            this.panel2.Click += new System.EventHandler(this.label3_Click);
+            this.panel2.Click += new System.EventHandler(this.Confirm_Click);
             // 
             // label3
             // 
@@ -171,7 +165,7 @@
             this.label3.Size = new System.Drawing.Size(54, 28);
             this.label3.TabIndex = 1;
             this.label3.Text = "确定";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Click += new System.EventHandler(this.Confirm_Click);
             // 
             // pictureBox2
             // 
@@ -183,23 +177,39 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.label3_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.Confirm_Click);
             // 
-            // listView2
+            // listView_Prescribe_Meds
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_Prescribe_Meds.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
             this.columnHeader8,
             this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12});
-            this.listView2.Location = new System.Drawing.Point(446, 117);
-            this.listView2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(362, 415);
-            this.listView2.TabIndex = 2;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.columnHeader12,
+            this.columnHeader14});
+            this.listView_Prescribe_Meds.FullRowSelect = true;
+            this.listView_Prescribe_Meds.Location = new System.Drawing.Point(446, 117);
+            this.listView_Prescribe_Meds.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listView_Prescribe_Meds.Name = "listView_Prescribe_Meds";
+            this.listView_Prescribe_Meds.Size = new System.Drawing.Size(362, 415);
+            this.listView_Prescribe_Meds.TabIndex = 2;
+            this.listView_Prescribe_Meds.UseCompatibleStateImageBehavior = false;
+            this.listView_Prescribe_Meds.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.DisplayIndex = 1;
+            this.columnHeader8.Text = "药品名";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.DisplayIndex = 2;
+            this.columnHeader9.Text = "类别";
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.DisplayIndex = 5;
+            this.columnHeader12.Text = "效果";
             // 
             // label_Add_Med
             // 
@@ -212,25 +222,14 @@
             this.label_Add_Med.Text = "-->";
             this.label_Add_Med.Click += new System.EventHandler(this.label_Add_Med_Click);
             // 
-            // columnHeader8
+            // columnHeader13
             // 
-            this.columnHeader8.Text = "药品名";
+            this.columnHeader13.DisplayIndex = 0;
+            this.columnHeader13.Text = "药品ID";
             // 
-            // columnHeader9
+            // columnHeader14
             // 
-            this.columnHeader9.Text = "类别";
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "单位";
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "价格";
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "效果";
+            this.columnHeader14.Text = "数量";
             // 
             // D_Prescribe
             // 
@@ -239,7 +238,7 @@
             this.ClientSize = new System.Drawing.Size(812, 554);
             this.Controls.Add(this.label_Add_Med);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.listView_Prescribe_Meds);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -270,7 +269,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listView_Prescribe_Meds;
         private System.Windows.Forms.Label label_Add_Med;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -278,11 +277,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
     }
 }

@@ -26,14 +26,20 @@ namespace Server.Models
         public int Count { get; set; }
 
         /// <summary>
-        /// Prescribe the specified D_ID, P_ID and M_ID.
+        /// Prescribe
         /// </summary>
-        /// <param name="D_ID">医生ID</param>
-        /// <param name="P_ID">病人ID</param>
+        /// <param name="T_ID">坐诊ID</param>
         /// <param name="M_ID">药品ID</param>
-        public static void Prescribe(string D_ID, string P_ID, int M_ID)
+        /// <param name="Count">药品数量</param>
+        public static bool Prescribe(int T_ID, int M_ID, int Count)
         {
-            
+            var command = new SqlCommand("insert into Med_Record values (@T_ID, @M_ID, @Count)");
+            command.Parameters.AddRange(new SqlParameter[] {
+                new SqlParameter("@T_ID",T_ID),
+                new SqlParameter("@M_ID",M_ID),
+                new SqlParameter("@Count",Count)
+            });
+            return DB.Execute(command);
         }
     }
 }

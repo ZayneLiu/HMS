@@ -68,8 +68,15 @@ namespace Server.Logics
             return basic_info;
         }
 
-        public static bool Prescribe(string D_ID){
-            return true;
+        /// <summary>
+        /// 开药
+        /// </summary>
+        /// <param name="T_ID">坐诊ID</param>
+        /// <param name="M_ID">药品ID</param>
+        /// <param name="Count">药品数量</param>
+        /// <returns></returns>
+        public static bool Prescribe(int T_ID, int M_ID, int Count){
+            return Med_Record.Prescribe(T_ID, M_ID, Count);
         }
     }
 }

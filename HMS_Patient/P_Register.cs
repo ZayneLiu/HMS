@@ -21,49 +21,46 @@ namespace HMS_Patient
 
         private void Back_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
             parent.Show();
         }
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count != 0)
+            if (listView1.SelectedItems.Count != 0 && tbx_Detail.Text != "")
             {
-                if (Server.Logics.Treatment_Record_Logics.Start_Treatment(listView1.SelectedItems[0].Text, P_Login.P_ID, Detail.Text))
+                if (Server.Logics.Treatment_Record_Logics.Start_Treatment(listView1.SelectedItems[0].Text, P_Login.P_ID, tbx_Detail.Text))
                 {
                     MessageBox.Show("挂号成功", "信息提示");
                 }
+                Close();
+                parent.Show();
             }
             else
             {
-                MessageBox.Show("尚未选择医生");
+                MessageBox.Show("尚未选择医生 或 尚未描述病情");
                 return;
             }
-            this.Close();
-            parent.Show();
         }
 
         private void P_Register_Load(object sender, EventArgs e)
         {
             foreach (string Department in Server.Models.Doctor.Get_All_Department())
             {
-                comboBox1.Items.Add(Department);
+                cbx_Department.Items.Add(Department);
             }
             
             foreach (string Specialty in Server.Models.Doctor.Get_All_Specialty())
             {
-                comboBox2.Items.Add(Specialty);
+                cbx_Specialty.Items.Add(Specialty);
             }
-        }
 
-        private void Depart_Change(object sender, EventArgs e)
-        {
-            listView1.Items.Clear();
-
-            var a = Server.Models.Doctor.Get_Doctor_By_Department(comboBox1.SelectedItem.ToString());
-            foreach (var doc in a)
+            var doctors = Server.Models.Doctor.Get_All_Doctors();
+            if (doctors != null)
             {
-                listView1.Items.Add(new ListViewItem(new string[] {
+                foreach (var doc in doctors)
+                {
+                    listView1.Items.Add(new ListViewItem(new string[] {
                     doc.D_ID,
                     doc.D_Name,
                     doc.D_Gender,
@@ -71,18 +68,34 @@ namespace HMS_Patient
                     doc.D_Department,
                     doc.D_Specialty
                 }));
+                }
             }
         }
 
-        private void Specialty_Change(object sender, EventArgs e)
+        private void Cbx_selected_item_Change(object sender, EventArgs e)
         {
+            List<Server.Models.Doctor> doctors = new List<Server.Models.Doctor>();
             listView1.Items.Clear();
-
-            var a = Server.Models.Doctor.Get_Doctor_By_Department_And_Specialty(comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString());
-
-            if (a!= null)
+            if (cbx_Department.SelectedItem == null && cbx_Specialty.SelectedItem == null)
             {
-                foreach (var doc in a)
+                doctors = Server.Models.Doctor.Get_All_Doctors();
+            }
+            if (cbx_Department.SelectedItem == null && cbx_Specialty.SelectedItem != null)
+            {
+                doctors = Server.Models.Doctor.Get_Doctors_By_Specialty(cbx_Specialty.SelectedItem.ToString());
+            }
+            if (cbx_Department.SelectedItem != null && cbx_Specialty.SelectedItem == null)
+            {
+                doctors = Server.Models.Doctor.Get_Doctor_By_Department(cbx_Department.SelectedItem.ToString());
+            }
+            if (cbx_Department.SelectedItem != null && cbx_Specialty.SelectedItem != null)
+            {
+                doctors = Server.Models.Doctor.Get_Doctors_By_Department_And_Specialty(cbx_Department.SelectedItem.ToString(), cbx_Specialty.SelectedItem.ToString());
+            }
+
+            if (doctors != null)
+            {
+                foreach (var doc in doctors)
                 {
                     listView1.Items.Add(new ListViewItem(new string[] {
                     doc.D_ID,
@@ -96,9 +109,14 @@ namespace HMS_Patient
             }
             else
             {
-                MessageBox.Show("没有擅长"+comboBox2.SelectedItem.ToString()+"的医生", "信息提示");
+                MessageBox.Show(string.Format("没有擅长 '{1}' 的 '{0}' 医生", cbx_Department.SelectedItem.ToString() ,cbx_Specialty.SelectedItem.ToString()), "信息提示");
             }
-            
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            cbx_Department.SelectedItem = null;
+            cbx_Specialty.SelectedItem = null;
         }
     }
 }
