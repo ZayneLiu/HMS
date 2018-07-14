@@ -1,6 +1,6 @@
 ﻿namespace HMS_Doctor
 {
-    partial class D_Inspect_Record
+    partial class D_Treatment_Record
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Inspect_Record));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Treatment_Record));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,12 +38,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -90,7 +90,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 46);
             this.label1.TabIndex = 7;
-            this.label1.Text = "检查记录";
+            this.label1.Text = "坐诊记录";
             // 
             // panel2
             // 
@@ -100,7 +100,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(221, 48);
             this.panel2.TabIndex = 10;
-            this.panel2.Click += new System.EventHandler(this.label3_Click);
             // 
             // label3
             // 
@@ -111,7 +110,6 @@
             this.label3.Size = new System.Drawing.Size(180, 28);
             this.label3.TabIndex = 1;
             this.label3.Text = "按患者姓名查找：";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox2
             // 
@@ -122,7 +120,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -133,13 +130,13 @@
             this.label4.Size = new System.Drawing.Size(96, 28);
             this.label4.TabIndex = 8;
             this.label4.Text = "查询全部";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.Location = new System.Drawing.Point(4, 149);
@@ -149,6 +146,22 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "坐诊ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "患者姓名";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "时间";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "坐诊内容";
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(330, 84);
@@ -157,31 +170,23 @@
             this.textBox1.Size = new System.Drawing.Size(155, 28);
             this.textBox1.TabIndex = 11;
             // 
-            // columnHeader1
+            // label5
             // 
-            this.columnHeader1.Text = "检查ID";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(389, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 28);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "坐诊详情";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "患者姓名";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "检查项目";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "时间";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "价格";
-            // 
-            // D_Inspect_Record
+            // D_Treatment_Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 418);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -189,7 +194,7 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "D_Inspect_Record";
+            this.Name = "D_Treatment_Record";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doc_Inspect_Record";
             this.Load += new System.EventHandler(this.D_Inspect_Record_Load);
@@ -218,8 +223,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label5;
     }
 }

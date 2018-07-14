@@ -194,8 +194,8 @@ namespace Server.Models
         {
             //初始化返回变量
             var patients = new List<Patient>();
-            var command = new SqlCommand("select * from Patient where P_ID like (%@P_Name%)");
-            command.Parameters.AddWithValue("@P_Name", name);
+            var command = new SqlCommand("select * from Patient where P_ID like (@P_Name)");
+            command.Parameters.AddWithValue("@P_Name", "%"+name+"%");
             var rows = DB.Read(command);
             if (rows == null)
             {
@@ -265,10 +265,10 @@ namespace Server.Models
         {
             // 初始化返回变量
             var patients = new List<Patient>();
-            var command = new SqlCommand("select * from Patient where P_Gender = @P_Gender and P_Name like (%@P_Name%)");
+            var command = new SqlCommand("select * from Patient where P_Gender = @P_Gender and P_Name like (@P_Name)");
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@P_Gender", gender),
-                new SqlParameter("@P_Name", name)
+                new SqlParameter("@P_Name", "%"+name+"%")
             });
             var rows = DB.Read(command);
             if (rows == null)

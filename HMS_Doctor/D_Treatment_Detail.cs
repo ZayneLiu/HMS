@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace HMS_Doctor
 {
-    public partial class D_Prescribe_Record : Form
+    public partial class D_Treatment_Detail : Form
     {
-        public D_Prescribe_Record()
+        public D_Treatment_Detail()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            D_Treatment_Record frm = new D_Treatment_Record();
+            Hide();
+            frm.Show(); 
         }
     }
 }
