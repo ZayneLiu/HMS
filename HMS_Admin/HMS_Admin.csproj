@@ -95,6 +95,18 @@
     <Compile Include="Med_Management\Meds_Management_Landing_Page.Designer.cs">
       <DependentUpon>Meds_Management_Landing_Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Success.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Success.Designer.cs">
+      <DependentUpon>Success.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tip.Designer.cs">
+      <DependentUpon>Tip.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin_Doc_Add.resx">
       <DependentUpon>Admin_Doc_Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Med_Management\Meds_Management_Landing_Page.resx">
       <DependentUpon>Meds_Management_Landing_Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Success.resx">
+      <DependentUpon>Success.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip.resx">
+      <DependentUpon>Tip.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -12,30 +12,71 @@ namespace HMS_Partial
 {
     public partial class Admin_Doc_Add : Form
     {
-        public Form parent;
-        public Admin_Doc_Add(Form form)
+        public Admin_Doc_Management parent;
+        public Admin_Doc_Add(Admin_Doc_Management form)
         {
             InitializeComponent();
             parent = form;
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-            this.Close();
-            parent.Show();
+            Close();
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
-            string id = textBox1.Text;
-            string name = textBox3.Text;
-            int age = int.Parse(textBox4.Text);
-            string gender = comboBox1.Text;
-            string title = textBox5.Text;
-            string specialty = textBox6.Text;
-            string department = textBox7.Text;
-            string tel = textBox8.Text;
-            var p = Server.Logics.Doctor_Logics.Add_If_Info_Valid(id,name,gender,age,tel,title,specialty,department);
+            bool success = false;
+            string id = "";
+            string name = "";
+            int age = 0;
+            string gender = "";
+            string title = "";
+            string specialty =  "";
+            string department = "";
+            string tel = "";
+            try
+            {
+                id = textBox1.Text;
+                name = textBox3.Text;
+                age = int.Parse(textBox4.Text);
+                gender = comboBox1.Text;
+                title = textBox5.Text;
+                specialty = textBox6.Text;
+                department = textBox7.Text;
+                tel = textBox8.Text;
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+                success = false;
+            }
+            success = Server.Logics.Doctor_Logics.Add_If_Info_Valid(id, name, gender, age, tel, title, specialty, department);
+
+            if (success)
+            {
+                Close();
+                var success_form = new Success();
+                success_form.Show();
+                //实现延迟
+                var timer = new Timer();
+                timer.Interval = 800;
+                timer.Start();
+                timer.Tick += (object timer_sender, EventArgs timer_e) =>
+                {
+                    success_form.Close();
+                    parent.RefreshData();
+                    //确保 Timer 只 Tick 一次
+                    timer.Stop();
+                    timer.Dispose();
+                };
+                return;
+            }
+            else
+            {
+
+                MessageBox.Show("失败，请重试");
+            }
         }
     }
 }

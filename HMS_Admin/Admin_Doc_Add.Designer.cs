@@ -66,6 +66,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(97, 42);
             this.panel3.TabIndex = 42;
+            this.panel3.Click += new System.EventHandler(this.Back_Click);
             // 
             // pictureBox2
             // 
@@ -79,6 +80,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 38;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.Back_Click);
             // 
             // label8
             // 
@@ -91,7 +93,7 @@
             this.label8.Size = new System.Drawing.Size(54, 28);
             this.label8.TabIndex = 39;
             this.label8.Text = "返回";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.label8.Click += new System.EventHandler(this.Back_Click);
             // 
             // label1
             // 
@@ -254,6 +256,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(108, 42);
             this.panel2.TabIndex = 54;
+            this.panel2.Click += new System.EventHandler(this.Add_Click);
             // 
             // pictureBox1
             // 
@@ -266,6 +269,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Add_Click);
             // 
             // label12
             // 
@@ -279,7 +283,7 @@
             this.label12.Size = new System.Drawing.Size(54, 28);
             this.label12.TabIndex = 39;
             this.label12.Text = "添加";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.label12.Click += new System.EventHandler(this.Add_Click);
             // 
             // Admin_Doc_Add
             // 
@@ -305,6 +309,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin_Doc_Add";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin_Doc_Add";

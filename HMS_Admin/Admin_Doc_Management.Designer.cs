@@ -263,7 +263,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(139, 42);
             this.panel2.TabIndex = 40;
-            this.panel2.Click += new System.EventHandler(this.label7_Click);
+            this.panel2.Click += new System.EventHandler(this.Add_Click);
             // 
             // pictureBox1
             // 
@@ -276,7 +276,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.label7_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.Add_Click);
             // 
             // label7
             // 
@@ -290,7 +290,7 @@
             this.label7.Size = new System.Drawing.Size(96, 28);
             this.label7.TabIndex = 39;
             this.label7.Text = "添加医生";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.Click += new System.EventHandler(this.Add_Click);
             // 
             // panel3
             // 

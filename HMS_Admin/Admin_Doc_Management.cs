@@ -34,7 +34,7 @@ namespace HMS_Partial
             RefreshData();
         }
 
-        private void RefreshData()
+        public void RefreshData()
         {
             cbx_Department.Items.Clear();
             var departments = Server.Models.Doctor.Get_All_Department();
@@ -124,11 +124,10 @@ namespace HMS_Partial
             RefreshData();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
             Admin_Doc_Add frm = new  Admin_Doc_Add(this);
-            frm.Show();
-            Hide();
+            frm.ShowDialog();
         }
     }
 }
