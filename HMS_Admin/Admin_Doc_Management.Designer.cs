@@ -94,7 +94,7 @@
             this.panel1.Controls.Add(this.Tbx_Seach_By_Name);
             this.panel1.Location = new System.Drawing.Point(9, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(847, 66);
+            this.panel1.Size = new System.Drawing.Size(850, 66);
             this.panel1.TabIndex = 38;
             // 
             // label6
@@ -113,7 +113,7 @@
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel5.Location = new System.Drawing.Point(113, 10);
+            this.panel5.Location = new System.Drawing.Point(115, 10);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(97, 42);
             this.panel5.TabIndex = 41;
@@ -148,7 +148,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(728, 11);
+            this.panel4.Location = new System.Drawing.Point(731, 11);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(90, 39);
             this.panel4.TabIndex = 41;
@@ -184,7 +184,7 @@
             this.panel6.Controls.Add(this.pictureBox5);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Location = new System.Drawing.Point(7, 10);
+            this.panel6.Location = new System.Drawing.Point(9, 10);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(97, 42);
             this.panel6.TabIndex = 41;
@@ -224,7 +224,7 @@
             "按姓名查询",
             "按性别查询",
             "按科室查询"});
-            this.Combobox_Search_By_Kind.Location = new System.Drawing.Point(346, 18);
+            this.Combobox_Search_By_Kind.Location = new System.Drawing.Point(349, 18);
             this.Combobox_Search_By_Kind.Name = "Combobox_Search_By_Kind";
             this.Combobox_Search_By_Kind.Size = new System.Drawing.Size(187, 28);
             this.Combobox_Search_By_Kind.TabIndex = 32;
@@ -233,7 +233,7 @@
             // 
             this.Tbx_Seach_By_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Tbx_Seach_By_Name.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tbx_Seach_By_Name.Location = new System.Drawing.Point(537, 18);
+            this.Tbx_Seach_By_Name.Location = new System.Drawing.Point(540, 18);
             this.Tbx_Seach_By_Name.Name = "Tbx_Seach_By_Name";
             this.Tbx_Seach_By_Name.Size = new System.Drawing.Size(187, 28);
             this.Tbx_Seach_By_Name.TabIndex = 34;

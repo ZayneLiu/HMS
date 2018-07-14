@@ -18,5 +18,11 @@ namespace HMS_Partial
             InitializeComponent();
             parent = form;
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parent.Show();
+        }
     }
 }
