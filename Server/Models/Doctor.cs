@@ -57,7 +57,7 @@ namespace Server.Models
         {
             try
             {
-                var command = new SqlCommand("update Doctor set D_Name=@D_Name, D_Gender=@D_Gender, D_Age=@D_Age, D_Tel=@D_Tel, D_Specialty=@D_Specialty, D_Department=@Department, D_Title=@D_Title, D_Pwd=@D_Pwd where D_ID=@D_ID");
+                var command = new SqlCommand("update Doctor set D_Name=@D_Name, D_Gender=@D_Gender, D_Age=@D_Age, D_Tel=@D_Tel, D_Specialty=@D_Specialty, D_Department=@D_Department, D_Title=@D_Title, D_Pwd=@D_Pwd where D_ID=@D_ID");
                 command.Parameters.AddRange(new SqlParameter[] {
                     new SqlParameter("@D_Name", D_Name),
                     new SqlParameter("@D_Gender", D_Gender),
@@ -69,8 +69,7 @@ namespace Server.Models
                     new SqlParameter("@D_Department", D_Department),
                     new SqlParameter("@D_ID", D_ID)
                 });
-                DB.Execute(command);
-                return true;
+                return DB.Execute(command);
             }
             catch (Exception ex)
             {

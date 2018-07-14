@@ -52,7 +52,7 @@ namespace Server.Models
         /// <summary>
         /// 将对 对象做出的更改 更新至数据库
         /// </summary>
-        public void SaveChanges()
+        public bool SaveChanges()
         {
             //初始化SQL命令
             var cmd = new SqlCommand(@"update Med set Med_Name=@Med_Name, Med_Catgory=@Med_Catgory, Med_Unit=@Med_Unit, Med_Price=@Med_Price, Med_Stock=@Med_Stock, Med_Effect=@Med_Effect)" 
@@ -67,7 +67,7 @@ namespace Server.Models
                 new SqlParameter("@Med_Effect",M_Effect),
             });
             //调用执行指令
-            DB.Execute(cmd);
+            return DB.Execute(cmd);
         }
 
         /// <summary>

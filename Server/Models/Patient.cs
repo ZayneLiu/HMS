@@ -84,8 +84,7 @@ namespace Server.Models
                     new SqlParameter("@P_Med_History", P_Med_History),
                     new SqlParameter("@P_ID", P_ID)
                 });
-                DB.Execute(command);
-                return true;
+                return DB.Execute(command);
             }
             catch (Exception ex)
             {
