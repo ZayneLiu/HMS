@@ -17,10 +17,9 @@ namespace HMS_Doctor
             InitializeComponent();
 
         }
-
         private void label_Add_Med_Click(object sender, EventArgs e)
         {
-            var Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse (listView1.SelectedItems[0].Text) );
+            var  Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse (listView1.SelectedItems[0].Text) );
             if (Med_Add == null)
             {
                 MessageBox.Show("请选中任意项");
@@ -35,6 +34,7 @@ namespace HMS_Doctor
                     Med_Add .M_Price.ToString (),
                     Med_Add .M_Effect
                 }));
+
         }
 
         private void D_Prescribe_Load(object sender, EventArgs e)
@@ -61,12 +61,16 @@ namespace HMS_Doctor
 
         private void label3_Click(object sender, EventArgs e)
         {
-            
+
+            var Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse(listView1.SelectedItems[0].Text));
             // 对应坐诊ID的药品记录进行Update
-            D_Treatment frm  = new D_Treatment();
-            frm.Show();
-            Hide();
-            
+            if (Med_Add.SaveChanges())
+            {
+                D_Treatment frm = new D_Treatment();
+                frm.Show();
+                Hide();
+            }
+            MessageBox.Show("开药失败！");
 
         }
 

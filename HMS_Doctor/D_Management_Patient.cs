@@ -67,6 +67,10 @@ namespace HMS_Doctor
         private void label_Prescride_Click_1(object sender, EventArgs e)
         {
             P_ID = listView1.SelectedItems[0].SubItems[0].ToString();
+            if (P_ID == null)
+            {
+                MessageBox.Show("请选择病人ID");
+            }
             D_Treatment frm = new D_Treatment();
             Hide();
             frm.Show();

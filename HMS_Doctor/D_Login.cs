@@ -31,5 +31,10 @@ namespace HMS_Doctor
                 MessageBox.Show("用户名或密码错误！");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
