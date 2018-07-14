@@ -12,10 +12,13 @@ namespace HMS_Partial
 {
     public partial class Admin_Landing_Page : Form
     {
-        public Admin_Landing_Page()
+        public Form parent;
+        public Admin_Landing_Page(Form form)
         {
             InitializeComponent();
+            parent = form;
         }
+
 
         private void Exit_Click(object sender, EventArgs e)
         {
@@ -27,6 +30,13 @@ namespace HMS_Partial
         {
             Hide();
             new Med_Management.Meds_Management_Landing_Page(this).Show();
+        }
+
+        private void Doc_Management_Click(object sender, EventArgs e)
+        {
+            Admin_Doc_Management frm = new Admin_Doc_Management(this);
+            frm.Show();
+            Hide();
         }
     }
 }

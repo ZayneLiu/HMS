@@ -49,6 +49,7 @@ namespace HMS_Partial.Med_Management
                 if (Label_Title.Text == "药品添加")
                 {
                     //添加药品
+                    succeed = Server.Logics.Med_Logics.Add_Med_If_Info_Valid(Name, Catgory, Unit, Price, Stock, Effect);
                     //待添加药品信息 存入元组  可以考虑直接在此处实例化一个Med对象
                     //var Med_To_Add = Tuple.Create();
                     //将数据传入逻辑层进行处理
