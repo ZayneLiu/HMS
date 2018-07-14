@@ -36,6 +36,7 @@ namespace Server
             {
                 Close_DB_Connection();
             }
+
             return false;
         }
 
@@ -54,25 +55,21 @@ namespace Server
                 var rows = new List<Row>();
                 while (reader.Read())
                 {
-                    Row row = new Row(reader.FieldCount);
-                    for (int i = 0; i < reader.FieldCount; i++)
-                    {
+                    var row = new Row(reader.FieldCount);
+                    for (var i = 0; i < reader.FieldCount; i++)
                         row.datas[i] = new Data(reader.GetName(i))
                         {
                             Value = reader.GetValue(i),
                             ValueType = reader.GetDataTypeName(i),
                         };
-                    }
+
                     //每行的记录添加到 List<Row> 中
                     rows.Add(row);
                 }
-                if (rows.Count == 0)
-                {
-                    return null;
-                }
+
+                if (rows.Count == 0) return null;
                 connection.Close();
                 return rows;
-
             }
             catch (Exception e)
             {
@@ -82,52 +79,59 @@ namespace Server
             {
                 Close_DB_Connection();
             }
+
             return null;
         }
 
         public static void Close_DB_Connection()
         {
-            if (connection.State != System.Data.ConnectionState.Closed)
-            {
-                connection.Close();
-            }
+            if (connection.State != ConnectionState.Closed) connection.Close();
         }
 
-        public static DataSet dataSet = new DataSet();
+        public static readonly DataSet dataSet = new DataSet();
 
         public static SqlDataAdapter GetAdapter(string sql)
         {
             return new SqlDataAdapter(sql, connection);
         }
 
-
         /// <summary>
         /// 映射数据库中的数据
         /// </summary>
         public class Data
         {
-            public Data(string fieldName) => this.FieldName = fieldName;
+            public Data(string fieldName)
+            {
+                FieldName = fieldName;
+            }
+
             public string FieldName { get; }
             public object Value { get; set; }
             public string ValueType { get; set; }
         }
-
 
         /// <summary>
         /// 映射数据库中的行
         /// </summary>
         public class Row
         {
-            public Row(Data[] datas) => this.datas = datas;
-            public Row(int fieldCount) => datas = new Data[fieldCount];
+            public Row(Data[] datas)
+            {
+                this.datas = datas;
+            }
+
+            public Row(int fieldCount)
+            {
+                datas = new Data[fieldCount];
+            }
+
             public Data[] datas;
-            
+
             public Data this[string fieldName]
             {
                 get
                 {
-                    Predicate<Data> match = new Predicate<Data>(
-                        (data) => { return (data.FieldName == fieldName); });
+                    var match = new Predicate<Data>((data) => { return data.FieldName == fieldName; });
                     return Array.Find(datas, match);
                 }
             }
