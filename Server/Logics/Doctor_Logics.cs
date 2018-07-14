@@ -62,7 +62,7 @@ namespace Server.Logics
             {
                 D_ID = id,
                 //初始密码为身份证后六位
-                D_Pwd = id.Substring(id.Length - 7, 6),
+                D_Pwd = id.Substring(id.Length - 6, 6),
                 D_Name = name,
                 D_Gender = gender,
                 D_Age = age,

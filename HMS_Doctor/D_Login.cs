@@ -34,7 +34,10 @@ namespace HMS_Doctor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("是否退出", "警告", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
