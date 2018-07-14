@@ -43,7 +43,7 @@
             this.Tbx_Unit = new System.Windows.Forms.TextBox();
             this.Tbx_Price = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.ComboBox_Catgory = new System.Windows.Forms.ComboBox();
+            this.Cbx_Catgory = new System.Windows.Forms.ComboBox();
             this.Tbx_Stock = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Panel_Input_Group = new System.Windows.Forms.Panel();
@@ -228,16 +228,16 @@
             // 
             // ComboBox_Catgory
             // 
-            this.ComboBox_Catgory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBox_Catgory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBox_Catgory.FormattingEnabled = true;
-            this.ComboBox_Catgory.Items.AddRange(new object[] {
+            this.Cbx_Catgory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbx_Catgory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbx_Catgory.FormattingEnabled = true;
+            this.Cbx_Catgory.Items.AddRange(new object[] {
             "OTC",
             "Rx"});
-            this.ComboBox_Catgory.Location = new System.Drawing.Point(245, 39);
-            this.ComboBox_Catgory.Name = "ComboBox_Catgory";
-            this.ComboBox_Catgory.Size = new System.Drawing.Size(161, 28);
-            this.ComboBox_Catgory.TabIndex = 53;
+            this.Cbx_Catgory.Location = new System.Drawing.Point(245, 39);
+            this.Cbx_Catgory.Name = "ComboBox_Catgory";
+            this.Cbx_Catgory.Size = new System.Drawing.Size(161, 28);
+            this.Cbx_Catgory.TabIndex = 53;
             // 
             // Tbx_Stock
             // 
@@ -269,7 +269,7 @@
             this.Panel_Input_Group.Controls.Add(this.label3);
             this.Panel_Input_Group.Controls.Add(this.label8);
             this.Panel_Input_Group.Controls.Add(this.label4);
-            this.Panel_Input_Group.Controls.Add(this.ComboBox_Catgory);
+            this.Panel_Input_Group.Controls.Add(this.Cbx_Catgory);
             this.Panel_Input_Group.Controls.Add(this.label5);
             this.Panel_Input_Group.Controls.Add(this.Tbx_Price);
             this.Panel_Input_Group.Controls.Add(this.label7);
@@ -387,7 +387,7 @@
         private System.Windows.Forms.TextBox Tbx_Unit;
         private System.Windows.Forms.TextBox Tbx_Price;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ComboBox ComboBox_Catgory;
+        private System.Windows.Forms.ComboBox Cbx_Catgory;
         private System.Windows.Forms.TextBox Tbx_Stock;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel Panel_Input_Group;

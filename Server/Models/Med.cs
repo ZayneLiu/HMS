@@ -55,16 +55,16 @@ namespace Server.Models
         public bool SaveChanges()
         {
             //初始化SQL命令
-            var cmd = new SqlCommand(@"update Med set Med_Name=@Med_Name, Med_Catgory=@Med_Catgory, Med_Unit=@Med_Unit, Med_Price=@Med_Price, Med_Stock=@Med_Stock, Med_Effect=@Med_Effect)" 
-                                     + " where Med_Id = @Med_Id");
+            var cmd = new SqlCommand(@"update Med set M_Name=@M_Name, M_Category=@M_Category, M_Unit=@M_Unit, M_Price=@M_Price, M_Stock=@M_Stock, M_Effect=@M_Effect" 
+                                     + " where M_Id = @M_Id");
             cmd.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@Med_Id",M_ID),
-                new SqlParameter("@Med_Name",M_Name),
-                new SqlParameter("@Med_Catgory",M_Category),
-                new SqlParameter("@Med_Unit",M_Unit),
-                new SqlParameter("@Med_Price",M_Price),
-                new SqlParameter("@Med_Stock",M_Stock),
-                new SqlParameter("@Med_Effect",M_Effect),
+                new SqlParameter("@M_Id",M_ID),
+                new SqlParameter("@M_Name",M_Name),
+                new SqlParameter("@M_Category",M_Category),
+                new SqlParameter("@M_Unit",M_Unit),
+                new SqlParameter("@M_Price",M_Price),
+                new SqlParameter("@M_Stock",M_Stock),
+                new SqlParameter("@M_Effect",M_Effect),
             });
             //调用执行指令
             return DB.Execute(cmd);
@@ -103,31 +103,19 @@ namespace Server.Models
         /// <param name="med">Med 类对象</param>
         public static bool Add(Med med)
         {
-            try
-            {
-                //初始化SQL命令
-                var cmd = new SqlCommand(@"insert into Med(Med_Name, Med_Catgory, Med_Unit, Med_Price, Med_Stock, Med_Effect)"
-                    + "values(@Med_Name, @Med_Catgory, @Med_Unit, @Med_Price, @Med_Stock, @Med_Effect)");
-                cmd.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@Med_Name",med.M_Name),
-                new SqlParameter("@Med_Catgory",med.M_Category),
-                new SqlParameter("@Med_Unit",med.M_Unit),
-                new SqlParameter("@Med_Price",med.M_Price),
-                new SqlParameter("@Med_Stock",med.M_Stock),
-                new SqlParameter("@Med_Effect",med.M_Effect),
-                });
-                //调用执行指令
-                return DB.Execute(cmd);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Med.Add() <- ERR: " + e.Message);
-                return false;
-            }
-            finally
-            {
-                DB.Close_DB_Connection();
-            }
+            //初始化SQL命令
+            var cmd = new SqlCommand(@"insert into Med(M_Name, M_Category, M_Unit, M_Price, M_Stock, M_Effect)"
+                + " values(@M_Name, @M_Category, @M_Unit, @M_Price, @M_Stock, @M_Effect)");
+            cmd.Parameters.AddRange(new SqlParameter[] {
+            new SqlParameter("@M_Name",med.M_Name),
+            new SqlParameter("@M_Category",med.M_Category),
+            new SqlParameter("@M_Unit",med.M_Unit),
+            new SqlParameter("@M_Price",med.M_Price),
+            new SqlParameter("@M_Stock",med.M_Stock),
+            new SqlParameter("@M_Effect",med.M_Effect),
+            });
+            //调用执行指令
+            return DB.Execute(cmd);
         }
 
         /// <summary>
@@ -156,20 +144,20 @@ namespace Server.Models
             };
         }
 
-        //public void Delete()
-        //{
-        //    //药品若 不存在 则取消删除
-        //    if (Med_Id == 0)
-        //    {
-        //        Console.WriteLine("药品不存在，请先添加药品");
-        //        return;
-        //    }
-        //    //初始化SQL命令
-        //    var cmd = new SqlCommand("delete from Med where Med_Id = @Med_Id");
-        //    cmd.Parameters.AddWithValue("@Med_Id", Med_Id);
-        //    //调用执行指令
-        //    DB.Execute(cmd);
-        //}
+        public void Delete()
+        {
+            //药品若 不存在 则取消删除
+            if (M_ID == 0)
+            {
+                Console.WriteLine("药品不存在，请先添加药品");
+                return;
+            }
+            //初始化SQL命令
+            var cmd = new SqlCommand("delete from Med where M_ID = @M_ID");
+            cmd.Parameters.AddWithValue("@M_ID", M_ID);
+            //调用执行指令
+            DB.Execute(cmd);
+        }
 
 
         //public static List<Med> Get_Meds_By_Catgory(string Catgory) => Get_Med("M_Catgory", Catgory);

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Server.Models;
 
 namespace HMS_Partial.Med_Management
 {
     public partial class Meds_Management_Edit_Med_Page : Form
     {
+        Med med = new Med();
         Meds_Management_Landing_Page Landing_Page;
         public Meds_Management_Edit_Med_Page(Meds_Management_Landing_Page meds_Management_Landing_Page)
         {
@@ -19,16 +21,31 @@ namespace HMS_Partial.Med_Management
             Label_Title.Text = "添加药品";
             label9.Text = "添加成功";
             Label_Save.Text = "添加";
-            pictureBox1.Image = Properties.Resources.Add;
             Landing_Page = meds_Management_Landing_Page;
+            pictureBox1.Image = Properties.Resources.Add;
         }
-        public Meds_Management_Edit_Med_Page(Meds_Management_Landing_Page landing_Page, Server.Models.Med med_edit)
+        public Meds_Management_Edit_Med_Page(Meds_Management_Landing_Page landing_Page, Server.Models.Med med_to_edit)
         {
             InitializeComponent();
-            pictureBox1.Image = Properties.Resources.Edit;
+            Label_Title.Text = "修改药品";
+            label9.Text = "修改成功";
+            Label_Save.Text = "修改";
+            Landing_Page = landing_Page;
 
+            pictureBox1.Image = Properties.Resources.Edit;
+            Load_Med_Info(med_to_edit);
+            med = med_to_edit;
         }
 
+        private void Load_Med_Info(Med med_to_edit)
+        {
+            Tbx_Unit.Text = med_to_edit.M_Unit.ToString();
+            Tbx_Name.Text = med_to_edit.M_Name;
+            Tbx_Effect.Text = med_to_edit.M_Effect;
+            Tbx_Price.Text = med_to_edit.M_Price.ToString();
+            Tbx_Stock.Text = med_to_edit.M_Stock.ToString();
+            Cbx_Catgory.SelectedItem = med_to_edit.M_Category;
+        }
 
         private void Back_Click(object sender, EventArgs e)
         {
@@ -38,7 +55,7 @@ namespace HMS_Partial.Med_Management
         private void Save_Click(object sender, EventArgs e)
         {
             string Name = Tbx_Name.Text;
-            string Catgory = ComboBox_Catgory.SelectedItem.ToString();
+            string Catgory = Cbx_Catgory.SelectedItem.ToString();
             string Unit = Tbx_Unit.Text;
             double Price = double.Parse(Tbx_Price.Text);
             int Stock = int.Parse(Tbx_Stock.Text);
@@ -46,7 +63,7 @@ namespace HMS_Partial.Med_Management
             bool succeed = false;
             try
             {
-                if (Label_Title.Text == "药品添加")
+                if (Label_Title.Text == "添加药品")
                 {
                     //添加药品
                     succeed = Server.Logics.Med_Logics.Add_Med_If_Info_Valid(Name, Catgory, Unit, Price, Stock, Effect);
@@ -58,15 +75,13 @@ namespace HMS_Partial.Med_Management
                 else
                 {
                     //修改药品
-                    //succeed = Server.Logics.Med_Logics.Update_If_Med_Info_Valid(new DAL.Models.Med(Med_Id: 123)
-                    //{
-                    //    Med_Name = Name,
-                    //    Med_Catgory = Catgory,
-                    //    Med_Stock = Stock,
-                    //    Med_Price = Price,
-                    //    Med_Unit = Unit,
-                    //    Med_Effect = Effect
-                    //});
+                    med.M_Name = Name;
+                    med.M_Category = Catgory;
+                    med.M_Stock = Stock;
+                    med.M_Price = Price;
+                    med.M_Unit = Unit;
+                    med.M_Effect = Effect;
+                    succeed = med.SaveChanges();
                 }
             }
             catch (Exception exc)
@@ -94,6 +109,12 @@ namespace HMS_Partial.Med_Management
                     timer.Stop();
                     timer.Dispose();
                 };
+                return;
+            }
+            else
+            {
+
+                MessageBox.Show("失败，请重试");
             }
         }
     }
