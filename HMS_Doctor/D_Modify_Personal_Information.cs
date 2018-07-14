@@ -31,7 +31,6 @@ namespace HMS_Doctor
                 D.D_Specialty = textBox_Specialty.Text;
                 D.D_Tel = textBox_Tel.Text;
                 D.D_Title = comboBox_Title.Text;
-            
                 MessageBox.Show("修改成功！");
            // }
             //catch

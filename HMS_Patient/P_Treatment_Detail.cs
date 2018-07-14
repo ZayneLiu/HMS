@@ -71,7 +71,7 @@ namespace HMS_Patient
                 }
 
             }
-            label11.Text = total.ToString();
+            //label11.Text = total.ToString();
         }
     }
 }

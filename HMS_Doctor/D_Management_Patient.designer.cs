@@ -31,6 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Management_Patient));
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label_Name_Search = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -43,12 +49,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
@@ -82,6 +82,31 @@
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "病人ID ";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "姓名";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "性别";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "年龄";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "电话";
+            this.columnHeader5.Width = 120;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "病史";
             // 
             // label_Name_Search
             // 
@@ -154,6 +179,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(119, 48);
             this.panel1.TabIndex = 8;
+            this.panel1.Click += new System.EventHandler(this.label_Prescride_Click_1);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label_Prescride
             // 
@@ -175,6 +202,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.label_Prescride_Click_1);
             // 
             // panel2
             // 
@@ -211,30 +239,6 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "病人ID ";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "姓名";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "性别";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "年龄";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "电话";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "病史";
-            // 
             // D_Management_Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -252,6 +256,7 @@
             this.Name = "D_Management_Patient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doc_Management_Patient";
+            this.Load += new System.EventHandler(this.D_Management_Patient_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -19,7 +19,7 @@ namespace HMS_Doctor
 
         private void D_Inspect_Load(object sender, EventArgs e)
         {
-            listView1.Clear();
+            listView1.Items .Clear();
             var Inspect = Server.Models.Inspection.Get_All_Inspections ();
             foreach (var Inspeccts in Inspect)
             {
@@ -42,7 +42,7 @@ namespace HMS_Doctor
 
         private void labelD_Inspect_Click(object sender, EventArgs e)
         {
-            var Med_Add = Server.Models.Inspection .Get_Inspection_By_ID(listView1.SelectedItems[0].SubItems[0].Text);
+            var Med_Add = Server.Models.Inspection .Get_Inspection_By_ID(listView1.SelectedItems[0].Text);
             listView2.Items.Add(new ListViewItem(new string[]
                 {
                     Med_Add .I_Name ,
@@ -57,7 +57,7 @@ namespace HMS_Doctor
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            D_Personal_Center frm = new D_Personal_Center();
+            D_Treatment frm = new D_Treatment();
             Hide();
             frm.Show();
         }
