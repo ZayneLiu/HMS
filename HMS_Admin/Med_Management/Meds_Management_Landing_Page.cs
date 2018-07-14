@@ -21,13 +21,12 @@ namespace HMS_Partial.Med_Management
 
         private void Meds_Management_Page_Load(object sender, EventArgs e)
         {
-            //默认选中一个RadioBtn
-            
             RefreshData();
         }
 
         public void RefreshData()
         {
+            tbx_search.Visible = false;
             try
             {
                 Server.DB.dataSet.Clear();
@@ -54,7 +53,7 @@ namespace HMS_Partial.Med_Management
                 //删除所有选中行
                 for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    //new DAL.Models.Med((int)dataGridView1.SelectedRows[i].Cells["Med_Id"].Value).Delete();
+                    new Server.Models.Med((int)dataGridView1.SelectedRows[i].Cells["M_ID"].Value).Delete();
                 }
                 //更新
                 RefreshData();
@@ -89,11 +88,11 @@ namespace HMS_Partial.Med_Management
             Landing_Page.Show();
         }
 
-        private void RadioBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            var btn = (RadioButton)sender;
-            btn.Checked = true;
-        }
+        //private void RadioBtn_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    var btn = (RadioButton)sender;
+        //    btn.Checked = true;
+        //}
 
         private void cbx_search_mode_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -103,6 +102,7 @@ namespace HMS_Partial.Med_Management
                 dataGridView1.DataSource = Server.DB.dataSet.Tables["Med"].DefaultView;
                 return;
             }
+            tbx_search.Visible = true;
             Server.DB.dataSet.Tables["Med"].DefaultView.RowFilter = "";
             dataGridView1.DataSource = Server.DB.dataSet.Tables["Med"].DefaultView;
 

@@ -24,8 +24,12 @@ namespace Server
             {
                 command.Connection = connection;
                 connection.Open();
-                command.ExecuteNonQuery();
+                int affected = command.ExecuteNonQuery();
                 connection.Close();
+                if ( affected == 0)
+                {
+                    return false;
+                }
                 return true;
             }
             catch (Exception e)

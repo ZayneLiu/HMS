@@ -63,7 +63,7 @@ namespace HMS_Partial.Med_Management
             bool succeed = false;
             try
             {
-                if (Label_Title.Text == "药品添加")
+                if (Label_Title.Text == "添加药品")
                 {
                     //添加药品
                     succeed = Server.Logics.Med_Logics.Add_Med_If_Info_Valid(Name, Catgory, Unit, Price, Stock, Effect);
@@ -109,6 +109,12 @@ namespace HMS_Partial.Med_Management
                     timer.Stop();
                     timer.Dispose();
                 };
+                return;
+            }
+            else
+            {
+
+                MessageBox.Show("失败，请重试");
             }
         }
     }
