@@ -88,7 +88,7 @@ namespace Server.Models
         public static bool Add(Doctor doctor)
         {
             var command = new SqlCommand("insert into Doctor values " +
-                "(@D_ID, @D_Pwd, @D_Name, @D_Age, @D_Gender, @D_Tel, @D_Title, @D_Specialty, @D_Section)");
+                "(@D_ID, @D_Pwd, @D_Name, @D_Age, @D_Gender, @D_Tel, @D_Title, @D_Specialty, @D_Department)");
             command.Parameters.AddRange(new SqlParameter[] {
                 new SqlParameter("@D_ID", doctor.D_ID),
                 new SqlParameter("@D_Name", doctor.D_Name),
