@@ -115,13 +115,16 @@ namespace HMS_Partial
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            var rows = dataGridView1.SelectedRows;
-            foreach (DataGridViewRow item in rows)
+            if (MessageBox.Show("是否删除","警告", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                string id = item.Cells[0].Value.ToString();
-                Server.DB.Execute(string.Format("Delete from Doctor where D_ID='{0}'", id));
+                var rows = dataGridView1.SelectedRows;
+                foreach (DataGridViewRow item in rows)
+                {
+                    string id = item.Cells[0].Value.ToString();
+                    Server.DB.Execute(string.Format("Delete from Doctor where D_ID='{0}'", id));
+                }
+                RefreshData();
             }
-            RefreshData();
         }
 
         private void Add_Click(object sender, EventArgs e)
