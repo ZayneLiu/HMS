@@ -135,7 +135,7 @@ namespace Server.Models
         /// </summary>
         /// <returns>对应ID的坐诊记录</returns>
         /// <param name="T_ID">坐诊ID</param>
-        public static Treatment_Record Get_Treatment_Record_By_ID(string T_ID)
+        public static Treatment_Record Get_Treatment_Record_By_ID(int T_ID)
         {
             var command = new SqlCommand("select * from Treatment_Record where T_ID = @T_ID");
             command.Parameters.AddWithValue("@T_ID", T_ID);

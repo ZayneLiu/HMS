@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_Register));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbx_Department = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,21 +46,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.Detail = new System.Windows.Forms.TextBox();
+            this.cbx_Specialty = new System.Windows.Forms.ComboBox();
+            this.tbx_Detail = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbx_Department
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(171, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(280, 20);
-            this.comboBox1.TabIndex = 57;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.Depart_Change);
+            this.cbx_Department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Department.FormattingEnabled = true;
+            this.cbx_Department.Location = new System.Drawing.Point(171, 109);
+            this.cbx_Department.Name = "cbx_Department";
+            this.cbx_Department.Size = new System.Drawing.Size(280, 20);
+            this.cbx_Department.TabIndex = 57;
+            this.cbx_Department.SelectedIndexChanged += new System.EventHandler(this.Cbx_selected_item_Change);
             // 
             // label2
             // 
@@ -156,7 +158,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(224, 9);
+            this.label1.Location = new System.Drawing.Point(237, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 42);
             this.label1.TabIndex = 65;
@@ -216,41 +218,54 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.Confirm_Click);
             // 
-            // comboBox2
+            // cbx_Specialty
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(171, 144);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(280, 20);
-            this.comboBox2.TabIndex = 66;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.Specialty_Change);
+            this.cbx_Specialty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Specialty.FormattingEnabled = true;
+            this.cbx_Specialty.Location = new System.Drawing.Point(171, 144);
+            this.cbx_Specialty.Name = "cbx_Specialty";
+            this.cbx_Specialty.Size = new System.Drawing.Size(280, 20);
+            this.cbx_Specialty.TabIndex = 66;
+            this.cbx_Specialty.SelectedIndexChanged += new System.EventHandler(this.Cbx_selected_item_Change);
             // 
-            // Detail
+            // tbx_Detail
             // 
-            this.Detail.Location = new System.Drawing.Point(206, 69);
-            this.Detail.Name = "Detail";
-            this.Detail.Size = new System.Drawing.Size(245, 21);
-            this.Detail.TabIndex = 71;
+            this.tbx_Detail.Location = new System.Drawing.Point(206, 69);
+            this.tbx_Detail.Name = "tbx_Detail";
+            this.tbx_Detail.Size = new System.Drawing.Size(245, 21);
+            this.tbx_Detail.TabIndex = 71;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(493, 109);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(51, 55);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 72;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.Reset_Click);
             // 
             // P_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 556);
-            this.Controls.Add(this.Detail);
+            this.ClientSize = new System.Drawing.Size(563, 556);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.tbx_Detail);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbx_Specialty);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbx_Department);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "P_Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -258,6 +273,7 @@
             this.Load += new System.EventHandler(this.P_Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,7 +281,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_Department;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -276,13 +292,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbx_Specialty;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.TextBox Detail;
+        private System.Windows.Forms.TextBox tbx_Detail;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

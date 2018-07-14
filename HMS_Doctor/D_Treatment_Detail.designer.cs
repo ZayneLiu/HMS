@@ -125,6 +125,7 @@
             this.columnHeader3,
             this.columnHeader2,
             this.columnHeader4});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(27, 188);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(250, 193);
@@ -208,6 +209,7 @@
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6});
+            this.listView2.FullRowSelect = true;
             this.listView2.Location = new System.Drawing.Point(321, 188);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(161, 193);
@@ -215,7 +217,7 @@
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             // 
-            // D_Treatment_Deetail
+            // D_Treatment_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +236,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "D_Treatment_Deetail";
+            this.Name = "D_Treatment_Detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doc_Prescribe_Record";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

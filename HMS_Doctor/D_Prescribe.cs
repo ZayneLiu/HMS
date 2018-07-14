@@ -19,22 +19,35 @@ namespace HMS_Doctor
         }
         private void label_Add_Med_Click(object sender, EventArgs e)
         {
-            var  Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse (listView1.SelectedItems[0].Text) );
-            if (Med_Add == null)
+            if (listView1.SelectedItems.Count == 0)
             {
                 MessageBox.Show("请选中任意项");
                 return;
             }
-            listView2.Items.Add(new ListViewItem(new string[]
-                {
-                    Med_Add.M_ID .ToString (),
-                    Med_Add .M_Name ,
-                    Med_Add.M_Category ,
-                    Med_Add .M_Unit ,
-                    Med_Add .M_Price.ToString (),
-                    Med_Add .M_Effect
-                }));
 
+            int selected_id = int.Parse(listView1.SelectedItems[0].Text);
+            var right_items = listView_Prescribe_Meds.Items;
+            foreach (ListViewItem item in right_items)
+            {
+                if (item.Text == selected_id.ToString())
+                {
+                    int count = int.Parse(item.SubItems["Count"].Text);
+                    count++;
+                }
+                else
+                {
+                    var Med_Add = Server.Models.Med.Get_Med_By_Id(selected_id);
+                    listView_Prescribe_Meds.Items.Add(new ListViewItem(new string[]
+                        {
+                            Med_Add.M_ID .ToString (),
+                            Med_Add .M_Name ,
+                            Med_Add.M_Category ,
+                            Med_Add .M_Unit ,
+                            Med_Add .M_Price.ToString (),
+                            Med_Add .M_Effect
+                        }));
+                }
+            }
         }
 
         private void D_Prescribe_Load(object sender, EventArgs e)
@@ -51,17 +64,21 @@ namespace HMS_Doctor
                         Meds.M_ID .ToString (),
                         Meds.M_Name ,
                         Meds .M_Category,
-                        Meds.M_Unit,
-                        Meds.M_Price.ToString(),
-                        Meds .M_Effect,
-                        Meds.M_Stock .ToString ()
+                        Meds.M_Effect,
+                        1.ToString()
                     }));
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Confirm_Click(object sender, EventArgs e)
         {
-
+            var meds = listView_Prescribe_Meds.Items;
+            int count = int.Parse(listView_Prescribe_Meds.Items["Count"].Text);
+            foreach (ListViewItem item in meds)
+            {
+                int M_ID = int.Parse(item.Text);
+                Server.Logics.Treatment_Record_Logics.Prescribe(D_Management_Patient.T_ID, M_ID, count);
+            }
             var Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse(listView1.SelectedItems[0].Text));
             // 对应坐诊ID的药品记录进行Update
             if (Med_Add.SaveChanges())

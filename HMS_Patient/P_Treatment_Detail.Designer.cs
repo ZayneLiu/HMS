@@ -127,6 +127,7 @@
             this.columnHeader3,
             this.columnHeader2,
             this.columnHeader4});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(7, 181);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(250, 193);
@@ -157,6 +158,7 @@
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6});
+            this.listView2.FullRowSelect = true;
             this.listView2.Location = new System.Drawing.Point(263, 181);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(139, 193);

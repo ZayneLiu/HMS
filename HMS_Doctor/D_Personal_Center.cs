@@ -52,7 +52,10 @@ namespace HMS_Doctor
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("是否退出登录！", "警告", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
 

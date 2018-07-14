@@ -35,7 +35,6 @@ namespace HMS_Doctor
                 {
                     MessageBox.Show("修改成功！");
                 }
-            
                 else 
                 {
                     MessageBox.Show("修改失败！");

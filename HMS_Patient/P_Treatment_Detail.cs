@@ -13,7 +13,7 @@ namespace HMS_Patient
     public partial class P_Treatment_Detail : Form
     {
         public Form parent;
-        public string T_ID;
+        public int T_ID;
         public P_Treatment_Detail(Form form)
         {
             InitializeComponent();
