@@ -1,6 +1,6 @@
 ﻿namespace HMS_Partial
 {
-    partial class Admin_Pat_Treatment_Detail
+    partial class Admin_Patient_Treatment_Detail
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label_Detail = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.listView_Inspections = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView_Meds = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,12 +48,11 @@
             this.label_T_ID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label_D_Name = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label_D_Department = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label_Total = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -68,6 +68,20 @@
             this.panel3.Size = new System.Drawing.Size(97, 42);
             this.panel3.TabIndex = 43;
             this.panel3.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::HMS_Partial.Properties.Resources.Back;
+            this.pictureBox2.Location = new System.Drawing.Point(-3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.label8_Click);
             // 
             // label8
             // 
@@ -101,17 +115,17 @@
             this.label9.TabIndex = 94;
             this.label9.Text = "内容：";
             // 
-            // listView2
+            // listView_Inspections
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_Inspections.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6});
-            this.listView2.Location = new System.Drawing.Point(268, 177);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(162, 193);
-            this.listView2.TabIndex = 90;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView_Inspections.Location = new System.Drawing.Point(268, 177);
+            this.listView_Inspections.Name = "listView_Inspections";
+            this.listView_Inspections.Size = new System.Drawing.Size(162, 193);
+            this.listView_Inspections.TabIndex = 90;
+            this.listView_Inspections.UseCompatibleStateImageBehavior = false;
+            this.listView_Inspections.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader5
             // 
@@ -121,19 +135,19 @@
             // 
             this.columnHeader6.Text = "费用";
             // 
-            // listView1
+            // listView_Meds
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_Meds.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader3,
             this.columnHeader2,
             this.columnHeader4});
-            this.listView1.Location = new System.Drawing.Point(12, 177);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(250, 193);
-            this.listView1.TabIndex = 89;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView_Meds.Location = new System.Drawing.Point(12, 177);
+            this.listView_Meds.Name = "listView_Meds";
+            this.listView_Meds.Size = new System.Drawing.Size(250, 193);
+            this.listView_Meds.TabIndex = 89;
+            this.listView_Meds.UseCompatibleStateImageBehavior = false;
+            this.listView_Meds.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -220,20 +234,6 @@
             this.label6.TabIndex = 82;
             this.label6.Text = "记录详情";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::HMS_Partial.Properties.Resources.Back;
-            this.pictureBox2.Location = new System.Drawing.Point(-3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.label8_Click);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -272,14 +272,14 @@
             this.label_D_Department.TabIndex = 83;
             this.label_D_Department.Text = "label2";
             // 
-            // label15
+            // label_Total
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(371, 384);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(47, 12);
-            this.label15.TabIndex = 96;
-            this.label15.Text = "label15";
+            this.label_Total.AutoSize = true;
+            this.label_Total.Location = new System.Drawing.Point(371, 384);
+            this.label_Total.Name = "label_Total";
+            this.label_Total.Size = new System.Drawing.Size(47, 12);
+            this.label_Total.TabIndex = 96;
+            this.label_Total.Text = "label15";
             // 
             // label16
             // 
@@ -291,17 +291,17 @@
             this.label16.TabIndex = 95;
             this.label16.Text = "总金额：";
             // 
-            // Admin_Pat_Treatment_Detail
+            // Admin_Patient_Treatment_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 400);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label_Total);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label_Detail);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listView_Inspections);
+            this.Controls.Add(this.listView_Meds);
             this.Controls.Add(this.label_D_Department);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label_D_Name);
@@ -315,9 +315,10 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Admin_Pat_Treatment_Detail";
+            this.Name = "Admin_Patient_Treatment_Detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin_Pat_Treatment_Detail";
+            this.Load += new System.EventHandler(this.Admin_Patient_Treatment_Detail_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -333,10 +334,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label_Detail;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listView_Inspections;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView_Meds;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -352,7 +353,7 @@
         private System.Windows.Forms.Label label_D_Name;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label_D_Department;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label_Total;
         private System.Windows.Forms.Label label16;
     }
 }

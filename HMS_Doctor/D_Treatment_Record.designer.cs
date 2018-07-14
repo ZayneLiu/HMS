@@ -115,6 +115,7 @@
             this.label3.Size = new System.Drawing.Size(180, 28);
             this.label3.TabIndex = 1;
             this.label3.Text = "按患者姓名查找：";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // pictureBox2
             // 
@@ -165,10 +166,12 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "时间";
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "坐诊内容";
+            this.columnHeader5.Width = 100;
             // 
             // textBox1
             // 

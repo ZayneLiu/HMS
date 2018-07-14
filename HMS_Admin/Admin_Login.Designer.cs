@@ -118,7 +118,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(117, 99);
+            this.button1.Location = new System.Drawing.Point(121, 102);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 39);
             this.button1.TabIndex = 6;

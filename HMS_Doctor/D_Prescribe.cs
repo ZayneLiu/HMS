@@ -15,79 +15,101 @@ namespace HMS_Doctor
         public D_Prescribe()
         {
             InitializeComponent();
-
         }
         private void label_Add_Med_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 0)
+            if (listView_left.SelectedItems.Count == 0)
             {
                 MessageBox.Show("请选中任意项");
                 return;
             }
-
-            int selected_id = int.Parse(listView1.SelectedItems[0].Text);
+            int stock = int.Parse(listView_left.SelectedItems[0].SubItems[listView_left.SelectedItems[0].SubItems.Count - 1].Text);
+            int selected_id = int.Parse(listView_left.SelectedItems[0].Text);
             var right_items = listView_Prescribe_Meds.Items;
+            if (stock == 0)
+            {
+                MessageBox.Show("该药品已没有库存");
+                return;
+            }
+            if (right_items.Count == 0)
+            {
+                var med = Server.Models.Med.Get_Med_By_Id(selected_id);
+                listView_Prescribe_Meds.Items.Add(new ListViewItem(new string[]
+                    {
+                        med.M_ID .ToString (),
+                        med .M_Name ,
+                        med.M_Category ,
+                        med .M_Effect,
+                        1.ToString()
+                    }));
+                listView_left.SelectedItems[0].SubItems[listView_left.SelectedItems[0].SubItems.Count - 1].Text = (stock - 1).ToString();
+                return;
+            }
             foreach (ListViewItem item in right_items)
             {
                 if (item.Text == selected_id.ToString())
                 {
-                    int count = int.Parse(item.SubItems["Count"].Text);
+                    int count = int.Parse(item.SubItems[item.SubItems.Count - 1].Text);
                     count++;
-                }
-                else
-                {
-                    var Med_Add = Server.Models.Med.Get_Med_By_Id(selected_id);
-                    listView_Prescribe_Meds.Items.Add(new ListViewItem(new string[]
-                        {
-                            Med_Add.M_ID .ToString (),
-                            Med_Add .M_Name ,
-                            Med_Add.M_Category ,
-                            Med_Add .M_Unit ,
-                            Med_Add .M_Price.ToString (),
-                            Med_Add .M_Effect
-                        }));
+                    // 添加到右侧列表
+                    item.SubItems[item.SubItems.Count - 1].Text = count.ToString();
+                    // 左侧列表对应药品库存 -1
+                    listView_left.SelectedItems[0].SubItems[listView_left.SelectedItems[0].SubItems.Count - 1].Text = (stock - 1).ToString();
+                    return;
                 }
             }
+            var Med_Add = Server.Models.Med.Get_Med_By_Id(selected_id);
+            listView_Prescribe_Meds.Items.Add(new ListViewItem(new string[]
+                {
+                    Med_Add.M_ID.ToString(),
+                    Med_Add.M_Name,
+                    Med_Add.M_Category,
+                    Med_Add.M_Effect,
+                    1.ToString()
+                }));
         }
 
         private void D_Prescribe_Load(object sender, EventArgs e)
         {
-            var Med = Server.Models.Med.Get_All_Meds();
-            if (Med == null)
+            var meds = Server.Models.Med.Get_All_Meds();
+            if (meds == null)
             {
                 return;
             }
-            foreach (var Meds in Med)
+            foreach (var med in meds)
             {
-                listView1.Items.Add(new ListViewItem(new string[]
+                listView_left.Items.Add(new ListViewItem(new string[]
                     {
-                        Meds.M_ID .ToString (),
-                        Meds.M_Name ,
-                        Meds .M_Category,
-                        Meds.M_Effect,
-                        1.ToString()
+                        med.M_ID .ToString (),
+                        med.M_Name ,
+                        med .M_Category,
+                        med.M_Unit,
+                        med.M_Effect,
+                        med.M_Stock.ToString()
                     }));
             }
         }
 
         private void Confirm_Click(object sender, EventArgs e)
         {
+            bool failed = false;
             var meds = listView_Prescribe_Meds.Items;
-            int count = int.Parse(listView_Prescribe_Meds.Items["Count"].Text);
             foreach (ListViewItem item in meds)
             {
+                int count = int.Parse(item.SubItems[item.SubItems.Count -1].Text);
                 int M_ID = int.Parse(item.Text);
-                Server.Logics.Treatment_Record_Logics.Prescribe(D_Management_Patient.T_ID, M_ID, count);
+                if (false == Server.Logics.Treatment_Record_Logics.Prescribe(D_Management_Patient.T_ID, M_ID, count))
+                {
+                    failed = true;
+                }
             }
-            var Med_Add = Server.Models.Med.Get_Med_By_Id(int.Parse(listView1.SelectedItems[0].Text));
-            // 对应坐诊ID的药品记录进行Update
-            if (Med_Add.SaveChanges())
+            if (failed)
             {
-                D_Treatment frm = new D_Treatment();
-                frm.Show();
-                Hide();
+                MessageBox.Show("开药失败！");
+                return;
             }
-            MessageBox.Show("开药失败！");
+            MessageBox.Show("开药成功");
+            Close();
 
         }
 

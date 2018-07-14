@@ -31,26 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(D_Management_Patient));
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label_Name_Search = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label_All_Search = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_Prescride = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,9 +82,13 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "就诊ID";
+            // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "病人ID ";
+            this.columnHeader1.Text = "就诊时间";
             // 
             // columnHeader2
             // 
@@ -111,43 +111,18 @@
             // 
             this.columnHeader6.Text = "病史";
             // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "就诊ID";
-            // 
-            // label_Name_Search
-            // 
-            this.label_Name_Search.AutoSize = true;
-            this.label_Name_Search.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Name_Search.Location = new System.Drawing.Point(51, 12);
-            this.label_Name_Search.Name = "label_Name_Search";
-            this.label_Name_Search.Size = new System.Drawing.Size(201, 28);
-            this.label_Name_Search.TabIndex = 2;
-            this.label_Name_Search.Text = "按姓名和性别查找：";
-            this.label_Name_Search.Click += new System.EventHandler(this.label_Name_Search_Click);
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(478, 78);
-            this.textBox1.Multiline = true;
+            this.textBox1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(83, 84);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 19);
+            this.textBox1.Size = new System.Drawing.Size(153, 31);
             this.textBox1.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.label_Name_Search);
-            this.panel3.Location = new System.Drawing.Point(234, 74);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(238, 48);
-            this.panel3.TabIndex = 5;
-            this.panel3.Click += new System.EventHandler(this.label_Name_Search_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(22, 79);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(55, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,30 +134,18 @@
             // 
             this.label_All_Search.AutoSize = true;
             this.label_All_Search.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_All_Search.Location = new System.Drawing.Point(641, 86);
+            this.label_All_Search.Location = new System.Drawing.Point(242, 86);
             this.label_All_Search.Name = "label_All_Search";
             this.label_All_Search.Size = new System.Drawing.Size(96, 28);
             this.label_All_Search.TabIndex = 6;
             this.label_All_Search.Text = "搜索全部";
             this.label_All_Search.Click += new System.EventHandler(this.label_All_Search_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "男",
-            "女"});
-            this.comboBox1.Location = new System.Drawing.Point(478, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 20);
-            this.comboBox1.TabIndex = 7;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label_Prescride);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(22, 72);
+            this.panel1.Location = new System.Drawing.Point(618, 72);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(119, 48);
             this.panel1.TabIndex = 8;
@@ -251,11 +214,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 487);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label_All_Search);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);
@@ -264,8 +226,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doc_Management_Patient";
             this.Load += new System.EventHandler(this.D_Management_Patient_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -281,12 +241,9 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label label_Name_Search;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label_All_Search;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_Prescride;
         private System.Windows.Forms.PictureBox pictureBox1;

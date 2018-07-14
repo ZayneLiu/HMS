@@ -81,7 +81,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 1;
-            this.label3.Text = "被诊病人：";
+            this.label3.Text = "坐诊医生：";
             // 
             // label5
             // 
@@ -124,8 +124,8 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader3,
             this.columnHeader2,
+            this.columnHeader3,
             this.columnHeader4});
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(7, 181);
@@ -138,20 +138,24 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "药品名称";
+            this.columnHeader1.Width = 70;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.DisplayIndex = 2;
+            this.columnHeader3.DisplayIndex = 1;
             this.columnHeader3.Text = "单价";
+            this.columnHeader3.Width = 40;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.DisplayIndex = 1;
+            this.columnHeader2.DisplayIndex = 2;
             this.columnHeader2.Text = "数量";
+            this.columnHeader2.Width = 40;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "药品功效";
+            this.columnHeader4.Width = 80;
             // 
             // listView2
             // 

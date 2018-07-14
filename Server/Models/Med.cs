@@ -87,7 +87,7 @@ namespace Server.Models
                 meds.Add(new Med((int)row["M_Id"].Value)
                 {
                     M_Name = row["M_Name"].Value.ToString(),
-                    M_Category = row["M_Catgory"].Value.ToString(),
+                    M_Category = row["M_Category"].Value.ToString(),
                     M_Unit = row["M_Unit"].Value.ToString(),
                     M_Price = (double)row["M_Price"].Value,
                     M_Stock = (int)row["M_Stock"].Value,
@@ -136,7 +136,7 @@ namespace Server.Models
             return new Med((int)row["M_Id"].Value)
             {
                 M_Name = row["M_Name"].Value.ToString(),
-                M_Category = row["M_Catgory"].Value.ToString(),
+                M_Category = row["M_Category"].Value.ToString(),
                 M_Unit = row["M_Unit"].Value.ToString(),
                 M_Price = (double)row["M_Price"].Value,
                 M_Stock = (int)row["M_Stock"].Value,

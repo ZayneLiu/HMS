@@ -14,7 +14,7 @@ namespace HMS_Partial
     {
         public static string ID;
         public Admin_Login()
-        {
+        {              
             InitializeComponent();
         }
 
@@ -23,7 +23,7 @@ namespace HMS_Partial
             //if (Server.Logics.Admin.Is_Login_Info_Valid(Tbx_Username.Text, Tbx_Password.Text))
             //{
             //    ID = Tbx_Username.Text;
-                //Server.Logics.();
+                //Server.Logics();
                 Admin_Landing_Page frm = new Admin_Landing_Page(this);
                 frm.Show();
                 Hide();
@@ -33,7 +33,7 @@ namespace HMS_Partial
             //    MessageBox.Show("用户名或密码错误");
 
             //}
-            
+
         }
     }
 }

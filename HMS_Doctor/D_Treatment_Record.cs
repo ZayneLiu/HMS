@@ -78,9 +78,14 @@ namespace HMS_Doctor
 
         private void label5_Click(object sender, EventArgs e)
         {
-            D_Treatment_Record frm = new D_Treatment_Record();
+            D_Treatment_Detail frm = new D_Treatment_Detail();
             Hide();
             frm.Show();
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+            
         }
 
 

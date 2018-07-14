@@ -87,11 +87,11 @@
     <Compile Include="Admin_Patient_Management.Designer.cs">
       <DependentUpon>Admin_Patient_Management.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Pat_Treatment_Detail.cs">
+    <Compile Include="Admin_Patient_Treatment_Detail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Pat_Treatment_Detail.Designer.cs">
-      <DependentUpon>Admin_Pat_Treatment_Detail.cs</DependentUpon>
+    <Compile Include="Admin_Patient_Treatment_Detail.Designer.cs">
+      <DependentUpon>Admin_Patient_Treatment_Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin_Ptient_Record.cs">
       <SubType>Form</SubType>
@@ -146,8 +146,8 @@
     <EmbeddedResource Include="Admin_Patient_Management.resx">
       <DependentUpon>Admin_Patient_Management.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Pat_Treatment_Detail.resx">
-      <DependentUpon>Admin_Pat_Treatment_Detail.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_Patient_Treatment_Detail.resx">
+      <DependentUpon>Admin_Patient_Treatment_Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_Ptient_Record.resx">
       <DependentUpon>Admin_Ptient_Record.cs</DependentUpon>

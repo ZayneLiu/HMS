@@ -27,7 +27,7 @@ namespace HMS_Partial
 
         private void label4_Click(object sender, EventArgs e)
         {
-            Admin_Pat_Treatment_Detail frm = new Admin_Pat_Treatment_Detail(this);
+            Admin_Patient_Treatment_Detail frm = new Admin_Patient_Treatment_Detail(this);
             frm.Show();
             Hide();
         }

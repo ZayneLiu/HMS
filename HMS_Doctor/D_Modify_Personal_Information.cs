@@ -44,14 +44,14 @@ namespace HMS_Doctor
         private void D_Modify_Personal_Information_Load(object sender, EventArgs e)
         {
 
-            var D = Server.Models.Doctor.Get_Doctor_By_ID(D_Login.D_ID);
-            comboBox_Department.Text = D.D_Department;
-            textBox_Age.Text = D.D_Age.ToString();
-            textBox_Name .Text = D.D_Name;
-            textBox_Pwd .Text = D.D_Pwd;
-            textBox_Specialty .Text = D.D_Specialty;
-            textBox_Tel .Text = D.D_Tel.ToString();
-            comboBox_Title.Text = D.D_Title;
+            var Doc = Server.Models.Doctor.Get_Doctor_By_ID(D_Login.D_ID);
+            comboBox_Department.Text = Doc.D_Department;
+            textBox_Age.Text = Doc.D_Age.ToString();
+            textBox_Name .Text = Doc.D_Name;
+            textBox_Pwd .Text = Doc.D_Pwd;
+            textBox_Specialty.Text = Doc.D_Specialty;
+            textBox_Tel .Text = Doc.D_Tel.ToString();
+            comboBox_Title.Text = Doc.D_Title;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

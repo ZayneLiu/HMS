@@ -350,6 +350,31 @@ namespace Server.Models
             return records;
         }
 
+        public static List<Treatment_Record> GeMyTreatmentRecords(string D_ID, string P_Name)
+        {
+            // 初始化返回参数
+            var records = new List<Treatment_Record>();
+            var command = new SqlCommand(string.Format("select * from Treatment_Record join Patient on Treatment_Record.P_ID=Patient.P_ID  where D_ID=@D_ID and P_Name like '%{0}%'", P_Name));
+            command.Parameters.AddWithValue("@D_ID", D_ID);
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            foreach (var row in rows)
+            {
+                records.Add(new Treatment_Record()
+                {
+                    T_ID = (int)row["T_ID"].Value,
+                    T_Time = (DateTime)row["T_Time"].Value,
+                    D_ID = row["D_ID"].Value.ToString(),
+                    P_ID = row["P_ID"].Value.ToString(),
+                    Detail = row["Detail"].Value.ToString()
+                });
+            }
+            return records;
+        }
+
         public List<Treatment_Record> GeMyTreatmentRecords()
         {
             return GeMyTreatmentRecords(D_ID);

@@ -27,8 +27,7 @@ namespace HMS_Doctor
         private void label7_Click(object sender, EventArgs e)
         {
             D_Prescribe frm = new D_Prescribe();
-            Hide();
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void label3_Click(object sender, EventArgs e)

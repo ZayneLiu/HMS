@@ -23,20 +23,22 @@ namespace HMS_Doctor
         private void label_Name_Search_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            var _Name_And_Gender_Search = Server.Models.Patient.Get_Patients_By_Gender_And_Name(comboBox1.Text ,textBox1 .Text );
-            if (_Name_And_Gender_Search == null)
+            var name_search = Server.Models.Doctor.GeMyTreatmentRecords(D_Login.D_ID, textBox1.Text);
+            if (name_search == null)
             {
                 return;
             }
-            foreach (var Patient in _Name_And_Gender_Search )
+            foreach (var record in name_search )
             {
+                var patient = Server.Models.Patient.Get_Patient_By_ID(record.P_ID);
                 listView1.Items.Add(new ListViewItem(new string[] {
-                Patient .P_ID,
-                Patient.P_Name ,
-                Patient.P_Gender,
-                Patient.P_Age.ToString (),
-                Patient.P_Tel ,
-                Patient.P_Med_History
+                    record.T_ID.ToString(),
+                    record.T_Time.ToString(),
+                    patient.P_Name ,
+                    patient.P_Gender,
+                    patient.P_Age.ToString (),
+                    patient.P_Tel ,
+                    patient.P_Med_History
                 }));
             }
         }
@@ -44,17 +46,26 @@ namespace HMS_Doctor
         private void label_All_Search_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            var Patients  = Server.Models.Patient .Get_All_Patient ();
-            foreach (var  Patient in Patients )
+            var records  = Server.Models.Doctor.GeMyTreatmentRecords(D_Login.D_ID);
+            if (records == null)
             {
-                listView1.Items.Add(new ListViewItem(new string[] {
-                Patient.P_ID,
-                Patient.P_Name ,
-                Patient.P_Gender ,
-                Patient.P_Age.ToString (),
-                Patient.P_Tel ,
-                Patient.P_Med_History 
+                MessageBox.Show("没有挂号的病人。");
+            }
+            else
+            {
+                foreach (var record in records)
+                {
+                    var patient = Server.Models.Patient.Get_Patient_By_ID(record.P_ID);
+                    listView1.Items.Add(new ListViewItem(new string[] {
+                    record.T_ID.ToString(),
+                    record.T_Time.ToString(),
+                    patient.P_Name ,
+                    patient.P_Gender ,
+                    patient.P_Age.ToString (),
+                    patient.P_Tel ,
+                    patient.P_Med_History
                 }));
+                }
             }
         }
 
@@ -96,7 +107,7 @@ namespace HMS_Doctor
                 listView1.Items.Add(new ListViewItem(new string[]
                     {
                         record.T_ID.ToString(),
-                        patient.P_ID,
+                        record.T_Time.ToString(),
                         patient.P_Name,
                         patient.P_Gender,
                         patient.P_Age.ToString(),

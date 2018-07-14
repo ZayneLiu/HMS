@@ -33,6 +33,7 @@ namespace Server.Models
         /// </summary>
         public string Detail { get; set; }
 
+
         /// <summary>
         /// 坐诊记录药品列表 属性-只读
         /// </summary>
@@ -129,6 +130,31 @@ namespace Server.Models
             });
             return DB.Execute(command);
         }
+
+        public static List<Treatment_Record> Get_All_Treatment_Records()
+        {
+            var records = new List<Treatment_Record>();
+
+            var command = new SqlCommand("select * from Treatment_Record");
+            var rows = DB.Read(command);
+            if (rows == null)
+            {
+                return null;
+            }
+            foreach (var row in rows)
+            {
+                records.Add(new Treatment_Record()
+                {
+                    T_ID = (int)row["T_ID"].Value,
+                    T_Time = (DateTime)row["T_Time"].Value,
+                    D_ID = row["D_ID"].Value.ToString(),
+                    P_ID = row["P_ID"].Value.ToString(),
+                    Detail = row["Detail"].Value.ToString()
+                });
+            }
+            return records;
+        }
+
 
         /// <summary>
         /// 获取对应ID的坐诊记录
