@@ -55,16 +55,16 @@ namespace Server.Models
         public bool SaveChanges()
         {
             //初始化SQL命令
-            var cmd = new SqlCommand(@"update Med set Med_Name=@Med_Name, Med_Catgory=@Med_Catgory, Med_Unit=@Med_Unit, Med_Price=@Med_Price, Med_Stock=@Med_Stock, Med_Effect=@Med_Effect)" 
-                                     + " where Med_Id = @Med_Id");
+            var cmd = new SqlCommand(@"update Med set M_Name=@M_Name, M_Category=@M_Category, M_Unit=@M_Unit, M_Price=@M_Price, M_Stock=@M_Stock, M_Effect=@M_Effect" 
+                                     + " where M_Id = @M_Id");
             cmd.Parameters.AddRange(new SqlParameter[] {
-                new SqlParameter("@Med_Id",M_ID),
-                new SqlParameter("@Med_Name",M_Name),
-                new SqlParameter("@Med_Catgory",M_Category),
-                new SqlParameter("@Med_Unit",M_Unit),
-                new SqlParameter("@Med_Price",M_Price),
-                new SqlParameter("@Med_Stock",M_Stock),
-                new SqlParameter("@Med_Effect",M_Effect),
+                new SqlParameter("@M_Id",M_ID),
+                new SqlParameter("@M_Name",M_Name),
+                new SqlParameter("@M_Category",M_Category),
+                new SqlParameter("@M_Unit",M_Unit),
+                new SqlParameter("@M_Price",M_Price),
+                new SqlParameter("@M_Stock",M_Stock),
+                new SqlParameter("@M_Effect",M_Effect),
             });
             //调用执行指令
             return DB.Execute(cmd);

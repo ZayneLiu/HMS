@@ -17,7 +17,7 @@ namespace HMS_Partial
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Admin_Login());
-            Application.Run(new Admin_Doc_Management(new Form()));
+            Application.Run(new Med_Management.Meds_Management_Landing_Page(new Admin_Landing_Page(new Form())));
         }
     }
 }
