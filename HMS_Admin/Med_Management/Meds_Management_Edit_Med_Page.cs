@@ -88,7 +88,7 @@ namespace HMS_Partial.Med_Management
                 timer.Tick += (object timer_sender, EventArgs timer_e) =>
                 {
                     Close();
-                    Landing_Page.DGV_Refresh();
+                    Landing_Page.RefreshData();
                     //确保 Timer 只 Tick 一次
                     timer.Stop();
                     timer.Dispose();
