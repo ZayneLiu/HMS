@@ -34,7 +34,6 @@ namespace HMS_Patient
             a.P_Age =int.Parse( textBox3.Text);
             a.P_Med_History = textBox4.Text;
             a.P_Tel = textBox5.Text;
-            a.SaveChanges();
             if(a.SaveChanges())
             {
                 MessageBox.Show("修改成功");

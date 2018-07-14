@@ -80,19 +80,26 @@ namespace HMS_Doctor
             // 返回我的所有记录 集合
             
             listView1.Items.Clear();
-            var Patients = Server.Models.Patient.Get_All_Patient();
-            foreach (var Patient in Patients)
+            var records = Server.Models.Doctor.GeMyTreatmentRecords(D_Login.D_ID);
+
+            if (records == null)
             {
-                listView1.Items.Add(new ListViewItem(new string[] {
-                Patient .P_ID ,
-                Patient.P_Name ,
-                Patient.P_Gender ,
-                Patient.P_Age.ToString (),
-                Patient.P_Tel ,
-                Patient.P_Med_History
-                }));
+                return;
             }
-            
+            foreach (var record in records)
+            {
+                var patient = Server.Models.Patient.Get_Patient_By_ID(record.P_ID);
+                listView1.Items.Add(new ListViewItem(new string[]
+                    {
+                        patient.P_ID,
+                        patient.P_Name,
+                        patient.P_Gender,
+                        patient.P_Gender,
+                        patient.P_Tel,
+                        patient.P_Med_History 
+                    }));
+            }
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
