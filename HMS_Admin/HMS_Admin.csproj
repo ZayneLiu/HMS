@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Doc_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Doc_Management.Designer.cs">
+      <DependentUpon>Admin_Doc_Management.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Landing_Page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Med_Management\Meds_Management_Landing_Page.Designer.cs">
       <DependentUpon>Meds_Management_Landing_Page.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin_Doc_Management.resx">
+      <DependentUpon>Admin_Doc_Management.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Landing_Page.resx">
       <DependentUpon>Admin_Landing_Page.cs</DependentUpon>
     </EmbeddedResource>

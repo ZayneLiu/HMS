@@ -17,8 +17,8 @@ namespace HMS_Patient
         public P_Center(Form form)
         {
             InitializeComponent();
-            parent = form;
-        }
+           
+    }
 
         private void GH_Click(object sender, EventArgs e)
         {
