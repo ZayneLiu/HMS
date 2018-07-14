@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Doc_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Doc_Add.Designer.cs">
+      <DependentUpon>Admin_Doc_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Doc_Management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Med_Management\Meds_Management_Landing_Page.Designer.cs">
       <DependentUpon>Meds_Management_Landing_Page.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin_Doc_Add.resx">
+      <DependentUpon>Admin_Doc_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Doc_Management.resx">
       <DependentUpon>Admin_Doc_Management.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +189,9 @@
       <Project>{7685effd-4101-42a8-a396-e201125a379d}</Project>
       <Name>Server</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

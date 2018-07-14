@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Doc_Management));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Combobox_Search_By_Kind = new System.Windows.Forms.ComboBox();
+            this.cbx_Department = new System.Windows.Forms.ComboBox();
+            this.cbx_gender = new System.Windows.Forms.ComboBox();
             this.Tbx_Seach_By_Name = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,10 +52,9 @@
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,10 +65,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 126);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(854, 414);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -86,22 +89,36 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.Combobox_Search_By_Kind);
+            this.panel1.Controls.Add(this.cbx_Department);
+            this.panel1.Controls.Add(this.cbx_gender);
             this.panel1.Controls.Add(this.Tbx_Seach_By_Name);
             this.panel1.Location = new System.Drawing.Point(9, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(850, 66);
             this.panel1.TabIndex = 38;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(798, 10);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(43, 42);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 44;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(224, 20);
+            this.label6.Location = new System.Drawing.Point(314, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 22);
             this.label6.TabIndex = 42;
@@ -117,6 +134,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(97, 42);
             this.panel5.TabIndex = 41;
+            this.panel5.Click += new System.EventHandler(this.Delete_Click);
             // 
             // pictureBox4
             // 
@@ -130,6 +148,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 38;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.Delete_Click);
             // 
             // label4
             // 
@@ -142,41 +161,7 @@
             this.label4.Size = new System.Drawing.Size(54, 28);
             this.label4.TabIndex = 39;
             this.label4.Text = "删除";
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(731, 11);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(90, 39);
-            this.panel4.TabIndex = 41;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::HMS_Partial.Properties.Resources.Search;
-            this.pictureBox3.Location = new System.Drawing.Point(-4, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 35);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 38;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 28);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "检索";
+            this.label4.Click += new System.EventHandler(this.Delete_Click);
             // 
             // panel6
             // 
@@ -188,6 +173,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(97, 42);
             this.panel6.TabIndex = 41;
+            this.panel6.Click += new System.EventHandler(this.Edit_Click);
             // 
             // pictureBox5
             // 
@@ -201,6 +187,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 38;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.Edit_Click);
             // 
             // label5
             // 
@@ -213,6 +200,7 @@
             this.label5.Size = new System.Drawing.Size(54, 28);
             this.label5.TabIndex = 39;
             this.label5.Text = "修改";
+            this.label5.Click += new System.EventHandler(this.Edit_Click);
             // 
             // Combobox_Search_By_Kind
             // 
@@ -224,19 +212,46 @@
             "按姓名查询",
             "按性别查询",
             "按科室查询"});
-            this.Combobox_Search_By_Kind.Location = new System.Drawing.Point(349, 18);
+            this.Combobox_Search_By_Kind.Location = new System.Drawing.Point(442, 19);
             this.Combobox_Search_By_Kind.Name = "Combobox_Search_By_Kind";
-            this.Combobox_Search_By_Kind.Size = new System.Drawing.Size(187, 28);
+            this.Combobox_Search_By_Kind.Size = new System.Drawing.Size(151, 28);
             this.Combobox_Search_By_Kind.TabIndex = 32;
+            this.Combobox_Search_By_Kind.SelectedIndexChanged += new System.EventHandler(this.cbx_searchMode_Selected_Index_Changed);
+            // 
+            // cbx_Department
+            // 
+            this.cbx_Department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_Department.FormattingEnabled = true;
+            this.cbx_Department.Location = new System.Drawing.Point(599, 19);
+            this.cbx_Department.Name = "cbx_Department";
+            this.cbx_Department.Size = new System.Drawing.Size(150, 28);
+            this.cbx_Department.TabIndex = 43;
+            this.cbx_Department.SelectedIndexChanged += new System.EventHandler(this.cbx_Department_SelectedIndexChanged);
+            // 
+            // cbx_gender
+            // 
+            this.cbx_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_gender.FormattingEnabled = true;
+            this.cbx_gender.Items.AddRange(new object[] {
+            "男",
+            "女"});
+            this.cbx_gender.Location = new System.Drawing.Point(599, 18);
+            this.cbx_gender.Name = "cbx_gender";
+            this.cbx_gender.Size = new System.Drawing.Size(150, 28);
+            this.cbx_gender.TabIndex = 42;
+            this.cbx_gender.SelectedIndexChanged += new System.EventHandler(this.cbx_gender_SelectedIndexChanged);
             // 
             // Tbx_Seach_By_Name
             // 
             this.Tbx_Seach_By_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Tbx_Seach_By_Name.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tbx_Seach_By_Name.Location = new System.Drawing.Point(540, 18);
+            this.Tbx_Seach_By_Name.Location = new System.Drawing.Point(599, 19);
             this.Tbx_Seach_By_Name.Name = "Tbx_Seach_By_Name";
-            this.Tbx_Seach_By_Name.Size = new System.Drawing.Size(187, 28);
+            this.Tbx_Seach_By_Name.Size = new System.Drawing.Size(150, 28);
             this.Tbx_Seach_By_Name.TabIndex = 34;
+            this.Tbx_Seach_By_Name.TextChanged += new System.EventHandler(this.Tbx_Seach_By_Name_TextChanged);
             // 
             // panel2
             // 
@@ -248,6 +263,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(139, 42);
             this.panel2.TabIndex = 40;
+            this.panel2.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox1
             // 
@@ -260,6 +276,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.label7_Click);
             // 
             // label7
             // 
@@ -273,6 +290,7 @@
             this.label7.Size = new System.Drawing.Size(96, 28);
             this.label7.TabIndex = 39;
             this.label7.Text = "添加医生";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel3
             // 
@@ -324,16 +342,16 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin_Doc_Management";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin_Doc_Management";
+            this.Load += new System.EventHandler(this.Admin_Doc_Management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -356,9 +374,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label5;
@@ -370,5 +385,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbx_gender;
+        private System.Windows.Forms.ComboBox cbx_Department;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

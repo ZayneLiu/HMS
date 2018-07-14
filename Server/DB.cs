@@ -40,6 +40,28 @@ namespace Server
             return false;
         }
 
+        public static bool Execute(string sql)
+        {
+            try
+            {
+                var command = new SqlCommand(sql, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("DB.Execute() <- ERR: {0}", e.Message);
+            }
+            finally
+            {
+                Close_DB_Connection();
+            }
+
+            return false;
+        }
+
         /// <summary>
         /// 执行对应 sql命令
         /// </summary>

@@ -24,5 +24,18 @@ namespace HMS_Partial
             this.Close();
             parent.Show();
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            string id = textBox1.Text;
+            string name = textBox3.Text;
+            int age = int.Parse(textBox4.Text);
+            string gender = comboBox1.Text;
+            string title = textBox5.Text;
+            string specialty = textBox6.Text;
+            string department = textBox7.Text;
+            string tel = textBox8.Text;
+            var p = Server.Logics.Doctor_Logics.Add_If_Info_Valid(id,name,gender,age,tel,title,specialty,department);
+        }
     }
 }
