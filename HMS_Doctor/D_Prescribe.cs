@@ -39,8 +39,6 @@ namespace HMS_Doctor
 
         private void D_Prescribe_Load(object sender, EventArgs e)
         {
-            listView1.Clear();
-            listView2.Clear();
             var Med = Server.Models.Med.Get_All_Meds();
             if (Med == null)
             {
@@ -63,7 +61,8 @@ namespace HMS_Doctor
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            
+            // 对应坐诊ID的药品记录进行Update
             D_Treatment frm  = new D_Treatment();
             frm.Show();
             Hide();
@@ -78,9 +77,6 @@ namespace HMS_Doctor
             frm.Show();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

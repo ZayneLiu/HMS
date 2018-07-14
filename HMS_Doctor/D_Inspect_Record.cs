@@ -32,7 +32,22 @@ namespace HMS_Doctor
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            D_Personal_Center frm = new D_Personal_Center();
+            Hide();
+            frm.Show();
+        }
 
+        private void D_Inspect_Record_Load(object sender, EventArgs e)
+        {
+            var patient = Server.Models.Patient.Get_Patient_By_ID(D_Management_Patient.P_ID);
+            var records = patient.Get_My_Treatment_Records();
+            foreach (var record in records )
+            {
+                listView1.Items.Add(new ListViewItem(new string[]
+                    {
+                        
+                    }));
+            }
         }
     }
 }

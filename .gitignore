@@ -13,3 +13,12 @@
 Server/bin/Debug/Server.exe
 Server/bin/Debug/Server.exe.config
 Server/bin/Debug/Server.pdb
+/HMS_Patient/bin/Debug/HMS_Patient.exe
+/HMS_Patient/bin/Debug/HMS_Patient.exe.config
+/HMS_Patient/bin/Debug/HMS_Patient.pdb
+/HMS_Admin/bin/Debug/HMS_Admin.exe
+/HMS_Admin/bin/Debug/HMS_Admin.exe.config
+/HMS_Admin/bin/Debug/HMS_Admin.pdb
+/HMS_Doctor/bin/Debug/HMS_Doctor.exe
+/HMS_Doctor/bin/Debug/HMS_Doctor.exe.config
+/HMS_Doctor/bin/Debug/HMS_Doctor.pdb

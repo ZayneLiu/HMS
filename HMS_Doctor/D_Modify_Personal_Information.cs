@@ -21,9 +21,9 @@ namespace HMS_Doctor
 
         private void D_Modify_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var D = Server.Models.Doctor.Get_Doctor_By_ID(D_Login.D_ID);
+            //try
+            //{
+                var D = Server.Models .Doctor.Get_Doctor_By_ID (D_Login.D_ID);
                 D.D_Department = comboBox_Department.Text;
                 D.D_Age = int.Parse(textBox_Age.Text);
                 D.D_Name = textBox_Name.Text;
@@ -31,12 +31,13 @@ namespace HMS_Doctor
                 D.D_Specialty = textBox_Specialty.Text;
                 D.D_Tel = textBox_Tel.Text;
                 D.D_Title = comboBox_Title.Text;
+            
                 MessageBox.Show("修改成功！");
-            }
-            catch
-            {
-                MessageBox.Show("修改失败！");
-            }
+           // }
+            //catch
+            //{
+            //    MessageBox.Show("修改失败！");
+            //}
         }
 
         private void D_Modify_Personal_Information_Load(object sender, EventArgs e)

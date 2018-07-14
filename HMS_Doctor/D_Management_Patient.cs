@@ -65,10 +65,12 @@ namespace HMS_Doctor
             frm.Show();
         }
 
-        public static int P_ID;
+        public static string P_ID;
         private void D_Management_Patient_Load(object sender, EventArgs e)
         {
-            P_ID = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            P_ID = listView1.SelectedItems[0].SubItems[0].Text;
+            // 返回我的所有记录 集合
+
             listView1.Clear();
             var Patients = Server.Models.Patient.Get_All_Patient();
             foreach (var Patient in Patients)

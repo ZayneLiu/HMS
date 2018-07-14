@@ -54,5 +54,7 @@ namespace HMS_Doctor
         {
             Application.Exit();
         }
+
+
     }
 }

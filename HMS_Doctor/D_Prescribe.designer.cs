@@ -160,7 +160,6 @@
             this.panel2.Size = new System.Drawing.Size(119, 48);
             this.panel2.TabIndex = 2;
             this.panel2.Click += new System.EventHandler(this.label3_Click);
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label3
             // 
