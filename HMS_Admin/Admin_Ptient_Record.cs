@@ -28,6 +28,7 @@ namespace HMS_Partial
         private void label4_Click(object sender, EventArgs e)
         {
             Admin_Patient_Treatment_Detail frm = new Admin_Patient_Treatment_Detail(this);
+            frm.row = dataGridView1.SelectedRows[0];
             frm.Show();
             Hide();
         }

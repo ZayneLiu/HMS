@@ -38,16 +38,18 @@ namespace HMS_Partial
         {
             if (Combobox_Search_By_Kind.SelectedItem.ToString() == "按姓名查询")
             {
+                cbx_Gender.Visible = false;
                 Tbx_Seach_By_Name.Visible = true;
                 return;
             }
-            
-            Server.DB.dataSet.Tables["Patient"].DefaultView.RowFilter = string.Format("P_Gender = '{0}'", )
+            Tbx_Seach_By_Name.Visible = false;
+            cbx_Gender.Visible = true;
         }
 
         private void cbx_Gender_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Server.DB.dataSet.Tables["Patient"].DefaultView.RowFilter = string.Format("P_Gender = '{0}'", cbx_Gender.SelectedItem.ToString());
+            dataGridView1.DataSource = Server.DB.dataSet.Tables["Patient"].DefaultView;
         }
     }
 }
