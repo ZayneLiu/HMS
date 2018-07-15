@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbx_dep = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -53,6 +54,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.cbx_dep);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.tbx_search);
@@ -82,6 +84,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 45;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // tbx_search
             // 
@@ -90,6 +93,7 @@
             this.tbx_search.Name = "tbx_search";
             this.tbx_search.Size = new System.Drawing.Size(179, 29);
             this.tbx_search.TabIndex = 43;
+            this.tbx_search.TextChanged += new System.EventHandler(this.tbx_search_TextChanged);
             // 
             // cbx_search_mode
             // 
@@ -97,13 +101,14 @@
             this.cbx_search_mode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_search_mode.FormattingEnabled = true;
             this.cbx_search_mode.Items.AddRange(new object[] {
-            "按病人姓名查找",
-            "按医生姓名查找",
-            "按科室查找"});
+            "按医生姓名查询",
+            "按病人姓名查询",
+            "按科室查询"});
             this.cbx_search_mode.Location = new System.Drawing.Point(134, 11);
             this.cbx_search_mode.Name = "cbx_search_mode";
             this.cbx_search_mode.Size = new System.Drawing.Size(134, 32);
             this.cbx_search_mode.TabIndex = 42;
+            this.cbx_search_mode.SelectedIndexChanged += new System.EventHandler(this.cbx_search_mode_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -186,6 +191,17 @@
             this.label4.Text = "详情";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // cbx_dep
+            // 
+            this.cbx_dep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_dep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_dep.FormattingEnabled = true;
+            this.cbx_dep.Location = new System.Drawing.Point(274, 11);
+            this.cbx_dep.Name = "cbx_dep";
+            this.cbx_dep.Size = new System.Drawing.Size(179, 32);
+            this.cbx_dep.TabIndex = 47;
+            this.cbx_dep.SelectedIndexChanged += new System.EventHandler(this.cbx_dep_SelectedIndexChanged);
+            // 
             // Admin_Ptient_Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -200,6 +216,7 @@
             this.Name = "Admin_Ptient_Record";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin_Ptient_Record";
+            this.Load += new System.EventHandler(this.Admin_Ptient_Record_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -228,5 +245,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbx_dep;
     }
 }

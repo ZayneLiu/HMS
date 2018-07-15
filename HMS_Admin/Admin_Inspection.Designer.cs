@@ -150,10 +150,10 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.tbx_search);
             this.panel1.Controls.Add(this.cbx_search_mode);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.tbx_search);
             this.panel1.Location = new System.Drawing.Point(12, 55);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(809, 66);

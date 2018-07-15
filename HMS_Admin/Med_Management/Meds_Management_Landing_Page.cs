@@ -29,7 +29,7 @@ namespace HMS_Partial.Med_Management
             tbx_search.Visible = false;
             try
             {
-                Server.DB.dataSet.Clear();
+                Server.DB.dataSet.Tables["Med"].Clear();
             }
             catch (Exception e)
             {

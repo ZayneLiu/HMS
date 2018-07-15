@@ -38,9 +38,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Combobox_Search_By_Kind = new System.Windows.Forms.ComboBox();
-            this.cbx_Department = new System.Windows.Forms.ComboBox();
-            this.cbx_gender = new System.Windows.Forms.ComboBox();
             this.Tbx_Seach_By_Name = new System.Windows.Forms.TextBox();
+            this.cbx_Gender = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -109,11 +108,10 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.cbx_Gender);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.Combobox_Search_By_Kind);
-            this.panel1.Controls.Add(this.cbx_Department);
-            this.panel1.Controls.Add(this.cbx_gender);
             this.panel1.Controls.Add(this.Tbx_Seach_By_Name);
             this.panel1.Location = new System.Drawing.Point(3, 51);
             this.panel1.Name = "panel1";
@@ -149,36 +147,12 @@
             this.Combobox_Search_By_Kind.FormattingEnabled = true;
             this.Combobox_Search_By_Kind.Items.AddRange(new object[] {
             "按姓名查询",
-            "按性别查询",
-            "按科室查询",
-            "按医生查询"});
+            "按性别查询"});
             this.Combobox_Search_By_Kind.Location = new System.Drawing.Point(128, 21);
             this.Combobox_Search_By_Kind.Name = "Combobox_Search_By_Kind";
             this.Combobox_Search_By_Kind.Size = new System.Drawing.Size(151, 28);
             this.Combobox_Search_By_Kind.TabIndex = 32;
-            // 
-            // cbx_Department
-            // 
-            this.cbx_Department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_Department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_Department.FormattingEnabled = true;
-            this.cbx_Department.Location = new System.Drawing.Point(300, 21);
-            this.cbx_Department.Name = "cbx_Department";
-            this.cbx_Department.Size = new System.Drawing.Size(150, 28);
-            this.cbx_Department.TabIndex = 43;
-            // 
-            // cbx_gender
-            // 
-            this.cbx_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_gender.FormattingEnabled = true;
-            this.cbx_gender.Items.AddRange(new object[] {
-            "男",
-            "女"});
-            this.cbx_gender.Location = new System.Drawing.Point(300, 20);
-            this.cbx_gender.Name = "cbx_gender";
-            this.cbx_gender.Size = new System.Drawing.Size(150, 28);
-            this.cbx_gender.TabIndex = 42;
+            this.Combobox_Search_By_Kind.SelectedIndexChanged += new System.EventHandler(this.Combobox_Search_By_Kind_SelectedIndexChanged);
             // 
             // Tbx_Seach_By_Name
             // 
@@ -188,6 +162,21 @@
             this.Tbx_Seach_By_Name.Name = "Tbx_Seach_By_Name";
             this.Tbx_Seach_By_Name.Size = new System.Drawing.Size(150, 28);
             this.Tbx_Seach_By_Name.TabIndex = 34;
+            // 
+            // cbx_Gender
+            // 
+            this.cbx_Gender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbx_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_Gender.FormattingEnabled = true;
+            this.cbx_Gender.Items.AddRange(new object[] {
+            "男",
+            "女"});
+            this.cbx_Gender.Location = new System.Drawing.Point(285, 22);
+            this.cbx_Gender.Name = "cbx_Gender";
+            this.cbx_Gender.Size = new System.Drawing.Size(151, 28);
+            this.cbx_Gender.TabIndex = 45;
+            this.cbx_Gender.SelectedIndexChanged += new System.EventHandler(this.cbx_Gender_SelectedIndexChanged);
             // 
             // Admin_Patient_Management
             // 
@@ -202,6 +191,7 @@
             this.Name = "Admin_Patient_Management";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin_Pat_Management";
+            this.Load += new System.EventHandler(this.Admin_Patient_Management_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -225,8 +215,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox Combobox_Search_By_Kind;
-        private System.Windows.Forms.ComboBox cbx_Department;
-        private System.Windows.Forms.ComboBox cbx_gender;
         private System.Windows.Forms.TextBox Tbx_Seach_By_Name;
+        private System.Windows.Forms.ComboBox cbx_Gender;
     }
 }
